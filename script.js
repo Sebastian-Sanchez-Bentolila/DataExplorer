@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const tecnologias = document.querySelectorAll(".card .btn");
-    const guiasContainer = document.createElement("section");
-    guiasContainer.id = "guias-container";
-    document.body.appendChild(guiasContainer);
+    const guiasContainer = document.querySelector("#guias-container");
 
     tecnologias.forEach(btn => {
         btn.addEventListener("click", async (event) => {
@@ -31,6 +29,7 @@ async function cargarGuias(tecnologia) {
     }
 }
 
+// Función para mostrar guías dinámicamente
 function mostrarGuias(tecnologia, guias) {
     const guiasContainer = document.querySelector("#guias-container");
     guiasContainer.innerHTML = `
@@ -45,11 +44,11 @@ function mostrarGuias(tecnologia, guias) {
             `).join('')}
         </div>
     `;
-    
+
     // Reinicializar AOS para las nuevas guías
     AOS.refresh();
 
-    // Desplazarse al contenedor
+    // Desplazar la vista al contenedor
     guiasContainer.scrollIntoView({ behavior: "smooth" });
 }
 
