@@ -1,160 +1,134 @@
-/* Estilos generales */
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: #ecf0f1; /* Texto claro para contraste */
-    background-color: #1e272e; /* Fondo oscuro */
-    margin: 0;
-    padding: 0;
+/* Estilo General del Contenido de las Guías */
+.contenido {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #161b22;
+    color: #c9d1d9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-  
-/* Títulos */
-h1, h2, h3, h4, h5, h6 {
-    color: #f5f6fa; /* Títulos en tono más claro */
-    margin-bottom: 0.5em;
-    font-weight: 700;
+
+.contenido h1, .contenido h2, .contenido h3 {
+    color: #58a6ff;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
-  
-h1 {
+
+.contenido h1 {
     font-size: 2.5em;
-    border-bottom: 2px solid blue; 
-    padding-bottom: 0.3em;
+    text-align: center;
 }
-  
-h2 {
+
+.contenido h2 {
     font-size: 2em;
-    border-bottom: 1px solid #58a6ff;
-    padding-bottom: 0.2em;
+    margin-top: 30px;
 }
-  
-h3 {
-    font-size: 1.75em;
-}
-  
-h4 {
+
+.contenido h3 {
     font-size: 1.5em;
+    margin-top: 20px;
 }
-  
-h5 {
-    font-size: 1.25em;
+
+.contenido p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin-bottom: 20px;
 }
-  
-h6 {
-    font-size: 1em;
-}
-  
-/* Párrafos */
-p {
-    margin-bottom: 1em;
-}
-  
+
 /* Enlaces */
-a {
-    color: #58a6ff; /* Rojo oscuro para enlaces */
-    text-decoration: none;
-}
-  
-a:hover {
+.contenido a {
+    color: #58a6ff;
     text-decoration: underline;
 }
-  
+
+.contenido a:hover {
+    color: #1f6feb;
+}
+
 /* Listas */
-ul, ol {
-    margin: 1em 0;
-    padding-left: 2em;
+.contenido ul, .contenido ol {
+    margin: 20px 0;
+    padding-left: 20px;
 }
-  
-ul li {
-    list-style-type: square;
-    margin-bottom: 0.5em;
+
+.contenido ul li {
+    list-style-type: disc;
+    margin-bottom: 10px;
 }
-  
-ol li {
+
+.contenido ol li {
     list-style-type: decimal;
-    margin-bottom: 0.5em;
+    margin-bottom: 10px;
 }
-  
-/* Bloques de código */
-pre {
-    background-color: #2f3640; /* Fondo de código más oscuro */
-    color: #dcdde1; /* Texto de código claro */
-    padding: 1em;
-    overflow-x: auto;
-    border-radius: 5px;
-    margin-bottom: 1em;
-}
-  
-code {
-    background-color: #353b48; /* Fondo de inline code oscuro */
-    color: #f5f6fa; /* Texto de inline code claro */
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-}
-  
-/* Imágenes */
-img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #58a6ff; /* Borde rojo oscuro */
-    border-radius: 5px;
-    margin-bottom: 1em;
-}
-  
+
 /* Tablas */
-table {
+.contenido table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 1em;
+    margin: 20px 0;
 }
-  
-th, td {
-    border: 1px solid #ddd;
-    padding: 0.75em;
+
+.contenido th, .contenido td {
+    border: 1px solid #c9d1d9;
+    padding: 10px;
     text-align: left;
 }
-  
-th {
-    background-color: #2c3e50; /* Fondo de encabezado de tabla oscuro */
-    color: #fff;
+
+.contenido th {
+    background-color: #0d1117;
+    color: #58a6ff;
 }
-  
-  /* Citas */
-  blockquote {
-    border-left: 5px solid #58a6ff; /* Borde de cita rojo oscuro */
-    padding-left: 1em;
-    color: #dcdde1; /* Texto de cita claro */
-    margin: 1em 0;
-    font-style: italic;
-  }
-  
-  /* Botones */
-  button {
-    background-color: #58a6ff; 
-    color: #fff;
-    border: none;
-    padding: 0.75em 1.5em;
-    border-radius: 5px;
-    cursor: pointer;
+
+/* Imágenes */
+.contenido img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Código */
+.contenido pre {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    padding: 15px;
+    border-radius: 8px;
     font-size: 1em;
-  }
-  
-  button:hover {
-    background-color: blue; 
-  }
-  
-  /* Formularios */
-  input, textarea, select {
-    width: 100%;
-    padding: 0.75em;
-    margin-bottom: 1em;
-    border: 1px solid #ddd;
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contenido code {
+    font-family: "Courier New", Courier, monospace;
+    color: #58a6ff;
+    font-size: 1em;
+}
+
+/* Bloques de Notas o Advertencias */
+.contenido .nota {
+    background-color: #0a192f;
+    border-left: 5px solid #58a6ff;
+    padding: 15px;
+    margin: 20px 0;
     border-radius: 5px;
-    background-color: #2f3640; /* Fondo de campos de formulario oscuro */
-    color: #ecf0f1; /* Texto de campos de formulario claro */
-  }
-  
-  input:focus, textarea:focus, select:focus {
-    border-color: blue; /* Borde en foco rojo oscuro */
-    outline: none;
-  }
-  
+    font-size: 1em;
+}
+
+.contenido .nota strong {
+    color: #58a6ff;
+}
+
+/* Texto Alineado */
+.contenido .alineado-izquierda {
+    text-align: left;
+}
+
+.contenido .alineado-derecha {
+    text-align: right;
+}
+
+.contenido .alineado-centro {
+    text-align: center;
+}
