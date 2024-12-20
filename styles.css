@@ -234,5 +234,39 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.anuncio {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #112240;
+    color: #c9d1d9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+.anuncio h3 {
+    font-size: 1.8em;
+    color: #58a6ff;
+    margin-bottom: 10px;
+}
+
+.anuncio p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.anuncio .btn {
+    padding: 10px 20px;
+    background-color: #58a6ff;
+    color: #0d1117;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.anuncio .btn:hover {
+    background-color: #1f6feb;
+    transform: translateY(-3px);
+}
 
