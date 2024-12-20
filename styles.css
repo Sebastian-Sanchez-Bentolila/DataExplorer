@@ -185,44 +185,25 @@ body {
     transform: translateY(-3px);
 }
 
-.proyectos {
-    padding: 50px 20px;
-    background-color: #161b22;
-    color: #c9d1d9;
+.ciencia-de-datos {
+    padding: 60px 20px;
     text-align: center;
+    background-color: #112240; /* Fondo azul oscuro */
+    color: #c9d1d9; /* Texto claro */
 }
 
-.proyectos-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+.ciencia-de-datos h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #58a6ff; /* Azul vibrante */
 }
 
-.proyecto-card {
-    background: #0d1117;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: left;
-}
-
-.proyecto-card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.proyecto-card h3 {
-    margin: 10px 0;
-    color: #58a6ff;
-}
-
-
-.carousel {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    gap: 20px;
+.ciencia-de-datos .descripcion {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 800px;
+    color: #8b949e; /* Gris claro */
 }
 
 .slide {
