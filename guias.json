@@ -15,6 +15,26 @@
     ]
   },
   {
+    "tecnologia": "R",
+    "guias": [
+      {
+        "titulo": "Introduccion a R",
+        "descripcion": "Aprende que es R y como se usa.",
+        "enlace": "#"
+      }
+    ]
+  },
+  {
+    "tecnologia": "SQL",
+    "guias": [
+      {
+        "titulo": "SQL desde 0",
+        "descripcion": "Introducción a las bases de datos relacionales",
+        "enlace": "#"
+      }
+    ]
+  },
+  {
     "tecnologia": "Machine Learning",
     "guias": [
       {

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Blog de Data Science</title>
+    <title>DataExplorer</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="src/images/analytics.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -14,14 +16,16 @@
         <nav class="navbar">
             <a href="#inicio">Inicio</a>
             <a href="#tecnologias">Tecnologías</a>
-	    <a href="#proyectos">Proyectos</a>
+	        <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
     <section id="inicio" class="hero" data-aos="fade-up">
         <h1>¡Hola! Soy <span>Sebastian Sanchez Bentolila</span></h1>
-        <p>Explora mis aprendizajes en Data Science y tecnologías emergentes.</p>
+        <p>Explora mis aprendizajes en Data Science y tecnologías afines. Esta página web tiene como objetivo 
+            mostras lo aprendido en la universidad, cursos realizados y libros.
+        </p>
         <a href="#tecnologias" class="btn" data-aos="zoom-in">Explorar Tecnologías</a>
     </section>
 
@@ -30,7 +34,17 @@
         <div class="grid">
             <div class="card" data-aos="flip-left">
                 <h3>Python</h3>
-                <p>Aprende sobre mis guías en Python.</p>
+                <p>Aprende todo sobre este lenguaje de programación.</p>
+                <a href="#guias-container" class="btn">Ver Guías</a>
+            </div>
+            <div class="card" data-aos="flip-left">
+                <h3>R</h3>
+                <p>Aprende todo sobre R y el uso para análisis estadístico.</p>
+                <a href="#guias-container" class="btn">Ver Guías</a>
+            </div>
+            <div class="card" data-aos="flip-left">
+                <h3>SQL</h3>
+                <p>Base de Datos relacionales.</p>
                 <a href="#guias-container" class="btn">Ver Guías</a>
             </div>
             <div class="card" data-aos="flip-left">
@@ -49,14 +63,21 @@
         <h2>Proyectos Destacados</h2>
         <div class="carousel">
             <div class="slide">
-                <img src="ruta/a/imagen-proyecto1.jpg" alt="Proyecto 1">
-                <h3>Proyecto 1</h3>
-                <p>Descripción del proyecto.</p>
+                <img src="src/images/proyectos/titanic.jpg" alt="Proyecto 1" width="250px">
+                <h3>🚢 Análisis Predictivo: Supervivencia en el Titanic con Machine Learning 🚢</h3>
+                <p>📊 Sobre el Análisis Predictivo
+                    Este análisis se basa en datos de supervivencia del Titanic. 
+                    Se tratara de obtener los mejores modelos, y que pueda determinarse quien se logra salvar y 
+                    quien no al hundimiento del mismo.</p>
             </div>
             <div class="slide">
-                <img src="ruta/a/imagen-proyecto2.jpg" alt="Proyecto 2">
-                <h3>Proyecto 2</h3>
-                <p>Descripción del proyecto.</p>
+                <img src="src/images/proyectos/bicicleta.jpg" alt="Proyecto 2">
+                <h3>🌟 Explorando Nuevas Oportunidades para Bicicleterías en la Ciudad Autónoma de Buenos Aires🚴🌆</h3>
+                <p>📊 Sobre el Análisis
+                    Este análisis se basa en datos geoespaciales de bicicleterías existentes, 
+                    utilizando herramientas de análisis de datos para identificar patrones y oportunidades de mercado.
+                    Si te interesa conocer más detalles o ver cómo estos insights pueden aplicarse a tus estrategias 
+                    de negocio, ¡no dudes en ponerte en contacto!</p>
             </div>
         </div>
     </section>
@@ -65,13 +86,13 @@
     <section id="contacto" class="contacto" data-aos="fade-up">
         <h2>Contacto</h2>
         <div class="social-icons">
-            <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="icon" data-aos="zoom-in">
+            <a href="https://www.linkedin.com/in/sebastian-sanchez-bentolila/" target="_blank" class="icon" data-aos="zoom-in">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
             <a href="mailto:sebastiansb3004@gmail.com" class="icon" data-aos="zoom-in">
                 <i class="fas fa-envelope"></i> Correo
             </a>
-            <a href="https://github.com/tu-usuario" target="_blank" class="icon" data-aos="zoom-in">
+            <a href="https://github.com/Sebastian-Sanchez-Bentolila" target="_blank" class="icon" data-aos="zoom-in">
                 <i class="fab fa-github"></i> GitHub
             </a>
         </div>
