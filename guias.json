@@ -1,0 +1,32 @@
+[
+  {
+    "tecnologia": "Python",
+    "guias": [
+      {
+        "titulo": "Introducción a Python",
+        "descripcion": "Aprende los fundamentos de lenguaje de programación Python",
+        "enlace": "guias/Python/python_basico.html"
+      },
+      {
+        "titulo": "Manejo de datos con Pandas",
+        "descripcion": "Cómo usar Pandas para analizar datos.",
+        "enlace": "#"
+      }
+    ]
+  },
+  {
+    "tecnologia": "Machine Learning",
+    "guias": [
+      {
+        "titulo": "Modelos supervisados",
+        "descripcion": "Guía completa sobre clasificación y regresión.",
+        "enlace": "#"
+      },
+      {
+        "titulo": "Introducción a redes neuronales",
+        "descripcion": "Conceptos básicos de deep learning.",
+        "enlace": "#"
+      }
+    ]
+  }
+]

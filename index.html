@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog de Data Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Data<span>Explorer</span></div>
+        <nav class="navbar">
+            <a href="#inicio">Inicio</a>
+            <a href="#tecnologias">Tecnologías</a>
+	    <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero" data-aos="fade-up">
+        <h1>¡Hola! Soy <span>Sebastian Sanchez Bentolila</span></h1>
+        <p>Explora mis aprendizajes en Data Science y tecnologías emergentes.</p>
+        <a href="#tecnologias" class="btn" data-aos="zoom-in">Explorar Tecnologías</a>
+    </section>
+
+    <section id="tecnologias" class="tecnologias" data-aos="fade-right">
+        <h2>Tecnologías</h2>
+        <div class="grid">
+            <div class="card" data-aos="flip-left">
+                <h3>Python</h3>
+                <p>Aprende sobre mis guías en Python.</p>
+                <a href="#guias-container" class="btn">Ver Guías</a>
+            </div>
+            <div class="card" data-aos="flip-left">
+                <h3>Machine Learning</h3>
+                <p>Guías sobre modelos de ML.</p>
+                <a href="#guias-container" class="btn">Ver Guías</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="guias-container">
+        
+    </section>
+
+    <section id="proyectos" class="proyectos">
+        <h2>Proyectos Destacados</h2>
+        <div class="carousel">
+            <div class="slide">
+                <img src="ruta/a/imagen-proyecto1.jpg" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Descripción del proyecto.</p>
+            </div>
+            <div class="slide">
+                <img src="ruta/a/imagen-proyecto2.jpg" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Descripción del proyecto.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contacto" class="contacto" data-aos="fade-up">
+        <h2>Contacto</h2>
+        <div class="social-icons">
+            <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="icon" data-aos="zoom-in">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:sebastiansb3004@gmail.com" class="icon" data-aos="zoom-in">
+                <i class="fas fa-envelope"></i> Correo
+            </a>
+            <a href="https://github.com/tu-usuario" target="_blank" class="icon" data-aos="zoom-in">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        <div class="portafolio" data-aos="fade-up">
+            <p>Explora mi portafolio completo:</p>
+            <a href="https://sebastian-sanchez-bentolila.netlify.app/" target="_blank" class="btn portafolio-btn">Ver Portafolio</a>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

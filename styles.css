@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #161b22;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #58a6ff;
+}
+
+.navbar a {
+    color: #c9d1d9;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(120deg, #0a192f, #112240);
+}
+
+.hero h1 span {
+    color: #58a6ff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #58a6ff;
+    color: #0d1117;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.tecnologias {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.card h3 {
+    color: #58a6ff;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #161b22;
+    color: #8b949e;
+}
+
+
+
+#guias-container {
+    padding: 50px 20px;
+    background-color: #112240;
+    color: #c9d1d9;
+    text-align: center;
+}
+
+.guias-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.guia-card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.guia-card h3 {
+    color: #58a6ff;
+}
+
+.guia-card .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #58a6ff;
+    color: #0d1117;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.contacto {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+.contacto h2 {
+    margin-bottom: 20px;
+    color: #58a6ff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-icons .icon {
+    text-decoration: none;
+    color: #c9d1d9;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #161b22;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-icons .icon i {
+    font-size: 24px;
+    color: #58a6ff;
+}
+
+.social-icons .icon:hover {
+    transform: translateY(-5px);
+    background-color: #58a6ff;
+    color: #0d1117;
+}
+
+.portafolio {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.portafolio p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #8b949e;
+}
+
+.portafolio-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #58a6ff;
+    color: #0d1117;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.portafolio-btn:hover {
+    background-color: #1f6feb;
+    transform: translateY(-3px);
+}
+
+.proyectos {
+    padding: 50px 20px;
+    background-color: #161b22;
+    color: #c9d1d9;
+    text-align: center;
+}
+
+.proyectos-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.proyecto-card {
+    background: #0d1117;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.proyecto-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.proyecto-card h3 {
+    margin: 10px 0;
+    color: #58a6ff;
+}
+
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    gap: 20px;
+}
+
+.slide {
+    min-width: 300px;
+    flex: 0 0 auto;
+    text-align: center;
+    background-color: #161b22;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+

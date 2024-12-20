@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a Python</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Data<span>Explorer</span></div>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="contenido" class="contenido">
+        <h1>Introducción a Python</h1>
+        <p>Python es un lenguaje de programación de alto nivel, fácil de aprender y muy utilizado en diversas áreas como Data Science, Desarrollo Web y Automatización.</p>
+        
+        <h2>Paso 1: Instalar Python</h2>
+        <p>
+            1. Ve al sitio oficial de Python: <a href="https://www.python.org" target="_blank">python.org</a>.<br>
+            2. Descarga la última versión de Python para tu sistema operativo.<br>
+            3. Durante la instalación, selecciona la opción <strong>"Add Python to PATH"</strong> para configurarlo correctamente.
+        </p>
+
+        <h2>Paso 2: Escribir tu Primer Script</h2>
+        <p>Escribe el siguiente código en un archivo con extensión <code>.py</code> y ejecútalo desde la terminal:</p>
+        <pre><code>print("¡Hola, Mundo!")</code></pre>
+        <p>Deberías ver el mensaje: <strong>¡Hola, Mundo!</strong></p>
+
+        <h2>Paso 3: Variables y Tipos de Datos</h2>
+        <p>Aprende cómo funcionan las variables y los diferentes tipos de datos en Python:</p>
+        <pre><code># Números
+edad = 25
+pi = 3.14159
+
+# Cadenas
+nombre = "Sebastián"
+mensaje = "¡Bienvenido a Python!"
+
+# Booleanos
+es_estudiante = True
+
+print(nombre, "tiene", edad, "años.")</code></pre>
+
+        <h2>Paso 4: Estructuras de Control</h2>
+        <p>Controla el flujo de tu programa con condicionales y bucles:</p>
+        <pre><code># Condicional
+numero = 10
+if numero > 5:
+    print("El número es mayor que 5.")
+
+# Bucle For
+for i in range(5):
+    print("Iteración:", i)
+
+# Bucle While
+contador = 0
+while contador < 3:
+    print("Contador:", contador)
+    contador += 1</code></pre>
+
+        <h2>Paso 5: Listas y Funciones</h2>
+        <p>Trabaja con listas y define tus propias funciones:</p>
+        <pre><code># Listas
+frutas = ["Manzana", "Banana", "Cereza"]
+for fruta in frutas:
+    print("Me gusta:", fruta)
+
+# Funciones
+def saludo(nombre):
+    return f"Hola, {nombre}"
+
+print(saludo("Sebastián"))</code></pre>
+
+        <h2>Notas Finales</h2>
+        <ul>
+            <li>Python tiene una amplia comunidad y bibliotecas que facilitan el desarrollo.</li>
+            <li>Practica resolviendo problemas básicos y explorando nuevas funcionalidades.</li>
+            <li>Usa recursos como <a href="https://www.w3schools.com/python/" target="_blank">W3Schools</a> o <a href="https://realpython.com/" target="_blank">Real Python</a> para seguir aprendiendo.</li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
