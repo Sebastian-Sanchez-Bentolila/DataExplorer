@@ -16,17 +16,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Función para cargar guías desde el archivo JSON
+const guiasJSON = [
+  {
+    "tecnologia": "Python",
+    "guias": [
+      {
+        "titulo": "Introducción a Python",
+        "descripcion": "Aprende los fundamentos de lenguaje de programación Python",
+        "enlace": "guias/Python/python_basico.html"
+      },
+      {
+        "titulo": "Manejo de datos con Pandas",
+        "descripcion": "Cómo usar Pandas para analizar datos.",
+        "enlace": "#"
+      }
+    ]
+  }
+];
+
 async function cargarGuias(tecnologia) {
-    try {
-        const response = await fetch("guias.json");
-        const data = await response.json();
-        const tecnologiaData = data.find(item => item.tecnologia === tecnologia);
-        return tecnologiaData ? tecnologiaData.guias : [];
-    } catch (error) {
-        console.error("Error al cargar las guías:", error);
-        return [];
-    }
+    const tecnologiaData = guiasJSON.find(item => item.tecnologia === tecnologia);
+    return tecnologiaData ? tecnologiaData.guias : [];
 }
 
 // Función para mostrar guías dinámicamente
