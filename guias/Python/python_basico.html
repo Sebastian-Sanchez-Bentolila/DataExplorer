@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <div class="logo">Data<span>Explorer</span></div>
         <nav class="navbar">
             <a href="../../index.html">Inicio</a>
@@ -21,74 +21,143 @@
         </nav>
     </header>
 
-    <section id="contenido" class="contenido">
-        <h1>Introducción a Python</h1>
-        <p>Python es un lenguaje de programación de alto nivel, fácil de aprender y muy utilizado en diversas áreas como Data Science, Desarrollo Web y Automatización.</p>
-        
-        <h2>Paso 1: Instalar Python</h2>
-        <p>
-            1. Ve al sitio oficial de Python: <a href="https://www.python.org" target="_blank">python.org</a>.<br>
-            2. Descarga la última versión de Python para tu sistema operativo.<br>
-            3. Durante la instalación, selecciona la opción <strong>"Add Python to PATH"</strong> para configurarlo correctamente.
-        </p>
+    <div class="contenido">
+        <h1>Introducción al Lenguaje Python</h1>
+        <p>Explorando uno de los lenguajes de programación más populares y versátiles del mundo.</p>
 
-        <h2>Paso 2: Escribir tu Primer Script</h2>
-        <p>Escribe el siguiente código en un archivo con extensión <code>.py</code> y ejecútalo desde la terminal:</p>
-        <pre><code>print("¡Hola, Mundo!")</code></pre>
-        <p>Deberías ver el mensaje: <strong>¡Hola, Mundo!</strong></p>
+        <h2 id="que-es-python">¿Qué es Python?</h2>
+        <p>Python es un lenguaje de programación interpretado, de alto nivel y propósito general. 
+        Su diseño enfatiza la legibilidad del código, utilizando una sintaxis simple que facilita el aprendizaje 
+        y la colaboración.</p>
+        <p>Es un lenguaje multiparadigma que admite programación orientada a objetos, funcional e imperativa.</p>
+<p>Python también destaca por su amplia comunidad y ecosistema de bibliotecas, lo que permite abordar proyectos
+        en áreas como ciencia de datos, inteligencia artificial, desarrollo web, y mucho más.</p>
 
-        <h2>Paso 3: Variables y Tipos de Datos</h2>
-        <p>Aprende cómo funcionan las variables y los diferentes tipos de datos en Python:</p>
-        <pre><code># Números
-edad = 25
-pi = 3.14159
+        <h2 id="origen-de-python">Origen y Motivación</h2>
+        <p>Python fue creado por Guido van Rossum y se lanzó por primera vez en 1991. 
+        Su desarrollo comenzó a finales de los años 80, y fue concebido como una mejora de 
+        un lenguaje anterior llamado ABC.</p>
+        <p>El nombre "Python" no proviene del animal, sino del grupo de comedia británico Monty Python. 
+        Esto refleja el enfoque del lenguaje hacia la sencillez y el disfrute.</p>
+<p>En comparación con otros lenguajes de su época, como C y Perl, Python ofrecía una sintaxis más limpia y 
+        una curva de aprendizaje más suave, lo que lo convirtió en una opción atractiva para principiantes y expertos.</p>
 
-# Cadenas
-nombre = "Sebastián"
-mensaje = "¡Bienvenido a Python!"
+        <h2 id="usos-de-python">Usos de Python</h2>
+        <ul>
+            <li>Desarrollo web (frameworks como Django, Flask).</li>
+            <li>Análisis de datos y ciencia de datos (pandas, NumPy, SciPy).</li>
+            <li>Inteligencia artificial y aprendizaje automático (TensorFlow, PyTorch).</li>
+            <li>Automatización y scripting.</li>
+            <li>Desarrollo de videojuegos (Pygame).</li>
+            <li>Aplicaciones de escritorio y GUIs (Tkinter, PyQt).</li>
+            <li>Internet de las cosas (IoT) y hardware.</li>
+        </ul>
 
-# Booleanos
-es_estudiante = True
+        <h2 id="entornos-de-desarrollo">Entornos de Desarrollo</h2>
+        <p>Python se puede desarrollar en diversos entornos. Algunos de los más populares incluyen:</p>
+        <ul>
+            <li><strong>PyCharm:</strong> Un IDE profesional desarrollado por JetBrains, ideal para proyectos grandes.</li>
+            <li><strong>Visual Studio Code:</strong> Un editor ligero con extensiones potentes para Python.</li>
+            <li><strong>Jupyter Notebook:</strong> Ideal para ciencia de datos y aprendizaje automático.</li>
+            <li><strong>Spyder:</strong> Orientado a la programación científica.</li>
+            <li><strong>IDLE:</strong> El entorno básico incluido con la instalación de Python.</li>
+        </ul>
+<p>Para quienes recién comienzan, IDLE y Visual Studio Code son excelentes opciones. IDLE es sencillo y directo, mientras que Visual Studio Code ofrece herramientas más avanzadas a medida que se adquiere experiencia.</p>
 
-print(nombre, "tiene", edad, "años.")</code></pre>
+        <h2 id="tipos-de-datos">Tipos de Datos en Python</h2>
+        <p>Python admite diversos tipos de datos fundamentales y estructuras avanzadas:</p>
 
-        <h2>Paso 4: Estructuras de Control</h2>
-        <p>Controla el flujo de tu programa con condicionales y bucles:</p>
-        <pre><code># Condicional
-numero = 10
-if numero > 5:
-    print("El número es mayor que 5.")
+        <h3>Tipos Primitivos:</h3>
+        <ul>
+            <li><strong>int:</strong> Números enteros (ejemplo: 10, -5).</li>
+            <li><strong>float:</strong> Números decimales (ejemplo: 3.14, -0.5).</li>
+            <li><strong>str:</strong> Cadenas de texto (ejemplo: "Hola", "Python").</li>
+            <li><strong>bool:</strong> Valores lógicos (True, False).</li>
+        </ul>
 
-# Bucle For
+        <h3>Estructuras de Datos:</h3>
+        <ul>
+            <li><strong>list:</strong> Listas ordenadas y mutables (ejemplo: [1, 2, 3]).</li>
+            <li><strong>tuple:</strong> Tuplas ordenadas e inmutables (ejemplo: (1, 2, 3)).</li>
+            <li><strong>dict:</strong> Diccionarios (pares clave-valor) (ejemplo: {"nombre": "Python", "año": 1991}).</li>
+            <li><strong>set:</strong> Conjuntos desordenados y únicos (ejemplo: {1, 2, 3}).</li>
+        </ul>
+
+        <h3>Ejemplo de Código:</h3>
+        <pre><code># Ejemplo de diferentes tipos de datos
+entero = 10
+flotante = 3.14
+cadena = "Hola, Python!"
+booleano = True
+lista = [1, 2, 3]
+tupla = (1, 2, 3)
+diccionario = {"clave": "valor"}
+conjunto = {1, 2, 3}
+
+print(entero, flotante, cadena, booleano)
+print(lista, tupla, diccionario, conjunto)</code></pre>
+    
+
+<h2 id="control-de-flujo">Estructuras de Control de Flujo</h2>
+        <p>Las estructuras de control de flujo permiten dirigir la ejecución del programa según ciertas condiciones o repeticiones.</p>
+
+        <h3>Condicionales</h3>
+        <p>Los condicionales permiten ejecutar bloques de código según se cumplan ciertas condiciones.</p>
+        <pre><code># Ejemplo de condicional
+edad = 18
+if edad >= 18:
+    print("Eres mayor de edad")
+elif edad >= 13:
+    print("Eres adolescente")
+else:
+    print("Eres menor de edad")</code></pre>
+
+        <h3>Bucles</h3>
+        <p>Los bucles se usan para repetir un bloque de código varias veces:</p>
+        <ul>
+            <li><strong>while:</strong> Repite mientras una condición sea verdadera.</li>
+            <li><strong>for:</strong> Itera sobre una secuencia (lista, rango, etc.).</li>
+        </ul>
+        <pre><code># Ejemplo de bucle for
 for i in range(5):
-    print("Iteración:", i)
+    print(i)
 
-# Bucle While
+# Ejemplo de bucle while
 contador = 0
-while contador < 3:
-    print("Contador:", contador)
+while contador < 5:
+    print(contador)
     contador += 1</code></pre>
 
-        <h2>Paso 5: Listas y Funciones</h2>
-        <p>Trabaja con listas y define tus propias funciones:</p>
-        <pre><code># Listas
-frutas = ["Manzana", "Banana", "Cereza"]
-for fruta in frutas:
-    print("Me gusta:", fruta)
+        <h2 id="funciones">Funciones</h2>
+        <p>Las funciones son bloques de código reutilizables que se pueden invocar para realizar tareas específicas.</p>
+        <pre><code># Ejemplo de función
+def saludar(nombre):
+    return f"Hola, {nombre}!"
 
-# Funciones
-def saludo(nombre):
-    return f"Hola, {nombre}"
+print(saludar("Python"))</code></pre>
 
-print(saludo("Sebastián"))</code></pre>
+        <h2 id="excepciones">Manejo de Excepciones</h2>
+        <p>El manejo de excepciones permite controlar errores durante la ejecución del programa, evitando que este termine abruptamente.</p>
+        <pre><code># Ejemplo de manejo de excepciones
+try:
+    numero = int(input("Ingresa un número: "))
+    print(f"El número ingresado es {numero}")
+except ValueError:
+    print("Eso no es un número válido")
+finally:
+    print("Fin del programa")</code></pre>
 
-        <h2>Notas Finales</h2>
+
+<h2 id="recursos-adicionales">Recursos Adicionales</h2>
+        <p>Si quieres profundizar más en Python, aquí tienes una selección de libros y artículos interesantes:</p>
         <ul>
-            <li>Python tiene una amplia comunidad y bibliotecas que facilitan el desarrollo.</li>
-            <li>Practica resolviendo problemas básicos y explorando nuevas funcionalidades.</li>
-            <li>Usa recursos como <a href="https://www.w3schools.com/python/" target="_blank">W3Schools</a> o <a href="https://realpython.com/" target="_blank">Real Python</a> para seguir aprendiendo.</li>
+            <li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a> por Al Sweigart.</li>
+            <li><a href="https://realpython.com/" target="_blank">Real Python</a>: Tutoriales y recursos para todos los niveles.</li>
+            <li><a href="https://www.learnpython.org/" target="_blank">Learn Python</a>: Una plataforma interactiva para aprender Python.</li>
+            <li><a href="https://docs.python.org/3/tutorial/index.html" target="_blank">Documentación Oficial de Python</a>: El tutorial oficial del lenguaje.</li>
+            <li><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8</a>: La guía de estilo oficial de Python.</li>
         </ul>
-    </section>
+    </div>
 
     <footer class="footer">
         <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
