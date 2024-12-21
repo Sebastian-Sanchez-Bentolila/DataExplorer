@@ -17,21 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const guiasJSON = [
-  {
-    "tecnologia": "Python",
-    "guias": [
-      {
-        "titulo": "Introducción a Python",
-        "descripcion": "Aprende los fundamentos de lenguaje de programación Python",
-        "enlace": "guias/Python/python_basico.html"
-      },
-      {
-        "titulo": "Manejo de datos con Pandas",
-        "descripcion": "Cómo usar Pandas para analizar datos.",
-        "enlace": "#"
-      }
-    ]
-  }
+    {
+        "tecnologia": "Python",
+        "guias": [
+        {
+            "titulo": "Introducción a Python",
+            "descripcion": "Aprende los fundamentos de lenguaje de programación Python",
+            "enlace": "guias/Python/python_basico.html"
+        },
+        {
+            "titulo": "Expresiones regulares",
+            "descripcion": "Módulo regex",
+            "enlace": "#"
+        }]
+    }
 ];
 
 async function cargarGuias(tecnologia) {
