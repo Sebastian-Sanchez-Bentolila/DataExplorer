@@ -233,3 +233,49 @@ body {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.donaciones {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #112240; /* Fondo azul oscuro */
+    color: #c9d1d9; /* Texto claro */
+    border-top: 1px solid #58a6ff; /* Separador sutil */
+}
+
+.donaciones h2 {
+    font-size: 2em;
+    color: #58a6ff; /* Azul vibrante */
+    margin-bottom: 10px;
+}
+
+.donaciones p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #8b949e; /* Gris claro */
+}
+
+.btn-donacion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #58a6ff; /* Azul vibrante */
+    color: #0d1117; /* Texto oscuro */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-donacion:hover {
+    background-color: #1f6feb;
+    transform: translateY(-3px);
+}
+
+.icono-cafecito {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    filter: invert(1); /* Cambia el icono a blanco */
+}
