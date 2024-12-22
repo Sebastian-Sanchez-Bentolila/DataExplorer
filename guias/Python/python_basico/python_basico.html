@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía: Introducción a Python</title>
     <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
-    <link rel="shortcut icon" href="../../src/images/analytics.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../styles_guias.css">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
@@ -15,9 +15,9 @@
     <header class="header">
         <div class="logo">Data<span>Explorer</span></div>
         <nav class="navbar">
-            <a href="../../index.html">Inicio</a>
+            <a href="../../../index.html">Inicio</a>
             <a href="#contenido">Contenido</a>
-            <a href="../../index.html#contacto">Contacto</a>
+            <a href="../../../index.html#contacto">Contacto</a>
         </nav>
     </header>
 
@@ -84,7 +84,8 @@
         </ul>
 
         <h3>Ejemplo de Código:</h3>
-        <pre><code># Ejemplo de diferentes tipos de datos
+        <pre><code>
+# Ejemplo de diferentes tipos de datos
 entero = 10
 flotante = 3.14
 cadena = "Hola, Python!"
@@ -95,7 +96,13 @@ diccionario = {"clave": "valor"}
 conjunto = {1, 2, 3}
 
 print(entero, flotante, cadena, booleano)
-print(lista, tupla, diccionario, conjunto)</code></pre>
+print(lista, tupla, diccionario, conjunto)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+10 3.14 Hola, Python! True
+[1, 2, 3] (1, 2, 3) {'clave': 'valor'} {1, 2, 3}
+        </code></pre>
     
 
         <h2 id="control-de-flujo">Estructuras de Control de Flujo</h2>
@@ -103,14 +110,20 @@ print(lista, tupla, diccionario, conjunto)</code></pre>
 
         <h3>Condicionales</h3>
         <p>Los condicionales permiten ejecutar bloques de código según se cumplan ciertas condiciones.</p>
-        <pre><code># Ejemplo de condicional
+        <pre><code>
+# Ejemplo de condicional
 edad = 18
 if edad >= 18:
     print("Eres mayor de edad")
 elif edad >= 13:
     print("Eres adolescente")
 else:
-    print("Eres menor de edad")</code></pre>
+    print("Eres menor de edad")
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+Eres mayor de edad
+        </code></pre>
 
         <h3>Bucles</h3>
         <p>Los bucles se usan para repetir un bloque de código varias veces:</p>
@@ -118,7 +131,8 @@ else:
             <li><strong>while:</strong> Repite mientras una condición sea verdadera.</li>
             <li><strong>for:</strong> Itera sobre una secuencia (lista, rango, etc.).</li>
         </ul>
-        <pre><code># Ejemplo de bucle for
+        <pre><code>
+# Ejemplo de bucle for
 for i in range(5):
     print(i)
 
@@ -126,26 +140,54 @@ for i in range(5):
 contador = 0
 while contador < 5:
     print(contador)
-    contador += 1</code></pre>
+    contador += 1
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+0
+1
+2
+3
+4
+0
+1
+2
+3
+4
+        </code></pre>
 
         <h2 id="funciones">Funciones</h2>
         <p>Las funciones son bloques de código reutilizables que se pueden invocar para realizar tareas específicas.</p>
-        <pre><code># Ejemplo de función
+        <pre><code>
+# Ejemplo de función
 def saludar(nombre):
     return f"Hola, {nombre}!"
 
-print(saludar("Python"))</code></pre>
+print(saludar("Python"))
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+Hola, Python!
+        </code></pre>
 
         <h2 id="excepciones">Manejo de Excepciones</h2>
         <p>El manejo de excepciones permite controlar errores durante la ejecución del programa, evitando que este termine abruptamente.</p>
-        <pre><code># Ejemplo de manejo de excepciones
+        <pre><code>
+# Ejemplo de manejo de excepciones
 try:
     numero = int(input("Ingresa un número: "))
     print(f"El número ingresado es {numero}")
 except ValueError:
     print("Eso no es un número válido")
 finally:
-    print("Fin del programa")</code></pre>
+    print("Fin del programa")
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+Ingresa un número: t
+Eso no es un número válido
+Fin del programa  
+        </code></pre>
 
 
         <h2 id="recursos-adicionales">Recursos Adicionales</h2>
@@ -163,7 +205,7 @@ finally:
         <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
     </footer>
 
-    <script src="../../script.js"></script>
+    <script src="../../../script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({

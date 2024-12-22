@@ -23,12 +23,45 @@ const guiasJSON = [
         {
             "titulo": "Introducción a Python",
             "descripcion": "Aprende los fundamentos de lenguaje de programación Python",
-            "enlace": "guias/Python/python_basico.html"
+            "enlace": "guias/Python/python_basico/python_basico.html"
+        },
+        {
+            "titulo": "Módulos",
+            "descripcion": "Librerias y su importación",
+            "enlace": "guias/Python/modulos/modulos.html"
+        },
+        {
+            "titulo": "Clases y Objetos",
+            "descripcion": "Clases y Objetos",
+            "enlace": "guias/Python/clases/clases.html"
         },
         {
             "titulo": "Expresiones regulares",
             "descripcion": "Módulo regex",
-            "enlace": "#"
+            "enlace": "guias/Python/expresiones_regulares/expresiones_regulares.html"
+        },
+        {
+            "titulo": "Máquinas Virtuales",
+            "descripcion": "Maquinas virtuales, frizar version y un poco de Docker",
+            "enlace": "guias/Python/maquinas_virtuales/maquinas_virtuales.html"
+        }]
+    },
+    {
+        "tecnologia": "R",
+        "guias": [
+        {
+            "titulo": "Introducción a R",
+            "descripcion": "Aprende los fundamentos de lenguaje de programación R",
+            "enlace": "guias/R/r_basico/r_basico.html"
+        }]
+    },
+    {
+        "tecnologia": "SQL",
+        "guias": [
+        {
+            "titulo": "Introducción a SQL",
+            "descripcion": "Aprende los fundamentos de las bases de datos relacionales",
+            "enlace": "guias/SQL/sql_basico.html"
         }]
     }
 ];

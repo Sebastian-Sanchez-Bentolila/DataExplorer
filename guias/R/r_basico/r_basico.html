@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a R</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Data<span>Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Introducción a R</h1>
+        <p>R es un lenguaje de programación y un entorno de software libre utilizado principalmente para el análisis estadístico y la visualización gráfica. Fue desarrollado por Robert Gentleman y Ross Ihaka en 1993 en la Universidad de Auckland, Nueva Zelanda, y ha ganado una popularidad significativa en la comunidad de la ciencia de datos y la estadística.</p>
+        
+        <h2>¿Por qué usar R?</h2>
+        <p>R se destaca por su capacidad para manejar, almacenar y analizar datos. Aquí hay algunas razones por las cuales deberías considerar aprender R:</p>
+        <ul>
+            <li><strong>Amplia gama de funciones:</strong> R ofrece una gran cantidad de funciones y paquetes para estadística, modelado de datos, análisis y visualización.</li>
+            <li><strong>Comunidad activa:</strong> La comunidad de R es muy activa y proporciona numerosos recursos, como paquetes adicionales, foros de discusión y tutoriales.</li>
+            <li><strong>Gratuito y de código abierto:</strong> R es un software de código abierto, lo que significa que es gratuito y que cualquiera puede contribuir a su desarrollo.</li>
+            <li><strong>Visualización avanzada:</strong> R es conocido por sus capacidades gráficas avanzadas, permitiendo crear desde gráficos simples hasta visualizaciones complejas.</li>
+        </ul>
+        
+        <h2>Instalación de R y RStudio</h2>
+        <p>Para empezar a usar R, necesitas instalarlo en tu computadora. Además, se recomienda utilizar RStudio, un entorno de desarrollo integrado (IDE) que facilita la escritura de código en R.</p>
+        <ol>
+            <li>Descarga R desde el <a href="https://cran.r-project.org/">sitio oficial del Proyecto R</a> e instálalo.</li>
+            <li>Descarga RStudio desde el <a href="https://www.rstudio.com/products/rstudio/download/">sitio oficial de RStudio</a> e instálalo.</li>
+        </ol>
+        <div class="nota">
+            <strong>Nota:</strong> Asegúrate de instalar primero R y luego RStudio para evitar problemas de compatibilidad.
+        </div>
+        
+        <h2>Primeros Pasos con R</h2>
+        <p>Vamos a comenzar con algunos conceptos básicos y ejemplos de código en R.</p>
+        
+        <h3>Asignación de Variables</h3>
+        <p>En R, puedes asignar valores a variables utilizando el operador de asignación <code>&lt;-</code>. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Asignación de un número a una variable
+mi_numero <- 42
+        
+# Asignación de una cadena de texto a una variable
+mi_texto <- "Hola, mundo!"
+        
+# Mostrar los valores de las variables
+print(mi_numero)
+print(mi_texto)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(mi_numero)
+[1] 42
+> print(mi_texto)
+[1] "Hola, mundo!"    
+        </code></pre>
+        
+        <h3>Operaciones Matemáticas</h3>
+        <p>R puede realizar una variedad de operaciones matemáticas básicas:</p>
+        <pre><code>
+# Suma
+suma <- 5 + 3
+    
+# Resta
+resta <- 10 - 4
+    
+# Multiplicación
+multiplicacion <- 7 * 6
+    
+# División
+division <- 20 / 5
+    
+# Mostrar los resultados
+print(suma)
+print(resta)
+print(multiplicacion)
+print(division)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(suma)
+[1] 8
+> print(resta)
+[1] 6
+> print(multiplicacion)
+[1] 42
+> print(division)
+[1] 4
+        </code></pre>
+        
+        <h3>Creación y Manipulación de Vectores</h3>
+        <p>Los vectores son una de las estructuras de datos más importantes en R. Puedes crear un vector utilizando la función <code>c()</code>:</p>
+        <pre><code>
+# Crear un vector de números
+numeros <- c(1, 2, 3, 4, 5)
+    
+# Acceder a elementos del vector
+primer_elemento <- numeros[1]
+tercer_elemento <- numeros[3]
+    
+# Mostrar los elementos
+print(primer_elemento)
+print(tercer_elemento)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(primer_elemento)
+[1] 1
+> print(tercer_elemento)
+[1] 3
+        </code></pre>
+        
+        <h3>Funciones en R</h3>
+        <p>R tiene muchas funciones predefinidas y también permite crear tus propias funciones. Aquí tienes un ejemplo de una función que calcula el cuadrado de un número:</p>
+        <pre><code>
+# Definir una función
+cuadrado <- function(x) {
+    return(x^2)
+}
+    
+# Usar la función
+resultado <- cuadrado(4)
+    
+# Mostrar el resultado
+print(resultado)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(resultado)
+[1] 16
+        </code></pre>
+        
+        <h2>Visualización de Datos</h2>
+        <p>R es muy poderoso para la visualización de datos. Una de las bibliotecas más populares para esto es <code>ggplot2</code>. Aquí tienes un ejemplo de cómo crear un gráfico de dispersión:</p>
+        <pre><code>
+# Instalar y cargar ggplot2
+install.packages("ggplot2")
+library(ggplot2)
+    
+# Crear datos de ejemplo
+datos <- data.frame(
+    x = rnorm(100),
+    y = rnorm(100)
+)
+    
+# Crear gráfico de dispersión
+ggplot(datos, aes(x = x, y = y)) +
+    geom_point() +
+    labs(title = "Gráfico de Dispersión de Datos Aleatorios",
+        x = "Eje X",
+        y = "Eje Y")
+        </code></pre>
+        <p>Salida en consola: </p>
+        <img src="img/grafico_dispersion_datos_aleatorios.jpg" alt="Gráfico">
+        
+
+
+        <h2>Gráficos Avanzados con ggplot2</h2>
+        <p>La biblioteca <code>ggplot2</code> en R es una de las herramientas más potentes para la visualización de datos. Te permite crear gráficos detallados y personalizados de manera sencilla.</p>
+            
+        <h3>Gráfico de Barras</h3>
+        <p>Un gráfico de barras es útil para representar datos categóricos. Aquí tienes un ejemplo de cómo crear un gráfico de barras con <code>ggplot2</code>:</p>
+        <pre><code>
+# Crear datos de ejemplo
+datos_barras <- data.frame(
+        categoria = c("A", "B", "C", "D"),
+        valor = c(3, 12, 5, 8)
+)
+        
+# Crear gráfico de barras
+ggplot(datos_barras, aes(x = categoria, y = valor)) +
+        geom_bar(stat = "identity", fill = "skyblue") +
+        labs(title = "Gráfico de Barras", x = "Categoría", y = "Valor")
+        </code></pre>
+        <p>Salida en consola: </p>
+        <img src="img/grafico_barras.jpg" alt="Gráfico de barras">
+            
+        <h3>Gráfico de Líneas</h3>
+        <p>Un gráfico de líneas es ideal para mostrar cambios a lo largo del tiempo. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Crear datos de ejemplo
+datos_lineas <- data.frame(
+        tiempo = 1:10,
+        valor = c(2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
+)
+        
+# Crear gráfico de líneas
+ggplot(datos_lineas, aes(x = tiempo, y = valor)) +
+        geom_line(color = "blue") +
+        labs(title = "Gráfico de Líneas", x = "Tiempo", y = "Valor")
+        </code></pre>
+        <p>Salida en consola: </p>
+        <img src="img/grafico_lineas.jpg" alt="Gráfico de lineas">
+            
+        <h3>Gráfico de Caja y Bigotes</h3>
+        <p>Un gráfico de caja y bigotes (o boxplot) es útil para visualizar la distribución de datos y detectar posibles valores atípicos. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Crear datos de ejemplo
+datos_caja <- data.frame(
+        grupo = rep(c("A", "B", "C"), each = 20),
+        valor = c(rnorm(20, mean = 5), rnorm(20, mean = 10), rnorm(20, mean = 15))
+)
+        
+# Crear gráfico de caja y bigotes
+ggplot(datos_caja, aes(x = grupo, y = valor)) +
+        geom_boxplot(fill = "lightgreen") +
+        labs(title = "Gráfico de Caja y Bigotes", x = "Grupo", y = "Valor")
+        </code></pre>
+        <p>Salida en consola: </p>
+        <img src="img/grafico_caja_bigotes.jpg" alt="Gráfico de caja y bigotes">
+            
+        <h2>Manipulación de Datos con dplyr</h2>
+        <p>El paquete <code>dplyr</code> es muy popular para la manipulación de datos en R. Facilita tareas comunes como la filtración, selección y agrupación de datos. Aquí tienes algunos ejemplos básicos:</p>
+            
+        <h3>Filtrar Datos</h3>
+        <p>Para filtrar filas de un conjunto de datos, usa la función <code>filter()</code>:</p>
+        <pre><code>
+# Instalar y cargar dplyr
+install.packages("dplyr")
+library(dplyr)
+        
+# Crear datos de ejemplo
+datos <- data.frame(
+        nombre = c("Ana", "Luis", "Carla", "Jorge"),
+        edad = c(23, 30, 25, 35)
+)
+        
+# Filtrar datos para edades mayores de 25
+datos_filtrados <- filter(datos, edad > 25)
+        
+# Mostrar los datos filtrados
+print(datos_filtrados)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(datos_filtrados)
+  nombre edad
+1   Luis   30
+2  Jorge   35
+        </code></pre>
+            
+        <h3>Seleccionar Columnas</h3>
+        <p>Para seleccionar columnas específicas de un conjunto de datos, usa la función <code>select()</code>:</p>
+        <pre><code>
+# Seleccionar la columna 'nombre'
+datos_nombres <- select(datos, nombre)
+        
+# Mostrar los nombres
+print(datos_nombres)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(datos_nombres)
+  nombre
+1    Ana
+2   Luis
+3  Carla
+4  Jorge
+        </code></pre>
+            
+        <h3>Agregar Nueva Columna</h3>
+        <p>Para agregar una nueva columna basada en cálculos de otras columnas, usa la función <code>mutate()</code>:</p>
+        <pre><code>
+# Agregar una columna 'edad_al_doble'
+datos_mutados <- mutate(datos, edad_al_doble = edad * 2)
+        
+# Mostrar los datos mutados
+print(datos_mutados)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(datos_mutados)
+  nombre edad edad_al_doble
+1    Ana   23            46
+2   Luis   30            60
+3  Carla   25            50
+4  Jorge   35            70
+        </code></pre>
+            
+        <h3>Resumir Datos</h3>
+        <p>Para resumir datos y calcular estadísticas agregadas, usa la función <code>summarize()</code> junto con <code>group_by()</code>:</p>
+        <pre><code>
+# Crear datos de ejemplo
+datos <- data.frame(
+        grupo = c("A", "A", "B", "B"),
+        valor = c(10, 15, 20, 25)
+)
+        
+# Calcular la media de 'valor' por grupo
+datos_resumidos <- datos %>%
+        group_by(grupo) %>%
+        summarize(media_valor = mean(valor))
+        
+# Mostrar los datos resumidos
+print(datos_resumidos)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(datos_resumidos)
+# A tibble: 2 × 2
+  grupo media_valor
+  <chr>       <dbl>
+1 A            12.5
+2 B            22.5
+        </code></pre>
+            
+        <h2>Análisis Estadístico</h2>
+        <p>R es ampliamente utilizado para realizar análisis estadísticos. Aquí hay algunos ejemplos básicos:</p>
+            
+        <h3>Prueba t de Dos Muestras</h3>
+        <p>Una prueba t de dos muestras se usa para comparar las medias de dos grupos. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Crear datos de ejemplo
+grupo_a <- c(10, 12, 14, 16, 18)
+grupo_b <- c(20, 22, 24, 26, 28)
+        
+# Realizar prueba t
+resultado_prueba_t <- t.test(grupo_a, grupo_b)
+        
+# Mostrar resultados
+print(resultado_prueba_t)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> print(resultado_prueba_t)
+
+	Welch Two Sample t-test
+
+data:  grupo_a and grupo_b
+t = -5, df = 8, p-value = 0.001053
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -14.612008  -5.387992
+sample estimates:
+mean of x mean of y 
+       14        24 
+        </code></pre>
+            
+        <h3>Regresión Lineal</h3>
+        <p>La regresión lineal se utiliza para modelar la relación entre una variable dependiente y una o más variables independientes. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Crear datos de ejemplo
+datos_regresion <- data.frame(
+        x = c(1, 2, 3, 4, 5),
+        y = c(2, 4, 5, 7, 10)
+)
+        
+# Ajustar modelo de regresión lineal
+modelo <- lm(y ~ x, data = datos_regresion)
+        
+# Mostrar resumen del modelo
+summary(modelo)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> summary(modelo)
+
+Call:
+lm(formula = y ~ x, data = datos_regresion)
+
+Residuals:
+   1    2    3    4    5 
+ 0.2  0.3 -0.6 -0.5  0.6 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  -0.1000     0.6351  -0.157  0.88488   
+x             1.9000     0.1915   9.922  0.00218 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6055 on 3 degrees of freedom
+Multiple R-squared:  0.9704,	Adjusted R-squared:  0.9606 
+F-statistic: 98.45 on 1 and 3 DF,  p-value: 0.002178
+        </code></pre>
+            
+        <h2>Recursos Adicionales</h2>
+        <p>Para profundizar en el uso de R y sus paquetes, aquí tienes algunos recursos adicionales:</p>
+        <ul>
+            <li><a href="https://www.rdocumentation.org/" target="_blank">RDocumentation</a> - Documentación completa de paquetes en R</li>
+            <li><a href="https://shiny.rstudio.com/" target="_blank">Shiny</a> - Framework para construir aplicaciones web interactivas con R</li>
+            <li><a href="https://rstudio.com/resources/cheatsheets/" target="_blank">RStudio Cheatsheets</a> - Hojas de referencia rápida para R y sus paquetes</li>
+        </ul>
+        </div>
+        
+        
+ 
+        
+        <h2>Recursos Adicionales</h2>
+        <p>Para más información sobre R y recursos adicionales, puedes visitar los siguientes enlaces:</p>
+        <ul>
+            <li><a href="https://www.r-project.org/" target="_blank">Página oficial de R</a></li>
+            <li><a href="https://cran.r-project.org/manuals.html" target="_blank">Manuales y documentación de R</a></li>
+            <li><a href="https://www.tidyverse.org/" target="_blank">Tidyverse</a> - Colección de paquetes de R para ciencia de datos</li>
+        </ul>
+    </div>
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

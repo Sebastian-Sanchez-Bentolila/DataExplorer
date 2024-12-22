@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Maquinas virtuales</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Data<span>Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Máquinas Virtuales en Python</h1>
+        <p>Una máquina virtual (VM) es un entorno de software que emula una computadora física. Las VMs permiten ejecutar sistemas operativos y aplicaciones de manera aislada, lo que facilita la gestión de entornos de desarrollo, pruebas y producción. Existen varias tecnologías para crear y gestionar máquinas virtuales, como VirtualBox, VMware y Hyper-V.</p>
+        
+        <h2>Beneficios de las Máquinas Virtuales</h2>
+        <p>Las máquinas virtuales ofrecen varios beneficios, incluyendo:</p>
+        <ul>
+            <li><strong>Aislamiento:</strong> Permiten ejecutar múltiples entornos separados en un solo hardware físico.</li>
+            <li><strong>Portabilidad:</strong> Las VMs pueden ser movidas y ejecutadas en diferentes hosts sin modificar el entorno.</li>
+            <li><strong>Flexibilidad:</strong> Es fácil crear, clonar y eliminar VMs según las necesidades.</li>
+            <li><strong>Seguridad:</strong> Las VMs pueden contener entornos aislados, reduciendo el riesgo de interferencias entre aplicaciones.</li>
+        </ul>
+        
+        <h2>Creación de Máquinas Virtuales con VirtualBox</h2>
+        <p>A continuación, se muestra un ejemplo básico de cómo crear una máquina virtual utilizando VirtualBox:</p>
+        <pre><code>
+# Descargar e instalar VirtualBox desde https://www.virtualbox.org/
+    
+# Crear una nueva máquina virtual desde la interfaz gráfica de VirtualBox
+# 1. Abrir VirtualBox.
+# 2. Hacer clic en "Nuevo" para crear una nueva máquina virtual.
+# 3. Asignar un nombre y seleccionar el sistema operativo y versión.
+# 4. Configurar la memoria RAM y el tamaño del disco virtual.
+# 5. Completar la configuración y lanzar la máquina virtual para instalar el sistema operativo.
+        </code></pre>
+    
+        <h2>Manejo de Entornos Virtuales en Python</h2>
+        <p>En Python, los entornos virtuales permiten crear entornos aislados con sus propias dependencias. Esto es útil para evitar conflictos entre paquetes y garantizar la reproducibilidad del código. El módulo <code>venv</code> y la herramienta <code>virtualenv</code> son las opciones más comunes para crear entornos virtuales en Python.</p>
+        
+        <h3>Creación de un Entorno Virtual con <code>venv</code></h3>
+        <p>El módulo <code>venv</code> está incluido en Python 3. Aquí tienes un ejemplo de cómo crear y activar un entorno virtual:</p>
+        <pre><code>
+# Crear un entorno virtual
+python -m venv mi_entorno
+    
+# Activar el entorno virtual (Windows)
+mi_entorno\Scripts\activate
+    
+# Activar el entorno virtual (macOS/Linux)
+source mi_entorno/bin/activate
+    
+# Instalar paquetes dentro del entorno virtual
+pip install numpy pandas
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+# Mensaje de activación del entorno virtual y progreso de instalación de paquetes
+        </code></pre>
+        
+        <h3>Congelar Versiones de Paquetes</h3>
+        <p>Es importante congelar las versiones de los paquetes instalados para asegurar que todos los miembros de un equipo de desarrollo o un entorno de producción utilicen las mismas versiones de los paquetes. Para esto, se utiliza el archivo <code>requirements.txt</code>:</p>
+        <pre><code>
+# Guardar las versiones de los paquetes instalados en requirements.txt
+pip freeze > requirements.txt
+    
+# El contenido de requirements.txt será algo similar a esto:
+numpy==1.21.2
+pandas==1.3.3
+    
+# Instalar los paquetes desde requirements.txt
+pip install -r requirements.txt
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+# Lista de paquetes instalados y sus versiones
+        </code></pre>
+        
+        <h2>Complementos: Docker</h2>
+        <p>Otra herramienta poderosa para la gestión de entornos es Docker. Docker permite empaquetar aplicaciones y sus dependencias en contenedores, lo que facilita el despliegue y la gestión de aplicaciones en diferentes entornos.</p>
+        
+        <h3>Conceptos Básicos de Docker</h3>
+        <p>Con Docker, puedes crear y ejecutar contenedores ligeros y portátiles. Aquí tienes un ejemplo básico de cómo crear un contenedor Docker para una aplicación Python:</p>
+        <pre><code>
+# Crear un archivo Dockerfile
+FROM python:3.9
+    
+WORKDIR /app
+    
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+    
+COPY . .
+    
+CMD ["python", "app.py"]
+    
+# Construir la imagen Docker
+docker build -t mi_app_python .
+    
+# Ejecutar el contenedor Docker
+docker run -d -p 5000:5000 mi_app_python
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+# Progreso de construcción de la imagen Docker y ejecución del contenedor
+        </code></pre>
+        
+        <h2>Recursos Adicionales</h2>
+        <p>Para profundizar en el uso de máquinas virtuales, entornos virtuales y Docker, aquí tienes algunos recursos adicionales:</p>
+        <ul>
+            <li><a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a></li>
+            <li><a href="https://docs.python.org/3/library/venv.html" target="_blank">Documentación del módulo <code>venv</code> en Python</a></li>
+            <li><a href="https://docker.com/" target="_blank">Docker</a></li>
+        </ul>
+    </div>
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

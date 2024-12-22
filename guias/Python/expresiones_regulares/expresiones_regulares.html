@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Expresiones regulares en Python</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Data<span>Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Expresiones Regulares en Python</h1>
+        <p>Las expresiones regulares son una herramienta poderosa para trabajar con texto. Permiten buscar, coincidir y manipular patrones específicos en cadenas de caracteres. En Python, el módulo <code>re</code> proporciona soporte para expresiones regulares. A continuación, exploraremos los conceptos básicos de expresiones regulares y cómo usarlas en Python.</p>
+    
+        <h2>Instalación y Uso del Módulo <code>re</code></h2>
+        <p>El módulo <code>re</code> está incluido en la biblioteca estándar de Python, por lo que no es necesario instalarlo. Puedes importarlo y comenzar a usarlo directamente:</p>
+        <pre><code>
+import re
+        </code></pre>
+    
+        <h2>Funciones Principales del Módulo <code>re</code></h2>
+        <p>El módulo <code>re</code> ofrece varias funciones para trabajar con expresiones regulares:</p>
+        <ul>
+            <li><code>re.match()</code>: Comprueba si el patrón coincide con el comienzo de la cadena.</li>
+            <li><code>re.search()</code>: Busca el primer lugar donde el patrón coincide con la cadena.</li>
+            <li><code>re.findall()</code>: Devuelve una lista de todas las coincidencias del patrón en la cadena.</li>
+            <li><code>re.finditer()</code>: Devuelve un iterador con todas las coincidencias del patrón en la cadena.</li>
+            <li><code>re.sub()</code>: Reemplaza las coincidencias del patrón en la cadena por un texto de reemplazo.</li>
+        </ul>
+    
+        <h2>Ejemplos Prácticos</h2>
+        
+        <h3>Coincidencia de Patrones</h3>
+        <p>El siguiente ejemplo muestra cómo usar <code>re.match()</code> para comprobar si una cadena comienza con un patrón específico:</p>
+        <pre><code>
+import re
+    
+# Patrón y cadena
+patron = r"hola"
+cadena = "hola mundo"
+    
+# Comprobar coincidencia al inicio de la cadena
+coincidencia = re.match(patron, cadena)
+    
+if coincidencia:
+    print("¡Coincidencia encontrada!")
+else:
+    print("No se encontró coincidencia.")
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+¡Coincidencia encontrada!
+        </code></pre>
+        
+        <h3>Búsqueda en una Cadena</h3>
+        <p>El siguiente ejemplo muestra cómo usar <code>re.search()</code> para buscar la primera coincidencia de un patrón en una cadena:</p>
+        <pre><code>
+import re
+    
+# Patrón y cadena
+patron = r"mundo"
+cadena = "hola mundo"
+    
+# Buscar primera coincidencia en la cadena
+coincidencia = re.search(patron, cadena)
+    
+if coincidencia:
+    print("¡Coincidencia encontrada!")
+else:
+    print("No se encontró coincidencia.")
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+¡Coincidencia encontrada!
+        </code></pre>
+        
+        <h3>Encontrar Todas las Coincidencias</h3>
+        <p>El siguiente ejemplo muestra cómo usar <code>re.findall()</code> para encontrar todas las coincidencias de un patrón en una cadena:</p>
+        <pre><code>
+import re
+    
+# Patrón y cadena
+patron = r"\d+"
+cadena = "Los números son 123, 456 y 789."
+    
+# Encontrar todas las coincidencias en la cadena
+coincidencias = re.findall(patron, cadena)
+    
+print("Coincidencias encontradas:", coincidencias)
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Coincidencias encontradas: ['123', '456', '789']
+        </code></pre>
+    
+        <h3>Iterar sobre Coincidencias</h3>
+        <p>El siguiente ejemplo muestra cómo usar <code>re.finditer()</code> para iterar sobre todas las coincidencias de un patrón en una cadena:</p>
+        <pre><code>
+import re
+    
+# Patrón y cadena
+patron = r"\b\w+\b"
+cadena = "Este es un ejemplo."
+    
+# Iterar sobre todas las coincidencias en la cadena
+for coincidencia in re.finditer(patron, cadena):
+    print("Coincidencia encontrada:", coincidencia.group())
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Coincidencia encontrada: Este
+Coincidencia encontrada: es
+Coincidencia encontrada: un
+Coincidencia encontrada: ejemplo
+        </code></pre>
+        
+        <h3>Reemplazo de Patrones</h3>
+        <p>El siguiente ejemplo muestra cómo usar <code>re.sub()</code> para reemplazar todas las coincidencias de un patrón en una cadena:</p>
+        <pre><code>
+import re
+    
+# Patrón y cadena
+patron = r"\d+"
+cadena = "Los números son 123, 456 y 789."
+reemplazo = "#"
+    
+# Reemplazar todas las coincidencias en la cadena
+resultado = re.sub(patron, reemplazo, cadena)
+    
+print("Resultado:", resultado)
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Resultado: Los números son #, # y #.
+        </code></pre>
+    
+        <h2>Expresiones Regulares Comunes</h2>
+        <p>A continuación, se muestran algunos patrones de expresiones regulares comunes y su uso:</p>
+        <ul>
+            <li><code>\d</code>: Coincide con cualquier dígito.</li>
+            <li><code>\D</code>: Coincide con cualquier carácter que no sea un dígito.</li>
+            <li><code>\w</code>: Coincide con cualquier carácter alfanumérico (letra o número).</li>
+            <li><code>\W</code>: Coincide con cualquier carácter no alfanumérico.</li>
+            <li><code>\s</code>: Coincide con cualquier espacio en blanco (espacio, tabulador, nueva línea).</li>
+            <li><code>\S</code>: Coincide con cualquier carácter que no sea un espacio en blanco.</li>
+            <li><code>^</code>: Coincide con el inicio de la cadena.</li>
+            <li><code>$</code>: Coincide con el final de la cadena.</li>
+            <li><code>+</code>: Coincide con uno o más de los elementos anteriores.</li>
+            <li><code>*</code>: Coincide con cero o más de los elementos anteriores.</li>
+            <li><code>{n}</code>: Coincide con exactamente <code>n</code> repeticiones del elemento anterior.</li>
+            <li><code>{n,m}</code>: Coincide con entre <code>n</code> y <code>m</code> repeticiones del elemento anterior.</li>
+            <li><code>[abc]</code>: Coincide con cualquier carácter dentro de los corchetes.</li>
+            <li><code>[^abc]</code>: Coincide con cualquier carácter que no esté dentro de los corchetes.</li>
+            <li><code>(...)</code>: Agrupa una expresión para aplicar operadores a todo el grupo.</li>
+        </ul>
+    
+        <h2>Recursos Adicionales</h2>
+        <p>Para profundizar en las expresiones regulares y su uso en Python, aquí tienes algunos recursos adicionales:</p>
+        <ul>
+            <li><a href="https://docs.python.org/3/library/re.html" target="_blank">Documentación oficial del módulo <code>re</code> en Python</a></li>
+            <li><a href="https://www.regular-expressions.info/python.html" target="_blank">Guía de expresiones regulares en Python</a></li>
+            <li><a href="https://www.w3schools.com/python/python_regex.asp" target="_blank">Tutorial de expresiones regulares en Python de W3Schools</a></li>
+        </ul>
+    </div>    
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

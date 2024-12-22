@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Módulos</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Data<span>Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Módulos en Python</h1>
+        <p>Un módulo en Python es un archivo que contiene definiciones y declaraciones de Python, como funciones, clases y variables, que se pueden reutilizar en otros programas. Los módulos ayudan a organizar y estructurar el código, haciendo que sea más fácil de mantener y reutilizar.</p>
+    
+        <h2>Creación de un Módulo</h2>
+        <p>Para crear un módulo en Python, simplemente escribe tus definiciones y declaraciones en un archivo con extensión <code>.py</code>. Por ejemplo, vamos a crear un módulo llamado <code>mi_modulo.py</code>:</p>
+        <pre><code>
+# Archivo: mi_modulo.py
+    
+def saludar(nombre):
+    return f"Hola, {nombre}!"
+    
+def sumar(a, b):
+    return a + b
+        </code></pre>
+    
+        <h2>Importación de Módulos</h2>
+        <p>Para usar las funciones y variables de un módulo en otro archivo, puedes importarlo utilizando la palabra clave <code>import</code>. Aquí tienes un ejemplo de cómo importar y utilizar nuestro módulo <code>mi_modulo.py</code>:</p>
+        <pre><code>
+# Archivo: main.py
+    
+import mi_modulo
+    
+nombre = "Mundo"
+print(mi_modulo.saludar(nombre))
+    
+resultado = mi_modulo.sumar(3, 5)
+print(f"La suma es: {resultado}")
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Hola, Mundo!
+La suma es: 8
+        </code></pre>
+    
+        <h2>Importación de Funciones y Variables Específicas</h2>
+        <p>También puedes importar funciones o variables específicas de un módulo utilizando la sintaxis <code>from ... import ...</code>. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Archivo: main.py
+    
+from mi_modulo import saludar, sumar
+    
+nombre = "Mundo"
+print(saludar(nombre))
+    
+resultado = sumar(3, 5)
+print(f"La suma es: {resultado}")
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Hola, Mundo!
+La suma es: 8
+        </code></pre>
+    
+        <h2>Uso de Alias</h2>
+        <p>Para facilitar el uso de módulos, puedes asignarles alias utilizando la palabra clave <code>as</code>. Esto es útil cuando el nombre del módulo es largo o poco descriptivo. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Archivo: main.py
+    
+import mi_modulo as mm
+    
+nombre = "Mundo"
+print(mm.saludar(nombre))
+    
+resultado = mm.sumar(3, 5)
+print(f"La suma es: {resultado}")
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Hola, Mundo!
+La suma es: 8
+        </code></pre>
+    
+        <h2>Módulos Integrados</h2>
+        <p>Python incluye una amplia variedad de módulos integrados que proporcionan funcionalidades adicionales. Algunos ejemplos comunes son:</p>
+        <ul>
+            <li><code>math</code>: Proporciona funciones matemáticas.</li>
+            <li><code>os</code>: Permite interactuar con el sistema operativo.</li>
+            <li><code>datetime</code>: Proporciona clases para manipular fechas y horas.</li>
+            <li><code>random</code>: Proporciona funciones para generar números aleatorios.</li>
+        </ul>
+    
+        <h3>Ejemplo de Uso del Módulo <code>math</code></h3>
+        <pre><code>
+import math
+    
+# Calcular la raíz cuadrada de 16
+resultado = math.sqrt(16)
+print(f"La raíz cuadrada de 16 es: {resultado}")
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+La raíz cuadrada de 16 es: 4.0
+        </code></pre>
+    
+        <h2>Creación de Paquetes</h2>
+        <p>Un paquete en Python es una colección de módulos organizados en un directorio que contiene un archivo especial <code>__init__.py</code>. Este archivo puede estar vacío o puede incluir código de inicialización para el paquete.</p>
+    
+        <h3>Estructura de un Paquete</h3>
+        <p>La estructura de un paquete puede verse así:</p>
+        <pre><code>
+mi_paquete/
+    __init__.py
+    modulo1.py
+    modulo2.py
+        </code></pre>
+    
+        <h3>Uso de un Paquete</h3>
+        <p>Para utilizar un paquete, simplemente impórtalo utilizando la sintaxis de punto. Aquí tienes un ejemplo:</p>
+        <pre><code>
+# Archivo: main.py
+    
+from mi_paquete import modulo1, modulo2
+    
+modulo1.funcion1()
+modulo2.funcion2()
+        </code></pre>
+        
+        <h2>Recursos Adicionales</h2>
+        <p>Para profundizar en el uso de módulos y paquetes en Python, aquí tienes algunos recursos adicionales:</p>
+        <ul>
+            <li><a href="https://docs.python.org/3/tutorial/modules.html" target="_blank">Tutorial de módulos en la documentación oficial de Python</a></li>
+            <li><a href="https://realpython.com/python-modules-packages/" target="_blank">Guía de Real Python sobre módulos y paquetes</a></li>
+            <li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
+        </ul>
+    </div>
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

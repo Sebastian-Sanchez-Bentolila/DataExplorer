@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Clases y Objetos</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Data<span>Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Clases y Objetos en Python</h1>
+        <p>La programación orientada a objetos (OOP) es un paradigma de programación que utiliza "objetos" y "clases" para organizar el código. En Python, las clases se utilizan para crear objetos, que son instancias de esas clases. Este enfoque permite estructurar programas complejos de una manera más comprensible y modular.</p>
+        
+        <h2>Definición de Clases</h2>
+        <p>Una clase es una plantilla para crear objetos. Define un conjunto de atributos y métodos que los objetos creados a partir de la clase tendrán. A continuación se muestra cómo definir una clase en Python:</p>
+        <pre><code>
+# Definir una clase simple llamada "Persona"
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre  # Atributo de instancia
+        self.edad = edad      # Atributo de instancia
+    
+    def saludar(self):
+        return f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años."
+        </code></pre>
+        
+        <h2>Creación de Objetos</h2>
+        <p>Un objeto es una instancia de una clase. Para crear un objeto, simplemente llama a la clase como si fuera una función:</p>
+        <pre><code>
+# Crear un objeto de la clase Persona
+persona1 = Persona("Ana", 30)
+persona2 = Persona("Luis", 25)
+    
+# Acceder a los atributos y métodos del objeto
+print(persona1.saludar())
+print(persona2.saludar())
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Hola, mi nombre es Ana y tengo 30 años.
+Hola, mi nombre es Luis y tengo 25 años.
+        </code></pre>
+        
+        <h2>Métodos de Clase</h2>
+        <p>Los métodos son funciones definidas dentro de una clase que operan sobre las instancias de la clase. El primer parámetro de cualquier método debe ser <code>self</code>, que hace referencia a la instancia actual de la clase.</p>
+        
+        <h3>Métodos Especiales</h3>
+        <p>Python tiene varios métodos especiales, también conocidos como "métodos mágicos", que comienzan y terminan con dobles guiones bajos. Uno de los métodos especiales más comunes es <code>__init__</code>, que se utiliza para inicializar objetos.</p>
+        <pre><code>
+# Definir una clase con métodos especiales
+class Punto:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+        
+    def __add__(self, otro):
+        return Punto(self.x + otro.x, self.y + otro.y)
+        </code></pre>
+        
+        <h3>Uso de Métodos Especiales</h3>
+        <pre><code>
+# Crear objetos de la clase Punto
+punto1 = Punto(1, 2)
+punto2 = Punto(3, 4)
+    
+# Usar métodos especiales
+print(punto1)             # Llama a __str__
+punto3 = punto1 + punto2  # Llama a __add__
+print(punto3)
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+(1, 2)
+(4, 6)
+        </code></pre>
+        
+        <h2>Herencia</h2>
+        <p>La herencia permite crear una nueva clase basada en una clase existente. La nueva clase (subclase) hereda los atributos y métodos de la clase base (superclase), y puede agregar nuevos atributos y métodos o sobrescribir los existentes.</p>
+        
+        <h3>Definición de una Subclase</h3>
+        <pre><code>
+# Definir una clase base
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+        
+    def hablar(self):
+        pass
+    
+# Definir una subclase que hereda de Animal
+class Perro(Animal):
+    def hablar(self):
+        return "Guau!"
+    
+# Definir otra subclase que hereda de Animal
+class Gato(Animal):
+    def hablar(self):
+        return "Miau!"
+        </code></pre>
+        
+        <h3>Uso de Subclases</h3>
+        <pre><code>
+# Crear objetos de las subclases
+perro = Perro("Rex")
+gato = Gato("Miau")
+    
+# Llamar a métodos sobrescritos
+print(perro.nombre, "dice:", perro.hablar())
+print(gato.nombre, "dice:", gato.hablar())
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Rex dice: Guau!
+Miau dice: Miau!
+        </code></pre>
+    
+        <h2>Encapsulamiento</h2>
+        <p>El encapsulamiento es el principio de restringir el acceso directo a algunos de los atributos y métodos de un objeto, para evitar modificaciones accidentales o no autorizadas. En Python, esto se logra utilizando prefijos de subrayado:</p>
+        <pre><code>
+# Definir una clase con atributos encapsulados
+class CuentaBancaria:
+    def __init__(self, saldo_inicial):
+        self.__saldo = saldo_inicial  # Atributo privado
+    
+    def depositar(self, monto):
+        self.__saldo += monto
+    
+    def retirar(self, monto):
+        if monto <= self.__saldo:
+            self.__saldo -= monto
+        else:
+            print("Fondos insuficientes")
+    
+    def mostrar_saldo(self):
+        return self.__saldo
+        </code></pre>
+        
+        <h3>Uso de Encapsulamiento</h3>
+        <pre><code>
+# Crear un objeto de la clase CuentaBancaria
+cuenta = CuentaBancaria(1000)
+    
+# Interactuar con métodos públicos
+cuenta.depositar(500)
+cuenta.retirar(200)
+print("Saldo:", cuenta.mostrar_saldo())
+    
+# Intentar acceder a un atributo privado (generará un error)
+print(cuenta.__saldo)
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Saldo: 1300
+AttributeError: 'CuentaBancaria' object has no attribute '__saldo'
+        </code></pre>
+    
+        <h2>Polimorfismo</h2>
+        <p>El polimorfismo permite utilizar una interfaz común para diferentes tipos de objetos. En Python, esto se puede lograr mediante la herencia y la sobrescritura de métodos.</p>
+        
+        <h3>Ejemplo de Polimorfismo</h3>
+        <pre><code>
+# Definir una función que acepta diferentes tipos de objetos
+def hacer_hablar(animal):
+    print(animal.hablar())
+    
+# Crear objetos de diferentes subclases
+perro = Perro("Rex")
+gato = Gato("Miau")
+    
+# Usar polimorfismo
+hacer_hablar(perro)
+hacer_hablar(gato)
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Guau!
+Miau!
+        </code></pre>
+    
+        <h2>Recursos Adicionales</h2>
+        <p>Para profundizar en la programación orientada a objetos en Python, aquí tienes algunos recursos adicionales:</p>
+        <ul>
+            <li><a href="https://docs.python.org/3/tutorial/classes.html" target="_blank">Tutorial de clases en la documentación oficial de Python</a></li>
+            <li><a href="https://realpython.com/python3-object-oriented-programming/" target="_blank">Guía de Real Python sobre programación orientada a objetos</a></li>
+            <li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
+        </ul>
+    </div>
+    
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
