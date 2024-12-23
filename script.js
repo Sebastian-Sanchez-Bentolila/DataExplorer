@@ -28,7 +28,7 @@ const guiasJSON = [
         {
             "titulo": "Estructura de Datos",
             "descripcion": "Listas, tuplas, conjuntos, diccionarios y colas y pilas.",
-            "enlace": "guias/Python/estructuras/estructura.html"
+            "enlace": "guias/Python/estructura/estructura.html"
         },
         {
             "titulo": "Funciones",
