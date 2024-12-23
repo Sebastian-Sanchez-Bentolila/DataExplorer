@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Clases y Objetos</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+    <h1>Funciones en Python</h1>
+    <p>Las funciones en Python son bloques de código reutilizables que realizan una tarea específica. Permiten estructurar el código de manera modular, facilitando su lectura y mantenimiento. A continuación, exploraremos los conceptos básicos y avanzados de las funciones en Python, junto con ejemplos prácticos.</p>
+
+    <h2>Definición de una Función</h2>
+    <p>Para definir una función en Python, se utiliza la palabra clave <code>def</code>, seguida del nombre de la función, paréntesis y dos puntos. Dentro de la función, se incluye el bloque de código que realiza la tarea deseada:</p>
+    <pre><code>
+# Definir una función simple
+def saludar():
+    print("¡Hola, mundo!")
+    </code></pre>
+
+    <h2>Llamada a una Función</h2>
+    <p>Para llamar a una función, simplemente escribe su nombre seguido de paréntesis:</p>
+    <pre><code>
+# Llamar a la función saludar
+saludar()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+¡Hola, mundo!
+    </code></pre>
+
+    <h2>Parámetros y Argumentos</h2>
+    <p>Las funciones pueden aceptar parámetros, que son valores que se pasan a la función cuando se llama. Los parámetros se definen dentro de los paréntesis de la definición de la función:</p>
+    <pre><code>
+# Definir una función con parámetros
+def saludar(nombre):
+    print(f"¡Hola, {nombre}!")
+
+# Llamar a la función con un argumento
+saludar("Ana")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+¡Hola, Ana!
+    </code></pre>
+
+    <h2>Valores de Retorno</h2>
+    <p>Las funciones pueden devolver valores utilizando la palabra clave <code>return</code>. El valor de retorno puede ser asignado a una variable:</p>
+    <pre><code>
+# Definir una función que devuelve un valor
+def sumar(a, b):
+    return a + b
+
+# Llamar a la función y almacenar el valor de retorno en una variable
+resultado = sumar(3, 5)
+print(f"La suma es: {resultado}")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+La suma es: 8
+    </code></pre>
+
+    <h2>Argumentos por Defecto</h2>
+    <p>Las funciones pueden tener parámetros con valores por defecto, que se utilizan si no se proporciona un valor para el argumento correspondiente al llamar a la función:</p>
+    <pre><code>
+# Definir una función con un argumento por defecto
+def saludar(nombre="mundo"):
+    print(f"¡Hola, {nombre}!")
+
+# Llamar a la función sin argumentos
+saludar()
+
+# Llamar a la función con un argumento
+saludar("Luis")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+¡Hola, mundo!
+¡Hola, Luis!
+    </code></pre>
+
+    <h2>Argumentos con Nombre (Keyword Arguments)</h2>
+    <p>Al llamar a una función, puedes especificar los argumentos utilizando el nombre del parámetro. Esto se conoce como argumentos con nombre:</p>
+    <pre><code>
+# Definir una función con varios parámetros
+def presentar(nombre, edad, ciudad):
+    print(f"Soy {nombre}, tengo {edad} años y vivo en {ciudad}.")
+
+# Llamar a la función con argumentos con nombre
+presentar(edad=30, ciudad="Buenos Aires", nombre="Ana")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+Soy Ana, tengo 30 años y vivo en Buenos Aires.
+    </code></pre>
+
+    <h2>Funciones con Número Variable de Argumentos</h2>
+    <p>Python permite definir funciones que acepten un número variable de argumentos utilizando <code>*args</code> y <code>**kwargs</code>:</p>
+    
+    <h3>*args</h3>
+    <p>El uso de <code>*args</code> permite pasar un número variable de argumentos posicionales a una función:</p>
+    <pre><code>
+# Definir una función que acepta un número variable de argumentos posicionales
+def sumar(*args):
+    return sum(args)
+
+# Llamar a la función con diferentes números de argumentos
+print(sumar(1, 2, 3))
+print(sumar(4, 5, 6, 7))
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+6
+22
+    </code></pre>
+
+    <h3>**kwargs</h3>
+    <p>El uso de <code>**kwargs</code> permite pasar un número variable de argumentos con nombre a una función:</p>
+    <pre><code>
+# Definir una función que acepta un número variable de argumentos con nombre
+def mostrar_info(**kwargs):
+    for clave, valor in kwargs.items():
+        print(f"{clave}: {valor}")
+
+# Llamar a la función con diferentes números de argumentos con nombre
+mostrar_info(nombre="Ana", edad=30)
+mostrar_info(ciudad="Buenos Aires", país="Argentina", año=2024)
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+nombre: Ana
+edad: 30
+ciudad: Buenos Aires
+país: Argentina
+año: 2024
+    </code></pre>
+
+    <h2>Funciones Lambda</h2>
+    <p>Las funciones lambda, también conocidas como funciones anónimas, son funciones pequeñas y anónimas que se definen utilizando la palabra clave <code>lambda</code>. Son útiles para crear funciones rápidas y sencillas:</p>
+    <pre><code>
+# Definir una función lambda que suma dos números
+sumar = lambda a, b: a + b
+
+# Llamar a la función lambda
+resultado = sumar(3, 5)
+print(f"La suma es: {resultado}")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+La suma es: 8
+    </code></pre>
+
+    <h2>Funciones Anidadas y Ámbito de Variables</h2>
+    <p>Las funciones pueden definirse dentro de otras funciones. El ámbito de una variable es el contexto en el que se define y es accesible:</p>
+    <pre><code>
+# Definir una función externa
+def funcion_externa():
+    x = 10  # Variable local en el ámbito de la función externa
+
+    # Definir una función interna
+    def funcion_interna():
+        print(f"El valor de x es: {x}")
+
+    # Llamar a la función interna
+    funcion_interna()
+
+# Llamar a la función externa
+funcion_externa()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+El valor de x es: 10
+    </code></pre>
+
+    <h2>Decoradores de Funciones</h2>
+    <p>Los decoradores son funciones que modifican el comportamiento de otras funciones. Se utilizan para agregar funcionalidad adicional a una función existente:</p>
+    <pre><code>
+# Definir un decorador
+def mi_decorador(func):
+    def nueva_funcion():
+        print("Antes de la función")
+        func()
+        print("Después de la función")
+    return nueva_funcion
+
+# Usar el decorador
+@mi_decorador
+def saludar():
+    print("¡Hola!")
+
+# Llamar a la función decorada
+saludar()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+Antes de la función
+¡Hola!
+Después de la función
+    </code></pre>
+
+    <h2>Documentación de Funciones</h2>
+    <p>Es importante documentar las funciones para que otros desarrolladores (o tú mismo en el futuro) puedan entender su propósito y uso. Se recomienda utilizar cadenas de documentación (docstrings):</p>
+    <pre><code>
+def sumar(a, b):
+    """
+    Suma dos números y devuelve el resultado.
+
+    Args:
+        a (int o float): El primer número.
+        b (int o float): El segundo número.
+
+    Returns:
+        int o float: La suma de a y b.
+    """
+    return a + b
+
+# Ver la documentación de la función
+print(sumar.__doc__)
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+Suma dos números y devuelve el resultado.
+
+Args:
+    a (int o float): El primer número.
+    b (int o float): El segundo número.
+
+Returns:
+    int o float: La suma de a y b.
+    </code></pre>
+
+    <h2>Recursos Adicionales</h2>
+    <p>Para profundizar en el uso de funciones en Python, aquí tienes algunos recursos adicionales:</p>
+    <ul>
+        <li><a href="https://docs.python.org/3
+    
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
