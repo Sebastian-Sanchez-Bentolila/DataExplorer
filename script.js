@@ -51,6 +51,11 @@ const guiasJSON = [
             "enlace": "guias/Python/clases/clases.html"
         },
         {
+            "titulo": "Tkinter",
+            "descripcion": "Interfaces Gráficas con el módulo tkinter",
+            "enlace": "guias/Python/clases/clases.html"
+        },
+        {
             "titulo": "Expresiones regulares",
             "descripcion": "Módulo regex",
             "enlace": "guias/Python/expresiones_regulares/expresiones_regulares.html"
