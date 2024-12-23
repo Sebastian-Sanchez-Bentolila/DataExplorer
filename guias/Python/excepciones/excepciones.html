@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Clases y Objetos</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+    <h1>Manejo de Excepciones en Python</h1>
+    <p>El manejo de excepciones es una parte crucial de la programación que permite a los desarrolladores gestionar errores de manera controlada. En Python, el manejo de excepciones se realiza principalmente utilizando las sentencias <code>try</code>, <code>except</code>, <code>else</code>, <code>finally</code> y <code>raise</code>. A continuación, exploraremos cada uno de estos elementos con ejemplos prácticos.</p>
+
+    <h2>La Sentencia <code>try</code> y <code>except</code></h2>
+    <p>La sentencia <code>try</code> permite probar un bloque de código en busca de errores, mientras que <code>except</code> maneja las excepciones que puedan ocurrir:</p>
+    <pre><code>
+try:
+    # Bloque de código a probar
+    resultado = 10 / 0
+except ZeroDivisionError:
+    # Manejo de la excepción
+    print("Error: División por cero no permitida.")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+Error: División por cero no permitida.
+    </code></pre>
+
+    <h2>La Sentencia <code>else</code></h2>
+    <p>El bloque <code>else</code> se ejecuta si no se produce ninguna excepción en el bloque <code>try</code>:</p>
+    <pre><code>
+try:
+    resultado = 10 / 2
+except ZeroDivisionError:
+    print("Error: División por cero no permitida.")
+else:
+    print(f"El resultado es: {resultado}")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+El resultado es: 5.0
+    </code></pre>
+
+    <h2>La Sentencia <code>finally</code></h2>
+    <p>El bloque <code>finally</code> se ejecuta siempre, ocurra o no una excepción. Se utiliza para liberar recursos o ejecutar código de limpieza:</p>
+    <pre><code>
+try:
+    resultado = 10 / 2
+except ZeroDivisionError:
+    print("Error: División por cero no permitida.")
+else:
+    print(f"El resultado es: {resultado}")
+finally:
+    print("La ejecución del bloque try-except ha terminado.")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+El resultado es: 5.0
+La ejecución del bloque try-except ha terminado.
+    </code></pre>
+
+    <h2>La Sentencia <code>raise</code></h2>
+    <p>La sentencia <code>raise</code> permite generar una excepción en cualquier momento del código. Esto es útil para probar el manejo de excepciones o para gestionar errores específicos:</p>
+    <pre><code>
+def dividir(a, b):
+    if b == 0:
+        raise ValueError("El divisor no puede ser cero.")
+    return a / b
+
+try:
+    resultado = dividir(10, 0)
+except ValueError as e:
+    print(f"Error: {e}")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+Error: El divisor no puede ser cero.
+    </code></pre>
+
+    <h2>Manejo de Múltiples Excepciones</h2>
+    <p>Es posible manejar múltiples excepciones utilizando varios bloques <code>except</code> o especificando varias excepciones en un solo bloque <code>except</code>:</p>
+    <pre><code>
+try:
+    resultado = 10 / int("a")
+except (ValueError, ZeroDivisionError) as e:
+    print(f"Error: {e}")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+Error: invalid literal for int() with base 10: 'a'
+    </code></pre>
+
+    <h2>Creación de Excepciones Personalizadas</h2>
+    <p>En Python, también puedes crear tus propias excepciones personalizadas definiendo una nueva clase que herede de <code>Exception</code>:</p>
+    <pre><code>
+# Definir una excepción personalizada
+class MiExcepcion(Exception):
+    pass
+
+def verificar(valor):
+    if valor < 0:
+        raise MiExcepcion("El valor no puede ser negativo.")
+    return valor
+
+try:
+    verificar(-1)
+except MiExcepcion as e:
+    print(f"Error: {e}")
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+Error: El valor no puede ser negativo.
+    </code></pre>
+
+    <h2>Recursos Adicionales</h2>
+    <p>Para profundizar en el manejo de excepciones en Python, aquí tienes algunos recursos adicionales:</p>
+    <ul>
+        <li><a href="https://docs.python.org/3/tutorial/errors.html" target="_blank">Manejo de errores y excepciones en la documentación oficial de Python</a></li>
+        <li><a href="https://realpython.com/python-exceptions/" target="_blank">Guía de Real Python sobre manejo de excepciones</a></li>
+        <li><a href="https://www.learnpython.org/en/Exception_Handling" target="_blank">Tutorial sobre manejo de excepciones en LearnPython.org</a></li>
+    </ul>
+</div>
+
+
+    
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
