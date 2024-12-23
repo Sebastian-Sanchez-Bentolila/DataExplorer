@@ -41,6 +41,11 @@ const guiasJSON = [
             "enlace": "guias/Python/modulos/modulos.html"
         },
         {
+            "titulo": "Excepciones",
+            "descripcion": "try, finally y raise",
+            "enlace": "guias/Python/excepciones/excepciones.html"
+        },
+        {
             "titulo": "Clases y Objetos",
             "descripcion": "Clases y Objetos",
             "enlace": "guias/Python/clases/clases.html"
