@@ -26,6 +26,11 @@ const guiasJSON = [
             "enlace": "guias/Python/python_basico/python_basico.html"
         },
         {
+            "titulo": "Funciones",
+            "descripcion": "Funciones y argumentos. Funciones lambda",
+            "enlace": "guias/Python/funciones/funciones.html"
+        },
+        {
             "titulo": "Módulos",
             "descripcion": "Librerias y su importación",
             "enlace": "guias/Python/modulos/modulos.html"
