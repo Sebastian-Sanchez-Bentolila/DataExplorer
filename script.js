@@ -51,6 +51,11 @@ const guiasJSON = [
             "enlace": "guias/Python/clases/clases.html"
         },
         {
+            "titulo": "Manejo de archivos",
+            "descripcion": "Módulo os",
+            "enlace": "guias/Python/archivos/archivos.html"
+        },
+        {
             "titulo": "Tkinter",
             "descripcion": "Interfaces Gráficas con el módulo tkinter",
             "enlace": "guias/Python/tkinter/tkinter.html"
@@ -69,6 +74,16 @@ const guiasJSON = [
             "titulo": "Máquinas Virtuales",
             "descripcion": "Maquinas virtuales, frizar version y un poco de Docker",
             "enlace": "guias/Python/maquinas_virtuales/maquinas_virtuales.html"
+        },
+        {
+            "titulo": "Documentación",
+            "descripcion": "Documentación en Python y gestores",
+            "enlace": "guias/Python/documentacion/documentacion.html"
+        },
+        {
+            "titulo": "Metaclases",
+            "descripcion": "Metaclases en Python",
+            "enlace": "guias/Python/metaclases/metaclases.html"
         }]
     },
     {

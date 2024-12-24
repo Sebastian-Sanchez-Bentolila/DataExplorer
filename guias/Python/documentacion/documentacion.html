@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Documentacion de proyectos en Python</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Documentación en Python</h1>
+        <p>La documentación es una parte esencial del desarrollo de software. Ayuda a los desarrolladores a entender cómo usar tu código y facilita el mantenimiento del mismo. En Python, las cadenas de documentación (docstrings) juegan un papel crucial en la creación de documentación clara y útil.</p>
+    
+        <h2>Docstrings</h2>
+        <p>Los docstrings son cadenas de texto que se colocan al inicio de módulos, clases, métodos o funciones. Sirven para describir su propósito y uso. Aquí tienes un ejemplo básico:</p>
+        <pre><code>
+def mi_funcion(param1, param2):
+    """
+    Esta es una función de ejemplo.
+        
+    Parámetros:
+    param1 (int): El primer parámetro.
+    param2 (str): El segundo parámetro.
+        
+    Retorna:
+    bool: El valor de retorno.
+    """
+    return True
+        </code></pre>
+    
+        <h2>Convenciones de Docstrings</h2>
+        <p>Es importante seguir ciertas convenciones al escribir docstrings para asegurar la claridad y consistencia. Algunos estilos comunes incluyen:</p>
+        <ul>
+            <li>Estilo de Google</li>
+            <li>Estilo de NumPy/SciPy</li>
+            <li>Estilo de reStructuredText (reST)</li>
+        </ul>
+        <pre><code>
+def suma(a, b):
+    """
+    Suma dos números.
+    
+    Parámetros
+    ----------
+    a : int
+        El primer número.
+    b : int
+        El segundo número.
+    
+    Retorna
+    -------
+    int
+        La suma de los dos números.
+    """
+    return a + b
+        </code></pre>
+    
+        <h2>Ejemplo Completo</h2>
+        <p>Aquí tienes un ejemplo completo de cómo documentar una clase utilizando docstrings:</p>
+        <pre><code>
+"""
+Módulo de ejemplo
+=================
+    
+Este es un módulo de ejemplo para demostrar cómo documentar código en Python.
+"""
+    
+class Ejemplo:
+    """
+    Clase de ejemplo.
+    
+    Atributos
+    ----------
+    x : int
+        Un valor entero.
+    y : int
+        Otro valor entero.
+    
+    Métodos
+    -------
+    __init__(x, y)
+        Inicializa los valores de la clase.
+    sumar()
+        Retorna la suma de x e y.
+    """
+    def __init__(self, x, y):
+        """
+        Inicializa los valores de la clase.
+    
+        Parámetros
+        ----------
+        x : int
+            Un valor entero.
+        y : int
+            Otro valor entero.
+        """
+        self.x = x
+        self.y = y
+    
+    def sumar(self):
+        """
+        Retorna la suma de x e y.
+    
+        Retorna
+        -------
+        int
+            La suma de x e y.
+        """
+        return self.x + self.y
+        </code></pre>
+    
+        <h2>Notas y Advertencias</h2>
+        <div class="nota">
+            <strong>Nota:</strong> Una buena práctica es mantener la documentación actualizada conforme cambias tu código. Documentar el código no solo es útil para otros desarrolladores, sino también para ti en el futuro.
+        </div>
+    
+        <h2>Recursos Adicionales</h2>
+        <p>Para aprender más sobre la documentación en Python, puedes consultar los siguientes recursos:</p>
+        <ul>
+            <li><a href="https://www.python.org/dev/peps/pep-0257/" target="_blank">PEP 257 - Convenciones de Docstring</a></li>
+            <li><a href="https://realpython.com/documenting-python-code/" target="_blank">Artículo de Real Python sobre Documentación en Python</a></li>
+        </ul>
+    </div>    
+       
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

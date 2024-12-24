@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Metaclases en Python</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Metaclases en Python</h1>
+        <p>Las metaclases en Python son un concepto avanzado que permite controlar la creación y el comportamiento de las clases. En términos simples, una metaclase es una clase de una clase. Vamos a explorar este concepto en detalle.</p>
+        
+        <h2>¿Qué es una Metaclase?</h2>
+        <p>En Python, todo es un objeto, incluidas las clases. Una metaclase es la clase de una clase, lo que significa que define cómo se comportan las clases. Cuando creas una clase en Python, el intérprete usa una metaclase para crear la instancia de esa clase.</p>
+        
+        <h2>Definiendo una Metaclase</h2>
+        <p>Para definir una metaclase, necesitamos crear una clase que herede de <code>type</code>. El método más comúnmente sobreescrito es <code>__new__</code>, que permite personalizar la creación de nuevas clases. Aquí tienes un ejemplo básico:</p>
+        <pre><code>
+class MetaClase(type):
+    def __new__(cls, name, bases, attrs):
+        print(f"Creando la clase {name}")
+        return super().__new__(cls, name, bases, attrs)
+        </code></pre>
+        <p>Ahora, podemos usar esta metaclase al definir una nueva clase:</p>
+        <pre><code>
+class MiClase(metaclass=MetaClase):
+    pass
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>Creando la clase MiClase</code></pre>
+        
+        <h2>Personalizando Clases con Metaclases</h2>
+        <p>Las metaclases se pueden usar para modificar clases de diversas maneras. Por ejemplo, podemos agregar métodos o atributos adicionales a una clase durante su creación:</p>
+        <pre><code>
+class MetaClase(type):
+    def __new__(cls, name, bases, attrs):
+        attrs['nuevo_metodo'] = lambda self: "Hola desde nuevo_metodo"
+        return super().__new__(cls, name, bases, attrs)
+        
+class MiClase(metaclass=MetaClase):
+    pass
+    
+obj = MiClase()
+print(obj.nuevo_metodo())
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>Hola desde nuevo_metodo</code></pre>
+    
+        <h2>Usos Comunes de las Metaclases</h2>
+        <p>Las metaclases se usan en varios casos avanzados, tales como:</p>
+        <ul>
+            <li>Validación de clases durante la creación.</li>
+            <li>Registro automático de clases.</li>
+            <li>Modificación de la herencia.</li>
+            <li>Creación de APIs y frameworks.</li>
+        </ul>
+        
+        <h2>Ejemplo Completo: Registro Automático de Clases</h2>
+        <p>Un uso práctico de las metaclases es el registro automático de clases. Aquí tienes un ejemplo donde todas las subclases de una clase base se registran automáticamente:</p>
+        <pre><code>
+class MetaRegistro(type):
+    clases_registradas = []
+        
+    def __new__(cls, name, bases, attrs):
+        nueva_clase = super().__new__(cls, name, bases, attrs)
+        cls.clases_registradas.append(nueva_clase)
+        return nueva_clase
+    
+class Base(metaclass=MetaRegistro):
+    pass
+    
+class SubClase1(Base):
+    pass
+    
+class SubClase2(Base):
+    pass
+    
+print(MetaRegistro.clases_registradas)
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>[<class '__main__.SubClase1'>, <class '__main__.SubClase2'>]</code></pre>
+    
+        <h2>Notas y Advertencias</h2>
+        <div class="nota">
+            <strong>Nota:</strong> Las metaclases son un concepto avanzado y pueden hacer el código más complejo y difícil de mantener. Úsalas con precaución y solo cuando realmente lo necesites.
+        </div>
+    
+        <h2>Recursos Adicionales</h2>
+        <p>Para aprender más sobre las metaclases en Python, puedes consultar los siguientes recursos:</p>
+        <ul>
+            <li><a href="https://docs.python.org/3/reference/datamodel.html#metaclasses" target="_blank">Documentación oficial de Python sobre Metaclases</a></li>
+            <li><a href="https://realpython.com/python-metaclasses/" target="_blank">Artículo de Real Python sobre Metaclases</a></li>
+            <li><a href="https://www.python.org/dev/peps/pep-3115/" target="_blank">PEP 3115 - New Metaclass Syntax</a></li>
+        </ul>
+    </div>
+        
+       
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

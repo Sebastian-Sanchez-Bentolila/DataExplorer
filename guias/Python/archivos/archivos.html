@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Manejo de archivos y módulo os</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Manejo de Archivos y el Módulo <code>os</code> en Python</h1>
+        <p>El manejo de archivos es una habilidad fundamental en la programación. Python proporciona varias funciones y métodos para trabajar con archivos. Además, el módulo <code>os</code> ofrece herramientas para interactuar con el sistema operativo. Vamos a explorar estos temas en detalle.</p>
+        
+        <h2>Abrir y Cerrar Archivos</h2>
+        <p>Para abrir un archivo en Python, usamos la función <code>open()</code>. Esta función retorna un objeto de archivo, que podemos usar para leer, escribir o realizar otras operaciones en el archivo. Aquí un ejemplo básico:</p>
+        <pre><code>
+archivo = open('mi_archivo.txt', 'r')
+contenido = archivo.read()
+print(contenido)
+archivo.close()
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
+Contenido del archivo...
+        </code></pre>
+        <p>Es importante cerrar el archivo después de usarlo para liberar recursos. También podemos usar la declaración <code>with</code> para manejar archivos, lo que asegura que el archivo se cierre automáticamente:</p>
+        <pre><code>
+with open('mi_archivo.txt', 'r') as archivo:
+    contenido = archivo.read()
+    print(contenido)
+        </code></pre>
+    
+        <h2>Modos de Apertura de Archivos</h2>
+        <p>La función <code>open()</code> acepta un segundo argumento que especifica el modo en que queremos abrir el archivo:</p>
+        <ul>
+            <li><code>'r'</code>: Lectura (por defecto, el archivo debe existir).</li>
+            <li><code>'w'</code>: Escritura (crea un archivo nuevo o sobrescribe uno existente).</li>
+            <li><code>'a'</code>: Anexar (añade contenido al final del archivo).</li>
+            <li><code>'b'</code>: Binario (se usa con otros modos, p.ej., <code>'rb'</code> o <code>'wb'</code>).</li>
+        </ul>
+    
+        <h2>Leer y Escribir Archivos</h2>
+        <p>Existen varios métodos para leer y escribir en archivos:</p>
+        <h3>Leyendo Archivos</h3>
+        <ul>
+            <li><code>read()</code>: Lee todo el contenido del archivo.</li>
+            <li><code>readline()</code>: Lee una línea del archivo.</li>
+            <li><code>readlines()</code>: Lee todas las líneas y las retorna como una lista.</li>
+        </ul>
+        <pre><code>
+with open('mi_archivo.txt', 'r') as archivo:
+    for linea in archivo:
+        print(linea.strip())
+        </code></pre>
+
+        <h3>Escribiendo en Archivos</h3>
+        <ul>
+            <li><code>write()</code>: Escribe una cadena al archivo.</li>
+            <li><code>writelines()</code>: Escribe una lista de cadenas al archivo.</li>
+        </ul>
+        <pre><code>
+with open('mi_archivo.txt', 'w') as archivo:
+    archivo.write("Esto es una línea nueva")
+        </code></pre>
+    
+        <h2>Uso del Módulo <code>os</code></h2>
+        <p>El módulo <code>os</code> nos permite interactuar con el sistema operativo de una manera portátil. Algunas operaciones comunes incluyen:</p>
+        <ul>
+            <li>Renombrar un archivo:</li>
+        </ul>
+        <pre><code>
+import os
+os.rename('mi_archivo.txt', 'archivo_renombrado.txt')
+        </code></pre>
+
+        <ul>
+            <li>Eliminar un archivo:</li>
+        </ul>
+        <pre><code>
+import os
+os.remove('archivo_renombrado.txt')
+        </code></pre>
+        
+        <h2>Explorando Directorios</h2>
+        <p>Podemos usar <code>os</code> para trabajar con directorios. Aquí algunos ejemplos:</p>
+        <ul>
+            <li>Obtener la lista de archivos en un directorio:</li>
+        </ul>
+        <pre><code>
+import os
+archivos = os.listdir('.')
+print(archivos)
+        </code></pre>
+
+        <ul>
+            <li>Crear un nuevo directorio:</li>
+        </ul>
+        <pre><code>
+import os
+os.mkdir('nuevo_directorio')
+        </code></pre>
+
+        <ul>
+            <li>Cambiar el directorio actual:</li>
+        </ul>
+        <pre><code>
+import os
+os.chdir('nuevo_directorio')
+print(os.getcwd())
+        </code></pre>
+        
+        <h2>Manejo de Rutas de Archivos</h2>
+        <p>El módulo <code>os</code> también proporciona funciones útiles para manipular rutas de archivos:</p>
+        <ul>
+            <li>Unir directorios y nombres de archivos:</li>
+        </ul>
+        <pre><code>
+import os
+ruta_completa = os.path.join('directorio', 'archivo.txt')
+print(ruta_completa)
+        </code></pre>
+
+        <ul>
+            <li>Obtener la ruta absoluta:</li>
+        </ul>
+        <pre><code>
+import os
+ruta_absoluta = os.path.abspath('archivo.txt')
+print(ruta_absoluta)
+        </code></pre>
+
+        <ul>
+            <li>Comprobar si una ruta es un archivo o un directorio:</li>
+        </ul>
+        <pre><code>
+import os
+es_archivo = os.path.isfile('archivo.txt')
+es_directorio = os.path.isdir('directorio')
+print(es_archivo, es_directorio)
+        </code></pre>
+        
+        <h2>Notas y Advertencias</h2>
+        <div class="nota">
+            <strong>Nota:</strong> Al manipular archivos y directorios, ten cuidado de no borrar o sobrescribir archivos importantes accidentalmente.
+        </div>
+
+        <h2>Recursos Adicionales</h2> 
+        <p>Para aprender más sobre el manejo de archivos y el módulo <code>os</code> en Python, puedes consultar los siguientes recursos:</p> 
+        <ul> 
+            <li><a href="https://docs.python.org/3/library/functions.html#open" target="_blank">Documentación de la función <code>open()</code> en Python</a></li> 
+            <li><a href="https://docs.python.org/3/library/os.html" target="_blank">Documentación del módulo <code>os</code> en Python</a></li> 
+            <li><a href="https://realpython.com/read-write-files-python/" target="_blank">Artículo de Real Python sobre lectura y escritura de archivos</a></li> 
+            <li><a href="https://www.programiz.com/python-programming/file-operation" target="_blank">Guía de Programiz sobre operaciones con archivos en Python</a></li> 
+        </ul>
+    </div> 
+       
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
