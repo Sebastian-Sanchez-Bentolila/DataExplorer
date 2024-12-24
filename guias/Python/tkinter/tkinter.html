@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Tkinter</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+    <h1>Introducción a Tkinter</h1>
+    <p>Tkinter es una biblioteca estándar de Python utilizada para crear interfaces gráficas de usuario (GUI). Es una de las bibliotecas más utilizadas para desarrollar aplicaciones de escritorio en Python debido a su simplicidad y eficacia. Tkinter proporciona una amplia gama de widgets como botones, etiquetas, cuadros de texto y más.</p>
+
+    <h2>Creación de una Ventana Básica</h2>
+    <p>Para comenzar, vamos a crear una ventana básica utilizando Tkinter. Esta ventana servirá como la base de nuestra aplicación GUI.</p>
+    <pre><code>
+import tkinter as tk
+
+# Crear la ventana principal
+ventana = tk.Tk()
+
+# Establecer el título de la ventana
+ventana.title("Mi primera aplicación")
+
+# Establecer el tamaño de la ventana
+ventana.geometry("400x300")
+
+# Iniciar el bucle principal
+ventana.mainloop()
+    </code></pre>
+
+    <h2>Añadiendo Widgets</h2>
+    <p>Los widgets son los componentes básicos de una interfaz gráfica. Vamos a añadir algunos widgets básicos a nuestra ventana.</p>
+
+    <h3>Etiquetas (Labels)</h3>
+    <pre><code>
+# Crear una etiqueta
+etiqueta = tk.Label(ventana, text="Hola, Tkinter!")
+etiqueta.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/label.png" alt="label">
+
+    <h3>Botones (Buttons)</h3>
+    <pre><code>
+# Crear un botón
+boton = tk.Button(ventana, text="Haz clic aquí")
+boton.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/button.png" alt="button">
+
+    <h3>Entradas de Texto (Entry)</h3>
+    <pre><code>
+# Crear una entrada de texto
+entrada = tk.Entry(ventana)
+entrada.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/entry.png" alt="entry">
+
+    <h2>Organización de Widgets</h2>
+    <p>Tkinter ofrece tres métodos principales para organizar los widgets en la ventana: <code>pack()</code>, <code>grid()</code> y <code>place()</code>.</p>
+
+    <h3>Método pack()</h3>
+    <p>El método <code>pack()</code> organiza los widgets en bloques antes y después de otros widgets.</p>
+    <pre><code>
+etiqueta1 = tk.Label(ventana, text="Etiqueta 1")
+etiqueta1.pack(side=tk.TOP)
+
+etiqueta2 = tk.Label(ventana, text="Etiqueta 2")
+etiqueta2.pack(side=tk.LEFT)
+
+etiqueta3 = tk.Label(ventana, text="Etiqueta 3")
+etiqueta3.pack(side=tk.BOTTOM)
+
+etiqueta4 = tk.Label(ventana, text="Etiqueta 4")
+etiqueta4.pack(side=tk.RIGHT)
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/pack.png" alt="pack">
+
+    <h3>Método grid()</h3>
+    <p>El método <code>grid()</code> organiza los widgets en una cuadrícula, permitiéndote especificar la fila y la columna.</p>
+    <pre><code>
+etiqueta1 = tk.Label(ventana, text="Etiqueta 1")
+etiqueta1.grid(row=0, column=0)
+
+etiqueta2 = tk.Label(ventana, text="Etiqueta 2")
+etiqueta2.grid(row=1, column=1)
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/grid.png" alt="grid">
+
+    <h3>Método place()</h3>
+    <p>El método <code>place()</code> organiza los widgets por coordenadas absolutas.</p>
+    <pre><code>
+etiqueta1 = tk.Label(ventana, text="Etiqueta 1")
+etiqueta1.place(x=50, y=50)
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/grid.png" alt="place">
+
+    <h2>Eventos y Controladores de Eventos</h2>
+    <p>Los eventos permiten que tu aplicación responda a las acciones del usuario. Puedes enlazar eventos a widgets específicos.</p>
+
+    <h3>Ejemplo de Eventos con Botón</h3>
+    <pre><code>
+def cuando_haces_clic():
+    print("¡Botón clicado!")
+
+boton = tk.Button(ventana, text="Haz clic aquí", command=cuando_haces_clic)
+boton.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/evento_boton.png" alt="Evento_Boton">
+
+    <h2>Menús en Tkinter</h2>
+    <p>Tkinter permite crear menús desplegables para aplicaciones más interactivas. Vamos a ver cómo crear un menú simple.</p>
+
+    <h3>Creación de un Menú</h3>
+    <pre><code>
+def hola():
+    print("Hola!")
+
+# Crear una barra de menú
+barra_menu = tk.Menu(ventana)
+
+# Crear un menú desplegable
+menu_archivo = tk.Menu(barra_menu, tearoff=0)
+menu_archivo.add_command(label="Nuevo", command=hola)
+menu_archivo.add_command(label="Abrir", command=hola)
+menu_archivo.add_separator()
+menu_archivo.add_command(label="Salir", command=ventana.quit)
+
+# Añadir el menú desplegable a la barra de menú
+barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
+
+# Configurar la ventana para usar la barra de menú
+ventana.config(menu=barra_menu)
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/evento_menu.png" alt="Evento_Menu_Antes">
+    <img src="src/img/evento_menu2.png" alt="Evento_Menu_Despues">
+
+    <h2>Cuadros de Diálogo</h2>
+    <p>Los cuadros de diálogo son ventanas emergentes que se usan para mostrar información, pedir datos al usuario o confirmar acciones. Tkinter ofrece varios tipos de cuadros de diálogo mediante el módulo <code>tkinter.messagebox</code>.</p>
+
+    <h3>Ejemplo de Cuadro de Diálogo</h3>
+    <pre><code>
+from tkinter import messagebox
+
+def mostrar_mensaje():
+    messagebox.showinfo("Información", "Esto es un cuadro de diálogo")
+
+boton = tk.Button(ventana, text="Mostrar Mensaje", command=mostrar_mensaje)
+boton.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/cuadro_dialogo.png" alt="Cuadro_Dialogo">
+
+    <h2>Más Widgets</h2>
+    <p>Tkinter tiene una amplia variedad de widgets adicionales que puedes utilizar.</p>
+
+    <h3>Checkbuttons (Casillas de Verificación)</h3>
+    <pre><code>
+var1 = tk.IntVar()
+var2 = tk.IntVar()
+
+check1 = tk.Checkbutton(ventana, text="Opción 1", variable=var1)
+check2 = tk.Checkbutton(ventana, text="Opción 2", variable=var2)
+
+check1.pack()
+check2.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/checkbuttons.png" alt="Checkbuttons">
+
+    <h3>Radiobuttons (Botones de Opción)</h3>
+    <pre><code>
+def seleccionar():
+    print(f"Seleccionaste la opción {opcion.get()}")
+
+opcion = tk.StringVar()
+opcion.set("1")
+
+radio1 = tk.Radiobutton(ventana, text="Opción 1", variable=opcion, value="1", command=seleccionar)
+radio2 = tk.Radiobutton(ventana, text="Opción 2", variable=opcion, value="2", command=seleccionar)
+
+radio1.pack()
+radio2.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/radiobuttons.png" alt="Radiobuttons">
+
+    <h3>Listbox (Lista de Selección)</h3>
+    <pre><code>
+listbox = tk.Listbox(ventana)
+listbox.insert(1, "Elemento 1")
+listbox.insert(2, "Elemento 2")
+listbox.insert(3, "Elemento 3")
+
+listbox.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/listbox.png" alt="Listbox">
+
+    <h2>Canvas (Lienzo)</h2>
+    <p>El widget <code>Canvas</code> permite dibujar formas y gráficos personalizados en tu aplicación.</p>
+
+    <h3>Ejemplo de Canvas</h3>
+    <pre><code>
+canvas = tk.Canvas(ventana, width=300, height=200)
+canvas.pack()
+
+# Dibujar un rectángulo
+canvas.create_rectangle(50, 50, 250, 150, fill="blue")
+
+# Dibujar un óvalo
+canvas.create_oval(75, 75, 225, 125, fill="red")
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/canvas.png" alt="Canvas">
+
+    <h2>Gestión de Archivos</h2>
+    <p>Puedes utilizar Tkinter para abrir y guardar archivos mediante cuadros de diálogo de archivos.</p>
+
+    <h3>Ejemplo de Gestión de Archivos</h3>
+    <pre><code>
+from tkinter import filedialog
+
+def abrir_archivo():
+    archivo = filedialog.askopenfilename()
+    if archivo:
+        with open(archivo, "r") as file:
+            print(file.read())
+
+boton_abrir = tk.Button(ventana, text="Abrir Archivo", command=abrir_archivo)
+boton_abrir.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/archivos.png" alt="Gestion_Archivos">
+
+    <h2>Scrollbar (Barra de Desplazamiento)</h2>
+    <p>El widget <code>Scrollbar</code> permite añadir barras de desplazamiento a otros widgets como <code>Listbox</code>, <code>Text</code>, <code>Canvas</code>, etc.</p>
+
+    <h3>Ejemplo de Scrollbar</h3>
+    <pre><code>
+scrollbar = tk.Scrollbar(ventana)
+listbox = tk.Listbox(ventana, yscrollcommand=scrollbar.set)
+
+for i in range(100):
+    listbox.insert(tk.END, f"Elemento {i+1}")
+
+scrollbar.config(command=listbox.yview)
+
+listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+ventana.mainloop()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/scrollbar.png" alt="Scrollbar">
+
+    <h2>Text (Cuadro de Texto Multilínea)</h2>
+    <p>El widget <code>Text</code> permite la entrada y edición de texto en múltiples líneas.</p>
+
+    <h3>Ejemplo de Text</h3>
+    <pre><code>
+# Crear un widget Text
+texto = tk.Text(ventana, height=10, width=30)
+texto.pack()
+
+# Insertar texto inicial
+texto.insert(tk.END, "Escribe algo aquí...")
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/text.png" alt="text">
+
+    <h2>Frames (Marcos)</h2>
+    <p>El widget <code>Frame</code> se utiliza como un contenedor para agrupar otros widgets. Esto es útil para organizar la interfaz gráfica de manera modular.</p>
+
+    <h3>Ejemplo de Frame</h3>
+    <pre><code>
+# Crear un marco
+frame = tk.Frame(ventana, bd=2, relief=tk.SUNKEN)
+frame.pack(padx=10, pady=10)
+
+# Añadir widgets al marco
+etiqueta = tk.Label(frame, text="Dentro del marco")
+etiqueta.pack()
+
+boton = tk.Button(frame, text="Botón en el marco")
+boton.pack()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/frame.png" alt="Frames">
+
+    <h2>PanedWindow (Ventana con Paneles)</h2>
+    <p>El widget <code>PanedWindow</code> permite dividir el área de la ventana en paneles ajustables.</p>
+
+    <h3>Ejemplo de PanedWindow</h3>
+    <pre><code>
+# Crear una PanedWindow horizontal
+panedwindow = tk.PanedWindow(ventana, orient=tk.HORIZONTAL)
+panedwindow.pack(fill=tk.BOTH, expand=True)
+
+# Añadir paneles
+left = tk.Label(panedwindow, text="Panel Izquierdo")
+panedwindow.add(left)
+
+right = tk.Label(panedwindow, text="Panel Derecho")
+panedwindow.add(right)
+
+ventana.mainloop()
+    </code></pre>
+    <p>Salida en consola: </p>
+    <img src="src/img/panedwindow.png" alt="Panedwindow">
+
+    <h2>Recursos Adicionales</h2>
+    <p>Para profundizar en el uso de Tkinter, aquí tienes algunos recursos adicionales:</p>
+    <ul>
+        <li><a href="https://docs.python.org/3/library/tkinter.html" target="_blank">Documentación oficial de Tkinter</a></li>
+        <li><a href="https://realpython.com/python-gui-tkinter/" target="_blank">Tutorial de Tkinter en Real Python</a></li>
+        <li><a href="https://www.learnpython.org/en/Tkinter" target="_blank">Programación con Tkinter en LearnPython.org</a></li>
+    </ul>
+    </div>
+
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
