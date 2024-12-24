@@ -56,6 +56,11 @@ const guiasJSON = [
             "enlace": "guias/Python/tkinter/tkinter.html"
         },
         {
+            "titulo": "Manejo de base de datos relacionales",
+            "descripcion": "SQLite, MySQL y ORM",
+            "enlace": "guias/Python/sql/sql.html"
+        },
+        {
             "titulo": "Expresiones regulares",
             "descripcion": "Módulo regex",
             "enlace": "guias/Python/expresiones_regulares/expresiones_regulares.html"
