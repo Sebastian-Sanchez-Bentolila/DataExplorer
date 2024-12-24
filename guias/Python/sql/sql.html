@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Tkinter</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+    <h1>Manejo de Bases de Datos Relacionales en Python</h1>
+    <p>Las bases de datos relacionales son una de las formas más comunes de almacenar y gestionar datos. En Python, se pueden utilizar varias bibliotecas para interactuar con bases de datos relacionales, como SQLite, MySQL y PostgreSQL. En este contenido, vamos a explorar cómo utilizar SQLite y otras bases de datos en Python mediante la biblioteca <code>sqlite3</code>.</p>
+
+    <h2>Introducción a SQLite</h2>
+    <p>SQLite es una base de datos ligera y de código abierto que no requiere un servidor separado para funcionar. Es ideal para proyectos pequeños y medianos. La biblioteca <code>sqlite3</code> viene incluida con Python, por lo que no es necesario instalar nada adicional.</p>
+
+    <h3>Conexión a una Base de Datos SQLite</h3>
+    <pre><code>
+import sqlite3
+
+# Conectar a una base de datos (se creará un archivo si no existe)
+conexion = sqlite3.connect("mi_base_de_datos.db")
+
+# Crear un cursor
+cursor = conexion.cursor()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h3>Creación de Tablas</h3>
+    <pre><code>
+# Crear una tabla
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    edad INTEGER,
+    email TEXT
+)
+''')
+
+# Confirmar cambios
+conexion.commit()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h3>Inserción de Datos</h3>
+    <pre><code>
+# Insertar datos en la tabla
+cursor.execute('''
+INSERT INTO usuarios (nombre, edad, email)
+VALUES ("Ana", 30, "ana@example.com")
+''')
+
+# Insertar múltiples registros a la vez
+usuarios = [
+    ("Luis", 25, "luis@example.com"),
+    ("Carla", 28, "carla@example.com"),
+    ("Jorge", 35, "jorge@example.com")
+]
+cursor.executemany('''
+INSERT INTO usuarios (nombre, edad, email)
+VALUES (?, ?, ?)
+''', usuarios)
+
+# Confirmar cambios
+conexion.commit()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h3>Consulta de Datos</h3>
+    <pre><code>
+# Consultar datos de la tabla
+cursor.execute('SELECT * FROM usuarios')
+
+# Obtener todos los registros
+registros = cursor.fetchall()
+
+# Imprimir registros
+for registro in registros:
+    print(registro)
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+(1, 'Ana', 30, 'ana@example.com')
+(2, 'Luis', 25, 'luis@example.com')
+(3, 'Carla', 28, 'carla@example.com')
+(4, 'Jorge', 35, 'jorge@example.com')
+    </code></pre>
+
+    <h3>Actualización de Datos</h3>
+    <pre><code>
+# Actualizar un registro
+cursor.execute('''
+UPDATE usuarios
+SET edad = 31
+WHERE nombre = "Ana"
+''')
+
+# Confirmar cambios
+conexion.commit()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h3>Eliminación de Datos</h3>
+    <pre><code>
+# Eliminar un registro
+cursor.execute('''
+DELETE FROM usuarios
+WHERE nombre = "Jorge"
+''')
+
+# Confirmar cambios
+conexion.commit()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h3>Cierre de la Conexión</h3>
+    <pre><code>
+# Cerrar cursor y conexión
+cursor.close()
+conexion.close()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h2>Uso de Otras Bases de Datos</h2>
+    <p>Aparte de SQLite, Python también puede interactuar con otras bases de datos como MySQL y PostgreSQL utilizando bibliotecas específicas. A continuación, se muestra cómo conectar y realizar operaciones básicas en MySQL y PostgreSQL.</p>
+
+    <h3>Conexión a MySQL</h3>
+    <pre><code>
+import mysql.connector
+
+# Conectar a la base de datos MySQL
+conexion = mysql.connector.connect(
+    host="localhost",
+    user="tu_usuario",
+    password="tu_contraseña",
+    database="mi_base_de_datos"
+)
+
+# Crear un cursor
+cursor = conexion.cursor()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h3>Conexión a PostgreSQL</h3>
+    <pre><code>
+import psycopg2
+
+# Conectar a la base de datos PostgreSQL
+conexion = psycopg2.connect(
+    host="localhost",
+    user="tu_usuario",
+    password="tu_contraseña",
+    database="mi_base_de_datos"
+)
+
+# Crear un cursor
+cursor = conexion.cursor()
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+# No hay salida visible para esta operación
+    </code></pre>
+
+    <h2>ORM (Object-Relational Mapping)</h2>
+    <p>El mapeo objeto-relacional (ORM) permite interactuar con bases de datos utilizando objetos en lugar de escribir consultas SQL manualmente. Una de las bibliotecas ORM más populares en Python es SQLAlchemy.</p>
+
+    <h3>Introducción a SQLAlchemy</h3>
+    <pre><code>
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+# Crear una conexión a la base de datos
+engine = create_engine('sqlite:///mi_base_de_datos.db', echo=True)
+
+# Crear una base declarativa
+Base = declarative_base()
+
+# Definir una clase que representa una tabla en la base de datos
+class Usuario(Base):
+    __tablename__ = 'usuarios'
+    id = Column(Integer, primary_key=True)
+    nombre = Column(String)
+    edad = Column(Integer)
+    email = Column(String)
+
+# Crear las tablas en la base de datos
+Base.metadata.create_all(engine)
+
+# Crear una sesión
+Session = sessionmaker(bind=engine)
+session = Session()
+
+# Crear un nuevo usuario
+nuevo_usuario = Usuario(nombre="Ana", edad=30, email="ana@example.com")
+
+# Añadir y confirmar cambios
+session.add(nuevo_usuario)
+session.commit()
+
+# Consultar usuarios
+usuarios = session.query(Usuario).all()
+for usuario in usuarios:
+    print(usuario.nombre, usuario.edad, usuario.email)
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>
+CREATE TABLE usuarios (
+    id INTEGER NOT NULL,
+    nombre VARCHAR,
+    edad INTEGER,
+    email VARCHAR,
+    PRIMARY KEY (id)
+)
+
+INSERT INTO usuarios (nombre, edad, email) VALUES (?, ?, ?)
+SELECT usuarios.id AS usuarios_id, usuarios.nombre AS usuarios_nombre, usuarios.edad AS, usuarios.email AS usuarios_email FROM usuarios 
+2022-05-05 12:00:00,000 INFO sqlalchemy.engine.base.Engine () 
+Ana 30 ana@example.com 
+    </code></pre> 
+
+    <h2>Recursos Adicionales</h2> 
+    <p>Para profundizar en el manejo de bases de datos relacionales en Python, aquí tienes algunos recursos adicionales:</p> 
+    <ul> 
+        <li><a href="https://docs.python.org/3/library/sqlite3.html" target="_blank">Documentación oficial de sqlite3</a> </li> 
+        <li><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank">Documentación de MySQL Connector/Python</a></li> 
+        <li><a href="https://www.psycopg.org/docs/" target="_blank">Documentación de Psycopg (PostgreSQL)</a></li> 
+        <li><a href="https://www.sqlalchemy.org/" target="_blank">Documentación de SQLAlchemy</a></li> 
+    </ul> 
+    </div>
+
+
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
