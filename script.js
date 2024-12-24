@@ -103,6 +103,15 @@ const guiasJSON = [
             "descripcion": "Aprende los fundamentos de las bases de datos relacionales",
             "enlace": "guias/SQL/sql_basico/sql_basico.html"
         }]
+    },
+    {
+        "tecnologia": "Investigación",
+        "guias": [
+        {
+            "titulo": "Metodología de la investigación",
+            "descripcion": "Aprende los fundamentos de una investigación",
+            "enlace": "guias/R/r_basico/r_basico.html"
+        }]
     }
 ];
 
