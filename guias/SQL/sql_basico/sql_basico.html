@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía: Introducción a SQL</title>
     <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
-    <link rel="shortcut icon" href="../../src/images/analytics.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../styles_guias.css">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
@@ -15,9 +15,9 @@
     <header class="header">
         <div class="logo">DataScience<span> Explorer</span></div>
         <nav class="navbar">
-            <a href="../../index.html">Inicio</a>
+            <a href="../../../index.html">Inicio</a>
             <a href="#contenido">Contenido</a>
-            <a href="../../index.html#contacto">Contacto</a>
+            <a href="../../../index.html#contacto">Contacto</a>
         </nav>
     </header>
 
@@ -28,34 +28,34 @@
         <h2>Creación de una Base de Datos y Tablas</h2>
         <p>Para comenzar a trabajar con SQL, primero necesitas crear una base de datos y luego crear tablas dentro de esa base de datos. Aquí tienes un ejemplo:</p>
         <pre><code>
-    -- Crear una base de datos
-    CREATE DATABASE MiBaseDeDatos;
+-- Crear una base de datos
+CREATE DATABASE MiBaseDeDatos;
     
-    -- Usar la base de datos creada
-    USE MiBaseDeDatos;
+ -- Usar la base de datos creada
+USE MiBaseDeDatos;
     
-    -- Crear una tabla llamada 'Estudiante'
-    CREATE TABLE Estudiante (
-        ID INT PRIMARY KEY,
-        Nombre VARCHAR(50),
-        Edad INT,
-        Carrera VARCHAR(50)
-    );
+-- Crear una tabla llamada 'Estudiante'
+CREATE TABLE Estudiante (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(50),
+    Edad INT,
+    Carrera VARCHAR(50)
+);
     
-    -- Insertar datos en la tabla 'Estudiante'
-    INSERT INTO Estudiante (ID, Nombre, Edad, Carrera)
-    VALUES
-    (1, 'Ana', 20, 'Ingeniería'),
-    (2, 'Luis', 22, 'Matemáticas'),
-    (3, 'Carla', 21, 'Biología'),
-    (4, 'Jorge', 23, 'Física');
+-- Insertar datos en la tabla 'Estudiante'
+INSERT INTO Estudiante (ID, Nombre, Edad, Carrera)
+VALUES
+(1, 'Ana', 20, 'Ingeniería'),
+(2, 'Luis', 22, 'Matemáticas'),
+(3, 'Carla', 21, 'Biología'),
+(4, 'Jorge', 23, 'Física');
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.01 sec)
     
-    Query OK, 4 rows affected (0.00 sec)
-    Records: 4  Duplicates: 0  Warnings: 0
+Query OK, 4 rows affected (0.00 sec)
+Records: 4  Duplicates: 0  Warnings: 0
         </code></pre>
         
         <h2>Consultas Básicas</h2>
@@ -63,34 +63,34 @@
         
         <h3>Seleccionar Todos los Datos</h3>
         <pre><code>
-    -- Seleccionar todos los datos de la tabla 'Estudiante'
-    SELECT * FROM Estudiante;
+-- Seleccionar todos los datos de la tabla 'Estudiante'
+SELECT * FROM Estudiante;
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    +----+--------+-----+------------+
-    | ID | Nombre | Edad | Carrera   |
-    +----+--------+-----+------------+
-    |  1 | Ana    |  20 | Ingeniería |
-    |  2 | Luis   |  22 | Matemáticas|
-    |  3 | Carla  |  21 | Biología   |
-    |  4 | Jorge  |  23 | Física     |
-    +----+--------+-----+------------+
++----+--------+-----+------------+
+| ID | Nombre | Edad | Carrera   |
++----+--------+-----+------------+
+|  1 | Ana    |  20 | Ingeniería |
+|  2 | Luis   |  22 | Matemáticas|
+|  3 | Carla  |  21 | Biología   |
+|  4 | Jorge  |  23 | Física     |
++----+--------+-----+------------+
         </code></pre>
         
         <h3>Seleccionar Datos con Condición</h3>
         <pre><code>
-    -- Seleccionar estudiantes con edad mayor a 21
-    SELECT * FROM Estudiante WHERE Edad > 21;
+-- Seleccionar estudiantes con edad mayor a 21
+SELECT * FROM Estudiante WHERE Edad > 21;
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    +----+-------+-----+------------+
-    | ID | Nombre| Edad| Carrera    |
-    +----+-------+-----+------------+
-    |  2 | Luis  |  22 | Matemáticas|
-    |  4 | Jorge |  23 | Física     |
-    +----+-------+-----+------------+
++----+-------+-----+------------+
+| ID | Nombre| Edad| Carrera    |
++----+-------+-----+------------+
+|  2 | Luis  |  22 | Matemáticas|
+|  4 | Jorge |  23 | Física     |
++----+-------+-----+------------+
         </code></pre>
         
         <h2>Inserción, Actualización y Eliminación de Datos</h2>
@@ -98,34 +98,34 @@
         
         <h3>Inserción de Datos</h3>
         <pre><code>
-    -- Insertar un nuevo estudiante
-    INSERT INTO Estudiante (ID, Nombre, Edad, Carrera)
-    VALUES (5, 'María', 24, 'Química');
+-- Insertar un nuevo estudiante
+INSERT INTO Estudiante (ID, Nombre, Edad, Carrera)
+VALUES (5, 'María', 24, 'Química');
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.01 sec)
         </code></pre>
         
         <h3>Actualización de Datos</h3>
         <pre><code>
-    -- Actualizar la edad de 'Ana'
-    UPDATE Estudiante SET Edad = 21 WHERE Nombre = 'Ana';
+-- Actualizar la edad de 'Ana'
+UPDATE Estudiante SET Edad = 21 WHERE Nombre = 'Ana';
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    Query OK, 1 row affected (0.00 sec)
-    Rows matched: 1  Changed: 1  Warnings: 0
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
         </code></pre>
         
         <h3>Eliminación de Datos</h3>
         <pre><code>
-    -- Eliminar el estudiante con ID 4
-    DELETE FROM Estudiante WHERE ID = 4;
+-- Eliminar el estudiante con ID 4
+DELETE FROM Estudiante WHERE ID = 4;
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.00 sec)
         </code></pre>
         
         <h2>Funciones Agregadas</h2>
@@ -133,30 +133,30 @@
         
         <h3>Contar Filas</h3>
         <pre><code>
-    -- Contar el número de estudiantes
-    SELECT COUNT(*) AS TotalEstudiantes FROM Estudiante;
+-- Contar el número de estudiantes
+SELECT COUNT(*) AS TotalEstudiantes FROM Estudiante;
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    +----------------+
-    | TotalEstudiantes|
-    +----------------+
-    |               4 |
-    +----------------+
++----------------+
+| TotalEstudiantes|
++----------------+
+|               4 |
++----------------+
         </code></pre>
         
         <h3>Calcular Promedio</h3>
         <pre><code>
-    -- Calcular la edad promedio de los estudiantes
-    SELECT AVG(Edad) AS EdadPromedio FROM Estudiante;
+-- Calcular la edad promedio de los estudiantes
+SELECT AVG(Edad) AS EdadPromedio FROM Estudiante;
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    +-------------+
-    | EdadPromedio|
-    +-------------+
-    |          21 |
-    +-------------+
++-------------+
+| EdadPromedio|
++-------------+
+|          21 |
++-------------+
         </code></pre>
         
         <h2>Uniones (JOINs)</h2>
@@ -164,49 +164,49 @@
         
         <h3>INNER JOIN</h3>
         <pre><code>
-    -- Crear una nueva tabla 'Curso'
-    CREATE TABLE Curso (
-        CursoID INT PRIMARY KEY,
-        NombreCurso VARCHAR(50)
-    );
+-- Crear una nueva tabla 'Curso'
+CREATE TABLE Curso (
+    CursoID INT PRIMARY KEY,
+    NombreCurso VARCHAR(50)
+);
     
-    -- Insertar datos en la tabla 'Curso'
-    INSERT INTO Curso (CursoID, NombreCurso)
-    VALUES
-    (1, 'Matemáticas Avanzadas'),
-    (2, 'Física Cuántica'),
-    (3, 'Bioquímica');
+-- Insertar datos en la tabla 'Curso'
+INSERT INTO Curso (CursoID, NombreCurso)
+VALUES
+(1, 'Matemáticas Avanzadas'),
+(2, 'Física Cuántica'),
+(3, 'Bioquímica');
     
-    -- Crear una tabla 'Inscripcion' que relaciona estudiantes con cursos
-    CREATE TABLE Inscripcion (
-        EstudianteID INT,
-        CursoID INT,
-        FOREIGN KEY (EstudianteID) REFERENCES Estudiantes(ID),
-        FOREIGN KEY (CursoID) REFERENCES Cursos(CursoID)
-    );
+-- Crear una tabla 'Inscripcion' que relaciona estudiantes con cursos
+CREATE TABLE Inscripcion (
+    EstudianteID INT,
+    CursoID INT,
+    FOREIGN KEY (EstudianteID) REFERENCES Estudiantes(ID),
+    FOREIGN KEY (CursoID) REFERENCES Cursos(CursoID)
+);
     
-    -- Insertar datos en la tabla 'Inscripcion'
-    INSERT INTO Inscripcion (EstudianteID, CursoID)
-    VALUES
-    (1, 1),
-    (2, 2),
-    (3, 3);
+-- Insertar datos en la tabla 'Inscripcion'
+INSERT INTO Inscripcion (EstudianteID, CursoID)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3);
     
-    -- Realizar un INNER JOIN entre 'Estudiante' e 'Inscripcion' para obtener los cursos de los estudiantes
-    SELECT Estudiante.Nombre, Curso.NombreCurso
-    FROM Estudiante
-    INNER JOIN Inscripcion ON Estudiante.ID = Inscripcion.EstudianteID
-    INNER JOIN Curso ON Inscripcion.CursoID = Curso.CursoID;
+-- Realizar un INNER JOIN entre 'Estudiante' e 'Inscripcion' para obtener los cursos de los estudiantes
+SELECT Estudiante.Nombre, Curso.NombreCurso
+FROM Estudiante
+INNER JOIN Inscripcion ON Estudiante.ID = Inscripcion.EstudianteID
+INNER JOIN Curso ON Inscripcion.CursoID = Curso.CursoID;
         </code></pre>
         <p>Salida en consola:</p>
         <pre><code>
-    +--------+---------------------+
-    | Nombre | NombreCurso         |
-    +--------+---------------------+
-    | Ana    | Matemáticas Avanzadas|
-    | Luis   | Física Cuántica     |
-    | Carla  | Bioquímica          |
-    +--------+---------------------+
++--------+---------------------+
+| Nombre | NombreCurso         |
++--------+---------------------+
+| Ana    | Matemáticas Avanzadas|
+| Luis   | Física Cuántica     |
+| Carla  | Bioquímica          |
++--------+---------------------+
         </code></pre>
         
         <h2>Recursos Adicionales</h2>
@@ -223,7 +223,7 @@
         <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
     </footer>
 
-    <script src="../../script.js"></script>
+    <script src="../../../script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({

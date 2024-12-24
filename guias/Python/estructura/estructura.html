@@ -22,13 +22,13 @@
     </header>
 
     <div class="contenido">
-    <h1>Estructuras de Datos en Python</h1>
-    <p>Las estructuras de datos son una forma de organizar y almacenar datos de manera que se puedan acceder y modificar eficientemente. Python ofrece varias estructuras de datos integradas que son fundamentales para escribir programas eficientes y organizados.</p>
+        <h1>Estructuras de Datos en Python</h1>
+        <p>Las estructuras de datos son una forma de organizar y almacenar datos de manera que se puedan acceder y modificar eficientemente. Python ofrece varias estructuras de datos integradas que son fundamentales para escribir programas eficientes y organizados.</p>
 
-    <h2>Listas</h2>
-    <p>Las listas son estructuras de datos ordenadas y mutables que pueden contener elementos de diferentes tipos. Se definen utilizando corchetes <code>[]</code> y se pueden modificar después de su creación.</p>
-    <h3>Creación y Acceso a Listas</h3>
-    <pre><code>
+        <h2>Listas</h2>
+        <p>Las listas son estructuras de datos ordenadas y mutables que pueden contener elementos de diferentes tipos. Se definen utilizando corchetes <code>[]</code> y se pueden modificar después de su creación.</p>
+        <h3>Creación y Acceso a Listas</h3>
+        <pre><code>
 # Crear una lista
 mi_lista = [1, 2, 3, "a", "b", "c"]
 
@@ -39,16 +39,16 @@ print(mi_lista[-1]) # Último elemento
 # Modificar un elemento de la lista
 mi_lista[0] = 10
 print(mi_lista)
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 1
 c
 [10, 2, 3, 'a', 'b', 'c']
-    </code></pre>
+        </code></pre>
 
-    <h3>Métodos de Listas</h3>
-    <pre><code>
+        <h3>Métodos de Listas</h3>
+        <pre><code>
 # Agregar elementos
 mi_lista.append(4)
 print(mi_lista)
@@ -59,18 +59,18 @@ print(mi_lista)
 
 # Obtener la longitud de la lista
 print(len(mi_lista))
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 [10, 2, 3, 'a', 'b', 'c', 4]
 [10, 2, 3, 'b', 'c', 4]
 6
-    </code></pre>
+        </code></pre>
 
-    <h2>Tuplas</h2>
-    <p>Las tuplas son estructuras de datos ordenadas e inmutables. Una vez creadas, sus elementos no pueden ser modificados. Se definen utilizando paréntesis <code>()</code>.</p>
-    <h3>Creación y Acceso a Tuplas</h3>
-    <pre><code>
+        <h2>Tuplas</h2>
+        <p>Las tuplas son estructuras de datos ordenadas e inmutables. Una vez creadas, sus elementos no pueden ser modificados. Se definen utilizando paréntesis <code>()</code>.</p>
+        <h3>Creación y Acceso a Tuplas</h3>
+        <pre><code>
 # Crear una tupla
 mi_tupla = (1, 2, 3, "a", "b", "c")
 
@@ -80,18 +80,18 @@ print(mi_tupla[-1]) # Último elemento
 
 # Intentar modificar un elemento (generará un error)
 mi_tupla[0] = 10
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 1
 c
 TypeError: 'tuple' object does not support item assignment
-    </code></pre>
+        </code></pre>
 
-    <h2>Conjuntos</h2>
-    <p>Los conjuntos son estructuras de datos no ordenadas y mutables que no permiten elementos duplicados. Se definen utilizando llaves <code>{}</code> o la función <code>set()</code>.</p>
-    <h3>Creación y Operaciones con Conjuntos</h3>
-    <pre><code>
+        <h2>Conjuntos</h2>
+        <p>Los conjuntos son estructuras de datos no ordenadas y mutables que no permiten elementos duplicados. Se definen utilizando llaves <code>{}</code> o la función <code>set()</code>.</p>
+        <h3>Creación y Operaciones con Conjuntos</h3>
+        <pre><code>
 # Crear un conjunto
 mi_conjunto = {1, 2, 3, 4, 4, 5}
 print(mi_conjunto)
@@ -110,19 +110,19 @@ union = mi_conjunto.union(otro_conjunto)
 interseccion = mi_conjunto.intersection(otro_conjunto)
 print(union)
 print(interseccion)
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 {1, 2, 3, 4, 5}
 {2, 3, 4, 5, 6}
 {2, 3, 4, 5, 6, 7}
 {3, 4, 5, 6}
-    </code></pre>
+        </code></pre>
 
-    <h2>Diccionarios</h2>
-    <p>Los diccionarios son estructuras de datos no ordenadas y mutables que almacenan pares clave-valor. Se definen utilizando llaves <code>{}</code> y cada elemento está compuesto por una clave única y su valor asociado.</p>
-    <h3>Creación y Acceso a Diccionarios</h3>
-    <pre><code>
+        <h2>Diccionarios</h2>
+        <p>Los diccionarios son estructuras de datos no ordenadas y mutables que almacenan pares clave-valor. Se definen utilizando llaves <code>{}</code> y cada elemento está compuesto por una clave única y su valor asociado.</p>
+        <h3>Creación y Acceso a Diccionarios</h3>
+        <pre><code>
 # Crear un diccionario
 mi_diccionario = {"nombre": "Ana", "edad": 30, "ciudad": "Buenos Aires"}
 
@@ -133,16 +133,16 @@ print(mi_diccionario["edad"])
 # Modificar un valor
 mi_diccionario["edad"] = 31
 print(mi_diccionario)
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 Ana
 30
 {'nombre': 'Ana', 'edad': 31, 'ciudad': 'Buenos Aires'}
-    </code></pre>
+        </code></pre>
 
-    <h3>Métodos de Diccionarios</h3>
-    <pre><code>
+        <h3>Métodos de Diccionarios</h3>
+        <pre><code>
 # Agregar un nuevo par clave-valor
 mi_diccionario["profesión"] = "Ingeniera"
 print(mi_diccionario)
@@ -156,19 +156,19 @@ claves = mi_diccionario.keys()
 valores = mi_diccionario.values()
 print(claves)
 print(valores)
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 {'nombre': 'Ana', 'edad': 31, 'ciudad': 'Buenos Aires', 'profesión': 'Ingeniera'}
 {'nombre': 'Ana', 'edad': 31, 'profesión': 'Ingeniera'}
 dict_keys(['nombre', 'edad', 'profesión'])
 dict_values(['Ana', 31, 'Ingeniera'])
-    </code></pre>
+        </code></pre>
 
-    <h2>Colas (Queue) y Pilas (Stack)</h2>
-    <p>Las colas y pilas son estructuras de datos que permiten manejar datos siguiendo el principio FIFO (First In First Out) y LIFO (Last In First Out), respectivamente. Python proporciona el módulo <code>collections</code> para trabajar con estas estructuras.</p>
-    <h3>Colas</h3>
-    <pre><code>
+        <h2>Colas (Queue) y Pilas (Stack)</h2>
+        <p>Las colas y pilas son estructuras de datos que permiten manejar datos siguiendo el principio FIFO (First In First Out) y LIFO (Last In First Out), respectivamente. Python proporciona el módulo <code>collections</code> para trabajar con estas estructuras.</p>
+        <h3>Colas</h3>
+        <pre><code>
 from collections import deque
 
 # Crear una cola
@@ -184,16 +184,16 @@ print(cola)
 elemento = cola.popleft()
 print(elemento)
 print(cola)
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 deque(['a', 'b', 'c'])
 a
 deque(['b', 'c'])
-    </code></pre>
+        </code></pre>
 
-    <h3>Pilas</h3>
-    <pre><code>
+        <h3>Pilas</h3>
+        <pre><code>
 # Crear una pila
 pila = []
 
@@ -207,21 +207,21 @@ print(pila)
 elemento = pila.pop()
 print(elemento)
 print(pila)
-    </code></pre>
-    <p>Salida en consola:</p>
-    <pre><code>
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
 ['a', 'b', 'c']
 c
 ['a', 'b']
-    </code></pre>
+        </code></pre>
 
-    <h2>Recursos Adicionales</h2>
-    <p>Para profundizar en las estructuras de datos en Python, aquí tienes algunos recursos adicionales:</p>
-    <ul>
-        <li><a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank">Tutorial de estructuras de datos en la documentación oficial de Python</a></li>
-        <li><a href="https://realpython.com/python-data-structures/" target="_blank">Guía de Real Python sobre estructuras de datos</a></li>
-        <li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
-    </ul>
+        <h2>Recursos Adicionales</h2>
+        <p>Para profundizar en las estructuras de datos en Python, aquí tienes algunos recursos adicionales:</p>
+        <ul>
+            <li><a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank">Tutorial de estructuras de datos en la documentación oficial de Python</a></li>
+            <li><a href="https://realpython.com/python-data-structures/" target="_blank">Guía de Real Python sobre estructuras de datos</a></li>
+            <li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
+        </ul>
     </div>
 
     

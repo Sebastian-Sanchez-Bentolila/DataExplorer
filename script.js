@@ -86,7 +86,7 @@ const guiasJSON = [
         {
             "titulo": "Introducción a SQL",
             "descripcion": "Aprende los fundamentos de las bases de datos relacionales",
-            "enlace": "guias/SQL/sql_basico.html"
+            "enlace": "guias/SQL/sql_basico/sql_basico.html"
         }]
     }
 ];
