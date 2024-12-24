@@ -110,7 +110,7 @@ const guiasJSON = [
         {
             "titulo": "Metodología de la investigación",
             "descripcion": "Aprende los fundamentos de una investigación",
-            "enlace": "guias/Investigacion/metodologia_investigacion.html"
+            "enlace": "guias/Investigacion/metodologia_investigacion/metodologia_investigacion.html"
         }]
     }
 ];
