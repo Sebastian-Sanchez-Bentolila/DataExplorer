@@ -110,6 +110,20 @@ const guiasJSON = [
         }]
     },
     {
+        "tecnologia": "Matemáticas",
+        "guias": [
+        {
+            "titulo": "Ecuaciones",
+            "descripcion": "Ecuaciones Matematicas",
+            "enlace": "guias/matematica/ecuaciones/ecuaciones.html"
+        },
+        {
+            "titulo": "Logaritmo",
+            "descripcion": "Logaritmo",
+            "enlace": "guias/matematica/logaritmo/logaritmo.html"
+        }]
+    },
+    {
         "tecnologia": "Git",
         "guias": [
         {

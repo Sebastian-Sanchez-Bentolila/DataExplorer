@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Logarítmo</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+    
+    <div class="contenido">
+        <h1>Logaritmos</h1>
+        <p>Los <strong>logaritmos</strong> son una herramienta matemática esencial que se utiliza para resolver problemas relacionados con el crecimiento, la escala y la proporcionalidad. Son ampliamente usados en matemáticas, ciencia, ingeniería y análisis de datos.</p>
+    
+        <h2>Definición de Logaritmo</h2>
+        <p>El logaritmo de un número es el exponente al cual se debe elevar una base para obtener ese número. Matemáticamente, se expresa como:</p>
+        <div class="ecuacion">log<sub>b</sub>(x) = y</div>
+        <p>Esto significa que:</p>
+        <div class="ecuacion">b<sup>y</sup> = x</div>
+        <p>donde:</p>
+        <ul>
+            <li><strong>b</strong>: Es la base del logaritmo (un número positivo distinto de 1).</li>
+            <li><strong>x</strong>: Es el número cuyo logaritmo se está calculando (un número positivo).</li>
+            <li><strong>y</strong>: Es el resultado del logaritmo.</li>
+        </ul>
+    
+        <h2>Propiedades de los Logaritmos</h2>
+        <p>Los logaritmos poseen varias propiedades importantes que facilitan los cálculos:</p>
+        <ul>
+            <li><strong>Producto:</strong>
+                <div class="ecuacion">log<sub>b</sub>(mn) = log<sub>b</sub>(m) + log<sub>b</sub>(n)</div>
+            </li>
+            <li><strong>Cociente:</strong>
+                <div class="ecuacion">log<sub>b</sub>(m/n) = log<sub>b</sub>(m) - log<sub>b</sub>(n)</div>
+            </li>
+            <li><strong>Potencia:</strong>
+                <div class="ecuacion">log<sub>b</sub>(m<sup>n</sup>) = n · log<sub>b</sub>(m)</div>
+            </li>
+            <li><strong>Cambio de Base:</strong>
+                <div class="ecuacion">log<sub>b</sub>(x) = log<sub>k</sub>(x) / log<sub>k</sub>(b)</div>
+            </li>
+        </ul>
+    
+        <h2>Ejemplos de Logaritmos</h2>
+    
+        <h3>1. Cálculo Básico</h3>
+        <p><strong>Ejemplo:</strong> Calcula <code>log<sub>2</sub>(8)</code>.</p>
+        <div class="ecuacion">2<sup>y</sup> = 8</div>
+        <p>Encuentra el valor de <code>y</code>:</p>
+        <div class="ecuacion">y = 3</div>
+        <p><strong>Resultado:</strong> <code>log<sub>2</sub>(8) = 3</code>.</p>
+    
+        <h3>2. Uso de Propiedades</h3>
+        <p><strong>Ejemplo:</strong> Calcula <code>log<sub>3</sub>(27 · 9)</code>.</p>
+        <p>Utiliza la propiedad del producto:</p>
+        <div class="ecuacion">log<sub>3</sub>(27 · 9) = log<sub>3</sub>(27) + log<sub>3</sub>(9)</div>
+        <p>Resuelve cada término:</p>
+        <ul>
+            <li><code>log<sub>3</sub>(27) = 3</code></li>
+            <li><code>log<sub>3</sub>(9) = 2</code></li>
+        </ul>
+        <p><strong>Resultado:</strong> <code>log<sub>3</sub>(27 · 9) = 5</code>.</p>
+    
+        <h2>Logaritmos Especiales</h2>
+        <p>Hay dos tipos de logaritmos que se usan frecuentemente:</p>
+        <ul>
+            <li><strong>Logaritmo Común:</strong> Tiene como base <code>10</code>. Se escribe como <code>log(x)</code>.</li>
+            <li><strong>Logaritmo Natural:</strong> Tiene como base <code>e</code>, donde <code>e ≈ 2.718</code>. Se escribe como <code>ln(x)</code>.</li>
+        </ul>
+    
+        <h2>Aplicaciones de los Logaritmos</h2>
+        <p>Los logaritmos se aplican en diversas áreas:</p>
+        <ul>
+            <li><strong>Escalas Logarítmicas:</strong> En la medición de terremotos (escala de Richter) y niveles de sonido (decibelios).</li>
+            <li><strong>Crecimiento y Decaimiento:</strong> Modelos de crecimiento exponencial, como población o radioactividad.</li>
+            <li><strong>Análisis de Datos:</strong> Transformaciones logarítmicas para normalizar datos en regresión y aprendizaje automático.</li>
+            <li><strong>Ciencias de la Computación:</strong> Complejidad de algoritmos, como búsqueda binaria (<code>O(log n)</code>).</li>
+        </ul>
+
+        <h2>Cálculo y Gráficos en Python y R</h2>
+        <p>Los logaritmos se pueden calcular y graficar fácilmente utilizando herramientas como Python y R. Aquí tienes ejemplos prácticos:</p>
+
+        <h3>Cálculo y Gráficos en Python</h3>
+        <p>En Python, puedes usar la biblioteca <code>math</code> para cálculos básicos de logaritmos o <code>numpy</code> y <code>matplotlib</code> para visualizaciones más avanzadas.</p>
+        <pre><code>
+# Importar bibliotecas
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Cálculo de logaritmos
+base_10 = math.log10(1000)  # Logaritmo base 10
+base_e = math.log(10)       # Logaritmo natural (base e)
+base_2 = math.log2(32)      # Logaritmo base 2
+print(f"Log base 10: {base_10}, Log natural: {base_e}, Log base 2: {base_2}")
+
+# Graficar logaritmos
+x = np.linspace(1, 100, 100)
+y_base_10 = np.log10(x)
+y_natural = np.log(x)
+
+plt.plot(x, y_base_10, label="Log Base 10")
+plt.plot(x, y_natural, label="Log Natural")
+plt.title("Logaritmos en Python")
+plt.xlabel("x")
+plt.ylabel("log(x)")
+plt.legend()
+plt.grid()
+plt.show()
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>
+Log base 10: 3.0, Log natural: 2.302585092994046, Log base 2: 5.0
+        </code></pre>
+        <img src="src/img/log_python.png" alt="Logaritmo con Python">
+
+        <h3>Cálculo y Gráficos en R</h3>
+        <p>En R, puedes usar las funciones <code>log()</code> para cálculos y <code>plot()</code> para visualizaciones.</p>
+        <pre><code>
+# Cálculo de logaritmos
+log_base_10 <- log10(1000)  # Logaritmo base 10
+log_base_e <- log(10)       # Logaritmo natural (base e)
+log_base_2 <- log(32, base = 2)  # Logaritmo base 2
+print(paste("Log base 10:", log_base_10))
+print(paste("Log natural:", log_base_e))
+print(paste("Log base 2:", log_base_2))
+
+# Graficar logaritmos
+x <- seq(1, 100, length.out = 100)
+y_base_10 <- log10(x)
+y_natural <- log(x)
+
+plot(x, y_base_10, type = "l", col = "blue", lwd = 2, 
+     xlab = "x", ylab = "log(x)", main = "Logaritmos en R")
+lines(x, y_natural, col = "red", lwd = 2)
+legend("topright", legend = c("Log Base 10", "Log Natural"), 
+       col = c("blue", "red"), lwd = 2)
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>
+> # Cálculo de logaritmos
+> log_base_10 <- log10(1000)  # Logaritmo base 10
+> log_base_e <- log(10)       # Logaritmo natural (base e)
+> log_base_2 <- log(32, base = 2)  # Logaritmo base 2
+> print(paste("Log base 10:", log_base_10))
+[1] "Log base 10: 3"
+> print(paste("Log natural:", log_base_e))
+[1] "Log natural: 2.30258509299405"
+> print(paste("Log base 2:", log_base_2))
+[1] "Log base 2: 5"
+> 
+> # Graficar logaritmos
+> x <- seq(1, 100, length.out = 100)
+> y_base_10 <- log10(x)
+> y_natural <- log(x)
+> 
+> plot(x, y_base_10, type = "l", col = "blue", lwd = 2, 
++      xlab = "x", ylab = "log(x)", main = "Logaritmos en R")
+> lines(x, y_natural, col = "red", lwd = 2)
+> legend("topright", legend = c("Log Base 10", "Log Natural"), 
++        col = c("blue", "red"), lwd = 2)
+        </code></pre>
+        <img src="src/img/log_r.png" alt="Logaritmo con R">
+
+    
+        <h2>Notas Adicionales</h2>
+        <div class="nota">
+            <strong>Nota:</strong> Las calculadoras científicas y herramientas como Python pueden simplificar cálculos logarítmicos complejos.
+        </div>
+    
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://es.wikipedia.org/wiki/Logaritmo" target="_blank">Wikipedia: Logaritmo</a></li>
+            <li><a href="https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:exponents-radicals-and-logarithms" target="_blank">Khan Academy: Logaritmos</a></li>
+            <li><a href="https://mathworld.wolfram.com/Logarithm.html" target="_blank">MathWorld: Logarithm</a></li>
+        </ul>
+    </div>
+    
+    
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

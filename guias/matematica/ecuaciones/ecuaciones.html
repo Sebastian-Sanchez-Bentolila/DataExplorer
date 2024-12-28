@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Ecuaciones</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+    
+    <div class="contenido">
+        <h1>Ecuaciones Matemáticas</h1>
+        <p>Las ecuaciones matemáticas son una herramienta fundamental en el campo de la ciencia de datos, ya que permiten modelar, analizar y resolver problemas complejos. En este contenido exploraremos los conceptos básicos, tipos de ecuaciones y métodos de resolución.</p>
+    
+        <h2>Definición de Ecuación</h2>
+        <p>Una <strong>ecuación</strong> es una igualdad matemática que establece una relación entre variables y constantes. Se representa comúnmente como:</p>
+        <div class="ecuacion">f(x) = g(x)</div>
+        <p>donde <code>f(x)</code> y <code>g(x)</code> son expresiones matemáticas que pueden contener números, variables, y operaciones aritméticas.</p>
+    
+        <h2>Elementos de una Ecuación</h2>
+        <ul>
+            <li><strong>Variables:</strong> Son los elementos desconocidos que buscamos determinar, por ejemplo, <code>x</code> o <code>y</code>.</li>
+            <li><strong>Constantes:</strong> Valores fijos que no cambian, como <code>2</code>, <code>3.14</code> o <code>-5</code>.</li>
+            <li><strong>Operadores:</strong> Símbolos que indican operaciones matemáticas, como <code>+</code>, <code>-</code>, <code>×</code>, <code>÷</code>.</li>
+        </ul>
+    
+        <h2>Tipos de Ecuaciones</h2>
+        <p>Existen diversos tipos de ecuaciones según su grado y características:</p>
+        <ul>
+            <li><strong>Ecuaciones Lineales:</strong> Expresiones de primer grado. Ejemplo:
+                <div class="ecuacion">a<span>x</span> + b = 0</div>
+            </li>
+            <li><strong>Ecuaciones Cuadráticas:</strong> Contienen términos al cuadrado. Ejemplo:
+                <div class="ecuacion">a<span>x²</span> + b<span>x</span> + c = 0</div>
+            </li>
+            <li><strong>Ecuaciones Polinómicas:</strong> Expresiones de grado superior al segundo.</li>
+            <li><strong>Ecuaciones Exponenciales:</strong> Involucran potencias donde las variables están en el exponente. Ejemplo:
+                <div class="ecuacion">2<sup>x</sup> = 8</div>
+            </li>
+            <li><strong>Ecuaciones Logarítmicas:</strong> Contienen logaritmos. Ejemplo:
+                <div class="ecuacion">log<span>x</span> = 2</div>
+            </li>
+            <li><strong>Ecuaciones Diferenciales:</strong> Relacionan funciones con sus derivadas. Ejemplo:
+                <div class="ecuacion">dy/dx = 3<span>x²</span></div>
+            </li>
+        </ul>
+    
+        <h2>Resolución de Ecuaciones</h2>
+        <p>El proceso de resolución de ecuaciones depende de su tipo. A continuación, veremos algunos ejemplos.</p>
+    
+        <h3>1. Ecuaciones Lineales</h3>
+        <p>Resolvemos aislando la variable:</p>
+        <p><strong>Ejemplo:</strong></p>
+        <div class="ecuacion">5<span>x</span> - 10 = 15</div>
+        <p>Pasos:</p>
+        <ol>
+            <li>Suma <code>10</code> a ambos lados:
+                <div class="ecuacion">5<span>x</span> = 25</div>
+            </li>
+            <li>Divide entre <code>5</code>:
+                <div class="ecuacion"><span>x</span> = 5</div>
+            </li>
+        </ol>
+        <p><strong>Resultado:</strong> <code>x = 5</code>.</p>
+    
+        <h3>2. Ecuaciones Cuadráticas</h3>
+        <p>Se pueden resolver por factorización, completando el cuadrado o utilizando la fórmula general:</p>
+        <div class="ecuacion"><span>x</span> = (-b ± √(b² - 4ac)) / 2a</div>
+        <p><strong>Ejemplo:</strong></p>
+        <div class="ecuacion"><span>x²</span> - 3<span>x</span> - 4 = 0</div>
+        <p>Pasos:</p>
+        <ol>
+            <li>Calcula el discriminante:
+                <div class="ecuacion">Δ = (-3)² - 4(1)(-4) = 25</div>
+            </li>
+            <li>Aplica la fórmula general:
+                <div class="ecuacion"><span>x₁</span> = 4, <span>x₂</span> = -1</div>
+            </li>
+        </ol>
+        <p><strong>Resultado:</strong> <code>x₁ = 4</code>, <code>x₂ = -1</code>.</p>
+    
+        <h3>3. Ecuaciones Exponenciales</h3>
+        <p>Se resuelven aplicando logaritmos.</p>
+        <p><strong>Ejemplo:</strong></p>
+        <div class="ecuacion">3<sup>x</sup> = 27</div>
+        <p>Pasos:</p>
+        <ol>
+            <li>Escribe ambos lados con la misma base:
+                <div class="ecuacion">3<sup>x</sup> = 3³</div>
+            </li>
+            <li>Iguala los exponentes:
+                <div class="ecuacion"><span>x</span> = 3</div>
+            </li>
+        </ol>
+        <p><strong>Resultado:</strong> <code>x = 3</code>.</p>
+    
+        <h2>Notas Adicionales</h2>
+        <div class="nota">
+            <strong>Nota:</strong> Las ecuaciones diferenciales y las logarítmicas suelen requerir técnicas avanzadas o software especializado para su resolución.
+        </div>
+    
+        <h2>Aplicaciones en Ciencia de Datos</h2>
+        <p>En el análisis de datos, las ecuaciones matemáticas se utilizan para:</p>
+        <ul>
+            <li>Construir modelos predictivos.</li>
+            <li>Analizar tendencias y patrones.</li>
+            <li>Optimizar soluciones en problemas de negocio.</li>
+        </ul>
+    
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n" target="_blank">Wikipedia: Ecuación</a></li>
+            <li><a href="https://mathworld.wolfram.com/" target="_blank">MathWorld: Wolfram</a></li>
+            <li><a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a></li>
+        </ul>
+    </div>
+    
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
