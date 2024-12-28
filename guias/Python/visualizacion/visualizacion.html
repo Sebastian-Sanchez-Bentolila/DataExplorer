@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizaciones con Python</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+<div class="contenido">
+    <h1>Visualizaciones con Python</h1>
+    <p>La visualización de datos es una herramienta poderosa para entender y comunicar información de manera efectiva. Python ofrece varias bibliotecas para crear visualizaciones impresionantes y personalizables. A continuación, exploraremos algunas de las bibliotecas más populares y ejemplos de cómo usarlas.</p>
+    
+    <h2>Bibliotecas de Visualización en Python</h2>
+    <p>Existen varias bibliotecas en Python que facilitan la creación de gráficos y visualizaciones. Algunas de las más populares incluyen:</p>
+    <ul>
+        <li><strong>Matplotlib:</strong> Una biblioteca versátil y ampliamente utilizada para crear gráficos estáticos, animados e interactivos.</li>
+        <li><strong>Seaborn:</strong> Basada en Matplotlib, Seaborn proporciona una interfaz de alto nivel para crear gráficos estadísticos atractivos.</li>
+        <li><strong>Plotly:</strong> Una biblioteca que permite crear gráficos interactivos y compartirlos en la web.</li>
+        <li><strong>Altair:</strong> Una biblioteca declarativa basada en el lenguaje de visualización de datos Vega y Vega-Lite.</li>
+    </ul>
+
+    <h2>Ejemplos con Matplotlib</h2>
+    <p>Matplotlib es una de las bibliotecas más utilizadas para la visualización de datos en Python. Aquí tienes algunos ejemplos básicos:</p>
+    <h3>Gráfico de Líneas</h3>
+    <pre><code>
+import matplotlib.pyplot as plt
+
+# Datos de ejemplo
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
+
+# Crear el gráfico de líneas
+plt.plot(x, y, marker='o')
+plt.title('Gráfico de Líneas')
+plt.xlabel('Eje X')
+plt.ylabel('Eje Y')
+plt.grid(True)
+plt.show()</code></pre>
+     <img src="src/img/grafico_lineas.png" alt="Gráfico de Lineas">
+
+    <h3>Gráfico de Barras</h3>
+    <pre><code>
+import matplotlib.pyplot as plt
+
+# Datos de ejemplo
+categorias = ['A', 'B', 'C', 'D']
+valores = [10, 24, 36, 40]
+
+# Crear el gráfico de barras
+plt.bar(categorias, valores, color='skyblue')
+plt.title('Gráfico de Barras')
+plt.xlabel('Categorías')
+plt.ylabel('Valores')
+plt.show()</code></pre>
+    <img src="src/img/grafico_barras.png" alt="Gráfico de Barras">
+
+    <h2>Ejemplos con Seaborn</h2>
+    <p>Seaborn simplifica la creación de gráficos estadísticos y proporciona un conjunto de estilos visuales atractivos. Aquí tienes algunos ejemplos básicos:</p>
+    <h3>Gráfico de Dispersión</h3>
+    <pre><code>
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Datos de ejemplo
+tips = sns.load_dataset('tips')
+
+# Crear el gráfico de dispersión
+sns.scatterplot(data=tips, x='total_bill', y='tip', hue='time')
+plt.title('Gráfico de Dispersión')
+plt.show()</code></pre>
+    <img src="src/img/grafico_dispersion.png" alt="Gráfico de Dispersión">
+
+    <h3>Gráfico de Cajas</h3>
+    <pre><code>
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Datos de ejemplo
+tips = sns.load_dataset('tips')
+
+# Crear el gráfico de cajas
+sns.boxplot(data=tips, x='day', y='total_bill', palette='pastel')
+plt.title('Gráfico de Cajas')
+plt.show()</code></pre>
+    <img src="src/img/grafico_cajas.png" alt="Gráfico de Cajas">
+
+    <h2>Ejemplos con Plotly</h2>
+    <p>Plotly permite crear gráficos interactivos que pueden ser embebidos en aplicaciones web. Aquí tienes algunos ejemplos básicos:</p>
+    <h3>Gráfico de Líneas Interactivo</h3>
+    <pre><code>
+import plotly.graph_objects as go
+
+# Datos de ejemplo
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
+
+# Crear el gráfico de líneas interactivo
+fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines+markers'))
+fig.update_layout(title='Gráfico de Líneas Interactivo', xaxis_title='Eje X', yaxis_title='Eje Y')
+fig.show()</code></pre>
+    <img src="src/img/grafico_lineas_interactivo.png" alt="Gráfico de Lineas Interactivo">
+
+    <h3>Gráfico de Barras Interactivo</h3>
+    <pre><code>
+import plotly.express as px
+
+# Datos de ejemplo
+categorias = ['A', 'B', 'C', 'D']
+valores = [10, 24, 36, 40]
+
+# Crear el gráfico de barras interactivo
+fig = px.bar(x=categorias, y=valores, title='Gráfico de Barras Interactivo', labels={'x':'Categorías', 'y':'Valores'})
+fig.show()</code></pre>
+    <img src="src/img/grafico_barras_interactivo.png" alt="Gráfico de Barras Interactivo">
+
+    <h2>Ejemplos con Altair</h2>
+    <p>Altair permite crear visualizaciones declarativas con código conciso y legible. Aquí tienes algunos ejemplos básicos:</p>
+    <h3>Gráfico de Líneas</h3>
+    <pre><code>
+import altair as alt
+import pandas as pd
+
+# Datos de ejemplo
+df = pd.DataFrame({
+    'x': [1, 2, 3, 4, 5],
+    'y': [2, 3, 5, 7, 11]
+})
+
+# Crear el gráfico de líneas
+chart = alt.Chart(df).mark_line(point=True).encode(
+    x='x',
+    y='y'
+).properties(
+    title='Gráfico de Líneas'
+)
+chart.show()</code></pre>
+    <img src="src/img/grafico_lineas_altair.png" alt="Gráfico de linea con la librería Altair">
+
+    <h3>Gráfico de Barras</h3>
+    <pre><code>
+import altair as alt
+import pandas as pd
+
+# Datos de ejemplo
+df = pd.DataFrame({
+    'categorias': ['A', 'B', 'C', 'D'],
+    'valores': [10, 24, 36, 40]
+})
+
+# Crear el gráfico de barras
+chart = alt.Chart(df).mark_bar().encode(
+    x='categorias',
+    y='valores'
+).properties(
+    title='Gráfico de Barras'
+)
+chart.show()</code></pre>
+    <img src="src/img/grafico_barras_altair.png" alt="Gráfico de barras con la librería Altair">
+
+    <h2>Notas y Advertencias</h2>
+    <div class="nota">
+        <strong>Nota:</strong> Es importante elegir la biblioteca adecuada para tus necesidades y comprender las opciones de personalización disponibles. Cada biblioteca tiene sus propias fortalezas y casos de uso específicos.
+    </div>
+
+    <h2>Recursos Adicionales</h2>
+    <p>Para aprender más sobre la visualización de datos con Python, puedes consultar los siguientes recursos:</p>
+    <ul>
+        <li><a href="https://matplotlib.org/" target="_blank">Documentación Oficial de Matplotlib</a></li>
+        <li><a href="https://seaborn.pydata.org/" target="_blank">Documentación Oficial de Seaborn</a></li>
+        <li><a href="https://plotly.com/python/" target="_blank">Documentación Oficial de Plotly</a></li>
+        <li><a href="https://altair-viz.github.io/" target="_blank">Documentación Oficial de Altair</a></li>
+    </ul>
+</div>
+
+
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
