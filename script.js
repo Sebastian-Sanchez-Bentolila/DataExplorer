@@ -105,6 +105,15 @@ const guiasJSON = [
         }]
     },
     {
+        "tecnologia": "Git",
+        "guias": [
+        {
+            "titulo": "Introducción a Git",
+            "descripcion": "Aprende los fundamentos de Git",
+            "enlace": "guias/Git/git_basico/git_basico.html"
+        }]
+    },
+    {
         "tecnologia": "Investigación",
         "guias": [
         {
