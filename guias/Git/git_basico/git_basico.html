@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Básico</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+<div class="contenido">
+    <h1>Manejo de Proyectos Compartidos con Git y GitHub</h1>
+    <p>Git es un sistema de control de versiones distribuido que permite a varios desarrolladores trabajar en un proyecto de manera colaborativa. GitHub es una plataforma popular que utiliza Git para alojar repositorios de código y proporcionar herramientas de colaboración. A continuación, exploraremos cómo manejar proyectos compartidos utilizando Git y GitHub, y mencionaremos otras plataformas similares.</p>
+
+    <h2>Conceptos Básicos de Git</h2>
+    <p>Antes de profundizar en GitHub, es importante entender algunos conceptos básicos de Git:</p>
+    <ul>
+        <li><strong>Repositorio:</strong> Un repositorio es un directorio que contiene todos los archivos y el historial de versiones de un proyecto.</li>
+        <li><strong>Commit:</strong> Un commit es una instantánea de los cambios realizados en el repositorio en un momento específico.</li>
+        <li><strong>Branch:</strong> Una rama es una línea independiente de desarrollo. La rama principal suele llamarse <code>main</code> o <code>master</code>.</li>
+        <li><strong>Merge:</strong> La fusión es el proceso de combinar cambios de diferentes ramas en una sola rama.</li>
+    </ul>
+
+    <h2>Trabajando con GitHub</h2>
+    <p>GitHub es una plataforma que proporciona un entorno colaborativo para desarrollar proyectos utilizando Git. Aquí tienes los pasos básicos para trabajar con GitHub:</p>
+
+    <h3>1. Crear un Repositorio</h3>
+    <p>Para crear un repositorio en GitHub, sigue estos pasos:</p>
+    <ol>
+        <li>Inicia sesión en tu cuenta de GitHub.</li>
+        <li>Haz clic en el botón <strong>New repository</strong>.</li>
+        <li>Ingresa un nombre para el repositorio y selecciona las opciones de visibilidad (público o privado).</li>
+        <li>Haz clic en <strong>Create repository</strong>.</li>
+    </ol>
+
+    <h3>2. Clonar el Repositorio</h3>
+    <p>Clonar un repositorio significa descargar una copia local del mismo en tu computadora. Usa el siguiente comando en tu terminal:</p>
+    <pre><code>git clone https://github.com/tu_usuario/tu_repositorio.git</code></pre>
+
+    <h3>3. Hacer Cambios y Commits</h3>
+    <p>Realiza cambios en los archivos del repositorio local y luego crea un commit para guardar esos cambios:</p>
+    <pre><code>git add .
+git commit -m "Descripción de los cambios"</code></pre>
+
+    <h3>4. Subir Cambios a GitHub</h3>
+    <p>Para subir tus cambios al repositorio remoto en GitHub, usa el siguiente comando:</p>
+    <pre><code>git push origin main</code></pre>
+
+    <h3>5. Crear y Fusionar Ramas</h3>
+    <p>Para trabajar en nuevas características o correcciones sin afectar la rama principal, puedes crear una nueva rama:</p>
+    <pre><code>git checkout -b nueva_rama</code></pre>
+    <p>Después de realizar los cambios y hacer commits en la nueva rama, puedes fusionarla con la rama principal:</p>
+    <pre><code>git checkout main
+git merge nueva_rama</code></pre>
+
+    <h3>6. Actualizar el Repositorio Local con <code>git pull</code></h3>
+    <p>El comando <code>git pull</code> se utiliza para actualizar tu repositorio local con los cambios realizados en el repositorio remoto. Este comando es útil para asegurarte de que tienes la versión más reciente del proyecto antes de comenzar a trabajar. Usa el siguiente comando en tu terminal:</p>
+    <pre><code>git pull origin main</code></pre>
+    <p>El comando <code>git pull</code> es una combinación de dos comandos: <code>git fetch</code> (que descarga los cambios del repositorio remoto) y <code>git merge</code> (que aplica esos cambios a tu rama actual).</p>
+
+    <h2>Otras Plataformas de Control de Versiones</h2>
+    <p>Además de GitHub, existen otras plataformas que utilizan Git para el control de versiones y la colaboración:</p>
+    <ul>
+        <li><strong>GitLab:</strong> Una plataforma completa que proporciona control de versiones, CI/CD (Integración Continua/Despliegue Continuo) y herramientas de gestión de proyectos.</li>
+        <li><strong>Bitbucket:</strong> Una plataforma que ofrece repositorios Git y Mercurial, así como integración con herramientas de desarrollo de Atlassian como Jira.</li>
+        <li><strong>SourceForge:</strong> Una plataforma de alojamiento de proyectos de código abierto que también soporta Git.</li>
+    </ul>
+
+    <h2>Buenas Prácticas en el Uso de Git y GitHub</h2>
+    <p>Al trabajar en proyectos colaborativos, es importante seguir buenas prácticas para asegurar un flujo de trabajo eficiente y ordenado:</p>
+    <ul>
+        <li><strong>Commits Frecuentes:</strong> Realiza commits frecuentes con descripciones claras para mantener un historial de cambios detallado.</li>
+        <li><strong>Uso de Ramas:</strong> Usa ramas para trabajar en nuevas características o correcciones de errores sin afectar la rama principal.</li>
+        <li><strong>Revisiones de Código:</strong> Realiza revisiones de código (code reviews) para asegurar la calidad y consistencia del código.</li>
+        <li><strong>Documentación:</strong> Documenta los cambios y decisiones importantes en el repositorio.</li>
+    </ul>
+
+    <h2>Notas y Advertencias</h2>
+    <div class="nota">
+        <strong>Nota:</strong> Al trabajar con repositorios públicos, ten cuidado de no incluir información sensible o confidencial en tus commits. Usa archivos .gitignore para excluir archivos que no deben ser rastreados por Git.
+    </div>
+
+    <h2>Recursos Adicionales</h2>
+    <p>Para aprender más sobre el uso de Git y GitHub, puedes consultar los siguientes recursos:</p>
+    <ul>
+        <li><a href="https://guides.github.com/" target="_blank">GitHub Guides</a></li>
+        <li><a href="https://git-scm.com/doc" target="_blank">Documentación Oficial de Git</a></li>
+        <li><a href="https://www.atlassian.com/git/tutorials" target="_blank">Tutoriales de Git de Atlassian</a></li>
+    </ul>
+</div>
+
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
