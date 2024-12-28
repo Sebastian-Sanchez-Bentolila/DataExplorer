@@ -56,6 +56,11 @@ const guiasJSON = [
             "enlace": "guias/Python/archivos/archivos.html"
         },
         {
+            "titulo": "Visualizaciones",
+            "descripcion": "Matplotlib, Seaborn, plotly, altair",
+            "enlace": "guias/Python/visualizacion/visualizacion.html"
+        },
+        {
             "titulo": "Tkinter",
             "descripcion": "Interfaces Gráficas con el módulo tkinter",
             "enlace": "guias/Python/tkinter/tkinter.html"
