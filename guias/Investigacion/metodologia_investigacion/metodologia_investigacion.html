@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metodologia de la investigación</title>
     <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
     <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../styles.css">
     <link rel="stylesheet" href="../../styles_guias.css">
@@ -22,26 +25,26 @@
     </header>
 
     <div class="contenido">
-    <h1>Metodología de la Investigación</h1>
-    <p>La metodología de la investigación es el conjunto de procedimientos y técnicas utilizadas para recolectar y analizar datos con el fin de obtener conocimiento científico. A continuación, exploraremos las etapas clave y los métodos más comunes en la investigación.</p>
-    
-    <h2>Etapas de la Investigación</h2>
-    <p>El proceso de investigación generalmente se divide en varias etapas, cada una con un propósito específico:</p>
-    <ol>
-        <li><strong>Planteamiento del Problema:</strong> Definir claramente el problema o pregunta de investigación.</li>
-        <li><strong>Revisión de la Literatura:</strong> Examinar estudios previos y teorías relacionadas con el tema.</li>
-        <li><strong>Diseño de la Investigación:</strong> Planificar cómo se llevará a cabo la investigación.</li>
-        <li><strong>Recolección de Datos:</strong> Obtener datos mediante encuestas, experimentos, observaciones, etc.</li>
-        <li><strong>Análisis de Datos:</strong> Procesar y analizar los datos recopilados para extraer conclusiones.</li>
-        <li><strong>Presentación de Resultados:</strong> Comunicar los hallazgos a través de informes, artículos, presentaciones, etc.</li>
-    </ol>
+        <h1>Metodología de la Investigación</h1>
+        <p>La metodología de la investigación es el conjunto de procedimientos y técnicas utilizadas para recolectar y analizar datos con el fin de obtener conocimiento científico. A continuación, exploraremos las etapas clave y los métodos más comunes en la investigación.</p>
+        
+        <h2>Etapas de la Investigación</h2>
+        <p>El proceso de investigación generalmente se divide en varias etapas, cada una con un propósito específico:</p>
+        <ol>
+            <li><strong>Planteamiento del Problema:</strong> Definir claramente el problema o pregunta de investigación.</li>
+            <li><strong>Revisión de la Literatura:</strong> Examinar estudios previos y teorías relacionadas con el tema.</li>
+            <li><strong>Diseño de la Investigación:</strong> Planificar cómo se llevará a cabo la investigación.</li>
+            <li><strong>Recolección de Datos:</strong> Obtener datos mediante encuestas, experimentos, observaciones, etc.</li>
+            <li><strong>Análisis de Datos:</strong> Procesar y analizar los datos recopilados para extraer conclusiones.</li>
+            <li><strong>Presentación de Resultados:</strong> Comunicar los hallazgos a través de informes, artículos, presentaciones, etc.</li>
+        </ol>
 
-    <h2>Métodos de Investigación</h2>
-    <p>Existen diversos métodos de investigación que se pueden utilizar según el objetivo del estudio. Aquí presentamos algunos de los más comunes:</p>
-    
-    <h3>Investigación Cuantitativa</h3>
-    <p>La investigación cuantitativa se enfoca en la recolección y análisis de datos numéricos. Utiliza métodos estadísticos para probar hipótesis y encontrar patrones. Ejemplos de técnicas cuantitativas incluyen encuestas y experimentos.</p>
-    <pre><code>
+        <h2>Métodos de Investigación</h2>
+        <p>Existen diversos métodos de investigación que se pueden utilizar según el objetivo del estudio. Aquí presentamos algunos de los más comunes:</p>
+        
+        <h3>Investigación Cuantitativa</h3>
+        <p>La investigación cuantitativa se enfoca en la recolección y análisis de datos numéricos. Utiliza métodos estadísticos para probar hipótesis y encontrar patrones. Ejemplos de técnicas cuantitativas incluyen encuestas y experimentos.</p>
+        <pre><code>
 import numpy as np
 import pandas as pd
 
@@ -50,56 +53,61 @@ datos = {'Edad': [25, 30, 35, 40, 45], 'Puntaje': [80, 85, 78, 90, 88]}
 df = pd.DataFrame(datos)
 media_puntaje = np.mean(df['Puntaje'])
 print(f"La media de los puntajes es: {media_puntaje}")</code></pre>
-    <p><strong>Salida en consola:</strong></p>
-    <pre><code>La media de los puntajes es: 84.2</code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
+La media de los puntajes es: 84.2
+        </code></pre>
 
-    <h3>Investigación Cualitativa</h3>
-    <p>La investigación cualitativa se enfoca en la comprensión de fenómenos complejos a través de la recolección de datos no numéricos, como entrevistas, grupos focales y observaciones. Busca explorar experiencias y percepciones en profundidad.</p>
-    <pre><code>
+        <h3>Investigación Cualitativa</h3>
+        <p>La investigación cualitativa se enfoca en la comprensión de fenómenos complejos a través de la recolección de datos no numéricos, como entrevistas, grupos focales y observaciones. Busca explorar experiencias y percepciones en profundidad.</p>
+        <pre><code>
 from textblob import TextBlob
 
 # Ejemplo de análisis de datos cualitativos
 texto = "La metodología de la investigación es fascinante y fundamental para el desarrollo científico."
 analisis = TextBlob(texto)
-print(analisis.sentiment)</code></pre>
-    <p><strong>Salida en consola:</strong></p>
-    <pre><code>Sentiment(polarity=0.5, subjectivity=0.6)</code></pre>
+print(analisis.sentiment)
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
+Sentiment(polarity=0.5, subjectivity=0.6)
+        </code></pre>
 
-    <h3>Investigación Mixta</h3>
-    <p>La investigación mixta combina métodos cuantitativos y cualitativos para aprovechar las fortalezas de ambos enfoques. Permite una comprensión más completa del problema de investigación.</p>
+        <h3>Investigación Mixta</h3>
+        <p>La investigación mixta combina métodos cuantitativos y cualitativos para aprovechar las fortalezas de ambos enfoques. Permite una comprensión más completa del problema de investigación.</p>
 
-    <h2>Instrumentos de Recolección de Datos</h2>
-    <p>Los instrumentos de recolección de datos son herramientas utilizadas para obtener información relevante. Algunos de los más comunes incluyen:</p>
-    <ul>
-        <li><strong>Encuestas:</strong> Cuestionarios estructurados para recolectar datos de un gran número de personas.</li>
-        <li><strong>Entrevistas:</strong> Conversaciones detalladas para explorar percepciones y experiencias individuales.</li>
-        <li><strong>Observaciones:</strong> Registro sistemático de comportamientos y eventos en un entorno natural.</li>
-        <li><strong>Experimentos:</strong> Pruebas controladas para investigar relaciones causales entre variables.</li>
-    </ul>
+        <h2>Instrumentos de Recolección de Datos</h2>
+        <p>Los instrumentos de recolección de datos son herramientas utilizadas para obtener información relevante. Algunos de los más comunes incluyen:</p>
+        <ul>
+            <li><strong>Encuestas:</strong> Cuestionarios estructurados para recolectar datos de un gran número de personas.</li>
+            <li><strong>Entrevistas:</strong> Conversaciones detalladas para explorar percepciones y experiencias individuales.</li>
+            <li><strong>Observaciones:</strong> Registro sistemático de comportamientos y eventos en un entorno natural.</li>
+            <li><strong>Experimentos:</strong> Pruebas controladas para investigar relaciones causales entre variables.</li>
+        </ul>
 
-    <h2>Análisis de Datos</h2>
-    <p>El análisis de datos implica procesar la información recolectada para extraer conclusiones significativas. Las técnicas de análisis pueden ser descriptivas o inferenciales:</p>
-    <ul>
-        <li><strong>Análisis Descriptivo:</strong> Resumir y describir las características de los datos.</li>
-        <li><strong>Análisis Inferencial:</strong> Hacer inferencias y predicciones basadas en los datos.</li>
-    </ul>
+        <h2>Análisis de Datos</h2>
+        <p>El análisis de datos implica procesar la información recolectada para extraer conclusiones significativas. Las técnicas de análisis pueden ser descriptivas o inferenciales:</p>
+        <ul>
+            <li><strong>Análisis Descriptivo:</strong> Resumir y describir las características de los datos.</li>
+            <li><strong>Análisis Inferencial:</strong> Hacer inferencias y predicciones basadas en los datos.</li>
+        </ul>
 
-    <h2>Presentación de Resultados</h2>
-    <p>La presentación de resultados es la etapa final del proceso de investigación. Los hallazgos se comunican a través de informes, artículos, presentaciones o visualizaciones de datos. Es importante presentar los resultados de manera clara y coherente, destacando las conclusiones principales y sus implicaciones.</p>
+        <h2>Presentación de Resultados</h2>
+        <p>La presentación de resultados es la etapa final del proceso de investigación. Los hallazgos se comunican a través de informes, artículos, presentaciones o visualizaciones de datos. Es importante presentar los resultados de manera clara y coherente, destacando las conclusiones principales y sus implicaciones.</p>
 
-    <h2>Consideraciones Éticas en la Investigación</h2>
-    <p>La ética en la investigación es fundamental para garantizar que los estudios se realicen de manera justa, respetuosa y responsable. Algunos principios éticos clave incluyen:</p>
-    <ul>
-        <li><strong>Consentimiento Informado:</strong> Los participantes deben ser informados sobre el propósito, procedimientos, riesgos y beneficios del estudio, y deben dar su consentimiento voluntario.</li>
-        <li><strong>Confidencialidad:</strong> La información personal y los datos de los participantes deben ser tratados con confidencialidad y anonimato.</li>
-        <li><strong>Evitar Daños:</strong> Los investigadores deben minimizar cualquier posible daño físico o psicológico a los participantes.</li>
-        <li><strong>Justicia:</strong> Los beneficios y riesgos de la investigación deben ser distribuidos equitativamente entre todos los participantes.</li>
-    </ul>
-    <p>Al diseñar y llevar a cabo investigaciones, es crucial seguir directrices éticas y obtener las aprobaciones necesarias de los comités de ética. La adherencia a las normas éticas no solo protege a los participantes, sino que también fortalece la integridad y validez de la investigación.</p>
-    
-    <h3>Ejemplo de Consentimiento Informado</h3>
-    <p>A continuación se muestra un ejemplo de cómo podría estructurarse un formulario de consentimiento informado:</p>
-    <pre><code>
+        <h2>Consideraciones Éticas en la Investigación</h2>
+        <p>La ética en la investigación es fundamental para garantizar que los estudios se realicen de manera justa, respetuosa y responsable. Algunos principios éticos clave incluyen:</p>
+        <ul>
+            <li><strong>Consentimiento Informado:</strong> Los participantes deben ser informados sobre el propósito, procedimientos, riesgos y beneficios del estudio, y deben dar su consentimiento voluntario.</li>
+            <li><strong>Confidencialidad:</strong> La información personal y los datos de los participantes deben ser tratados con confidencialidad y anonimato.</li>
+            <li><strong>Evitar Daños:</strong> Los investigadores deben minimizar cualquier posible daño físico o psicológico a los participantes.</li>
+            <li><strong>Justicia:</strong> Los beneficios y riesgos de la investigación deben ser distribuidos equitativamente entre todos los participantes.</li>
+        </ul>
+        <p>Al diseñar y llevar a cabo investigaciones, es crucial seguir directrices éticas y obtener las aprobaciones necesarias de los comités de ética. La adherencia a las normas éticas no solo protege a los participantes, sino que también fortalece la integridad y validez de la investigación.</p>
+        
+        <h3>Ejemplo de Consentimiento Informado</h3>
+        <p>A continuación se muestra un ejemplo de cómo podría estructurarse un formulario de consentimiento informado:</p>
+        <pre><code>
 Estudio de Investigación: Título del Estudio
 
 Descripción: Este estudio tiene como objetivo investigar...
@@ -110,25 +118,23 @@ Riesgos y Beneficios: No se anticipan riesgos significativos...
 
 Confidencialidad: Todos los datos recolectados serán...
 
-Consentimiento: Al firmar este formulario, usted acepta participar en este estudio...</code></pre>
+Consentimiento: Al firmar este formulario, usted acepta participar en este estudio...
+        </code></pre>
 
 
-    <h2>Notas y Advertencias</h2>
-    <div class="nota">
-        <strong>Nota:</strong> La elección del método de investigación y los instrumentos de recolección de datos debe estar alineada con los objetivos del estudio. Es fundamental seguir prácticas éticas y obtener los permisos necesarios al realizar investigaciones con sujetos humanos.
-    </div>
+        <h2>Notas y Advertencias</h2>
+        <div class="nota">
+            <strong>Nota:</strong> La elección del método de investigación y los instrumentos de recolección de datos debe estar alineada con los objetivos del estudio. Es fundamental seguir prácticas éticas y obtener los permisos necesarios al realizar investigaciones con sujetos humanos.
+        </div>
 
-    <h2>Recursos Adicionales</h2>
-    <p>Para aprender más sobre la metodología de la investigación, puedes consultar los siguientes recursos:</p>
-    <ul>
-        <li><a href="https://www.metodologiadelainvestigacion.com" target="_blank">Sitio web sobre Metodología de la Investigación</a></li>
-        <li><a href="https://www.sciencedirect.com/topics/social-sciences/research-methodology" target="_blank">ScienceDirect: Research Methodology</a></li>
-        <li><a href="https://www.scribbr.com/research-methods/" target="_blank">Scribbr: Research Methods</a></li>
-    </ul>
-</div>
-
-
-    
+        <h2>Recursos Adicionales</h2>
+        <p>Para aprender más sobre la metodología de la investigación, puedes consultar los siguientes recursos:</p>
+        <ul>
+            <li><a href="https://www.metodologiadelainvestigacion.com" target="_blank">Sitio web sobre Metodología de la Investigación</a></li>
+            <li><a href="https://www.sciencedirect.com/topics/social-sciences/research-methodology" target="_blank">ScienceDirect: Research Methodology</a></li>
+            <li><a href="https://www.scribbr.com/research-methods/" target="_blank">Scribbr: Research Methods</a></li>
+        </ul>
+    </div> 
 
     <footer class="footer">
         <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
