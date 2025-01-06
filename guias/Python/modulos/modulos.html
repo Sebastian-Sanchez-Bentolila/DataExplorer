@@ -141,13 +141,117 @@ from mi_paquete import modulo1, modulo2
 modulo1.funcion1()
 modulo2.funcion2()
         </code></pre>
-        
+
+        <h1>PIP</h1>
+        <p>
+            <strong>pip</strong> es el sistema de gestión de paquetes oficial para Python. Permite instalar, actualizar y gestionar paquetes y bibliotecas que amplían la funcionalidad del lenguaje. Es una herramienta fundamental para cualquier desarrollador o analista que trabaje con Python.
+        </p>
+
+        <h2>¿Qué es pip?</h2>
+        <p>
+            <em>pip</em> es un acrónimo de "Pip Installs Packages". Su objetivo principal es facilitar la instalación y administración de bibliotecas desde el índice de paquetes de Python, conocido como <a href="https://pypi.org/" target="_blank">PyPI</a>.
+        </p>
+
+        <h2>Instalación de pip</h2>
+        <p>
+            En la mayoría de las distribuciones modernas de Python, pip ya está instalado. Sin embargo, si necesitas instalarlo manualmente, puedes usar el siguiente comando:
+        </p>
+        <pre><code>
+python -m ensurepip --upgrade
+        </code></pre>
+        <p>Esto instalará pip si no está presente o lo actualizará a la última versión disponible.</p>
+
+        <h2>Comandos básicos de pip</h2>
+        <h3>1. Verificar la versión instalada</h3>
+        <p>Usa el siguiente comando para verificar qué versión de pip tienes instalada:</p>
+        <pre><code>
+pip --version
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
+pip 23.0.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)
+        </code></pre>
+
+        <h3>2. Instalar un paquete</h3>
+        <p>Para instalar un paquete, usa el siguiente comando:</p>
+        <pre><code>
+pip install nombre_paquete
+        </code></pre>
+        <p>
+            Por ejemplo, para instalar la biblioteca <code>numpy</code>, puedes ejecutar:
+        </p>
+        <pre><code>
+pip install numpy
+        </code></pre>
+
+        <h3>3. Actualizar un paquete</h3>
+        <p>Para actualizar un paquete existente a su última versión:</p>
+        <pre><code>
+pip install --upgrade nombre_paquete
+        </code></pre>
+
+        <h3>4. Listar paquetes instalados</h3>
+        <p>Obtén una lista de todos los paquetes instalados y sus versiones:</p>
+        <pre><code>
+pip list
+        </code></pre>
+
+        <h3>5. Desinstalar un paquete</h3>
+        <p>Si deseas eliminar un paquete de tu entorno:</p>
+        <pre><code>
+pip uninstall nombre_paquete
+        </code></pre>
+
+        <h2>Uso avanzado de pip</h2>
+        <h3>Instalación desde un archivo requirements.txt</h3>
+        <p>
+            Un archivo <code>requirements.txt</code> es una lista de dependencias necesarias para un proyecto. Puedes instalar todas las bibliotecas mencionadas en este archivo con:
+        </p>
+        <pre><code>
+pip install -r requirements.txt
+        </code></pre>
+        <div class="nota">
+            <strong>Nota:</strong> Este comando es útil en proyectos colaborativos, ya que asegura que todos los desarrolladores trabajen con las mismas versiones de las dependencias.
+        </div>
+
+        <h3>Instalación desde un repositorio</h3>
+        <p>pip también permite instalar paquetes directamente desde un repositorio Git:</p>
+        <pre><code>pip install git+https://github.com/usuario/repositorio.git</code></pre>
+
+        <h2>Ejemplo práctico</h2>
+        <p>
+            Vamos a crear un entorno de desarrollo virtual, instalar un paquete y comprobar que funciona:
+        </p>
+        <pre><code>
+# Crear un entorno virtual
+python -m venv mi_entorno
+
+# Activar el entorno virtual
+# En Windows:
+mi_entorno\Scripts\activate
+# En Mac/Linux:
+source mi_entorno/bin/activate
+
+# Instalar numpy
+pip install numpy
+
+# Comprobar instalación
+python -c "import numpy; print(numpy.__version__)"
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
+1.23.5
+        </code></pre>
+
         <h2>Recursos Adicionales</h2>
         <p>Para profundizar en el uso de módulos y paquetes en Python, aquí tienes algunos recursos adicionales:</p>
         <ul>
             <li><a href="https://docs.python.org/3/tutorial/modules.html" target="_blank">Tutorial de módulos en la documentación oficial de Python</a></li>
             <li><a href="https://realpython.com/python-modules-packages/" target="_blank">Guía de Real Python sobre módulos y paquetes</a></li>
             <li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
+            <li><a href="https://pip.pypa.io/en/stable/" target="_blank">Documentación oficial de pip</a></li>
+            <li><a href="https://realpython.com/what-is-pip/" target="_blank">Guía sobre pip en Real Python</a></li>
+            <li><a href="https://pypi.org/" target="_blank">Repositorio oficial de PyPI</a></li>
         </ul>
     </div>
     
