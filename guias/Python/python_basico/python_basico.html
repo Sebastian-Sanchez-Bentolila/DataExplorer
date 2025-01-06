@@ -106,6 +106,239 @@ print(lista, tupla, diccionario, conjunto)
 10 3.14 Hola, Python! True
 [1, 2, 3] (1, 2, 3) {'clave': 'valor'} {1, 2, 3}
         </code></pre>
+
+        <h2>1. Operadores Aritméticos</h2>
+        <p>
+            Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas. Funcionan con números y devuelven un resultado basado en la operación realizada.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>Suma</td>
+                    <td>5 + 3</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Resta</td>
+                    <td>10 - 4</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplicación</td>
+                    <td>6 * 7</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>División</td>
+                    <td>8 / 2</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Módulo (resto)</td>
+                    <td>10 % 3</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>**</td>
+                    <td>Exponenciación</td>
+                    <td>2 ** 3</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>//</td>
+                    <td>División entera</td>
+                    <td>9 // 2</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2. Operadores de Comparación</h2>
+        <p>
+            Los operadores de comparación comparan dos valores y devuelven un resultado booleano: <code>True</code> o <code>False</code>.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>==</td>
+                    <td>Igual a</td>
+                    <td>5 == 5</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>Diferente de</td>
+                    <td>5 != 3</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td>&gt;</td>
+                    <td>Mayor que</td>
+                    <td>7 &gt; 3</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td>&lt;</td>
+                    <td>Menor que</td>
+                    <td>3 &lt; 5</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td>&gt;=</td>
+                    <td>Mayor o igual que</td>
+                    <td>5 &gt;= 5</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td>&lt;=</td>
+                    <td>Menor o igual que</td>
+                    <td>4 &lt;= 6</td>
+                    <td>True</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. Operadores Lógicos</h2>
+        <p>
+            Los operadores lógicos combinan expresiones booleanas y devuelven <code>True</code> o <code>False</code> según las condiciones.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>and</code></td>
+                    <td>Devuelve <code>True</code> si ambas condiciones son verdaderas.</td>
+                    <td>(5 &gt; 3) and (6 &gt; 2)</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td><code>or</code></td>
+                    <td>Devuelve <code>True</code> si al menos una condición es verdadera.</td>
+                    <td>(5 &gt; 3) or (2 &gt; 6)</td>
+                    <td>True</td>
+                </tr>
+                <tr>
+                    <td><code>not</code></td>
+                    <td>Invierte el valor lógico.</td>
+                    <td>not (5 &gt; 3)</td>
+                    <td>False</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>4. Operadores de Asignación</h2>
+        <p>
+            Los operadores de asignación se utilizan para asignar valores a las variables. Algunos combinan operaciones matemáticas con asignaciones.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>=</td>
+                    <td>Asigna un valor.</td>
+                    <td>x = 5</td>
+                    <td>x es 5</td>
+                </tr>
+                <tr>
+                    <td>+=</td>
+                    <td>Suma y asigna.</td>
+                    <td>x += 3</td>
+                    <td>x = x + 3</td>
+                </tr>
+                <tr>
+                    <td>-=</td>
+                    <td>Resta y asigna.</td>
+                    <td>x -= 2</td>
+                    <td>x = x - 2</td>
+                </tr>
+                <tr>
+                    <td>*=</td>
+                    <td>Multiplica y asigna.</td>
+                    <td>x *= 4</td>
+                    <td>x = x * 4</td>
+                </tr>
+                <tr>
+                    <td>/=</td>
+                    <td>Divide y asigna.</td>
+                    <td>x /= 2</td>
+                    <td>x = x / 2</td>
+                </tr>
+                <tr>
+                    <td>%=</td>
+                    <td>Calcula el módulo y asigna.</td>
+                    <td>x %= 3</td>
+                    <td>x = x % 3</td>
+                </tr>
+                <tr>
+                    <td>//=</td>
+                    <td>Divide enteros y asigna.</td>
+                    <td>x //= 2</td>
+                    <td>x = x // 2</td>
+                </tr>
+                <tr>
+                    <td>**=</td>
+                    <td>Eleva a potencia y asigna.</td>
+                    <td>x **= 2</td>
+                    <td>x = x ** 2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Ejemplo práctico</h2>
+        <pre><code>
+# Operadores aritméticos
+a = 10
+b = 3
+print(a + b)  # Suma
+print(a % b)  # Módulo
+
+# Operadores de comparación
+print(a > b)  # Mayor que
+print(a == b)  # Igualdad
+
+# Operadores lógicos
+print((a > b) and (b > 0))  # Lógico AND
+print(not (a == b))  # Negación lógica
+
+# Operadores de asignación
+a += 5
+print(a)  # a ahora es 15
+        </code></pre>
     
 
         <h2 id="control-de-flujo">Estructuras de Control de Flujo</h2>
@@ -192,6 +425,93 @@ Eso no es un número válido
 Fin del programa  
         </code></pre>
 
+        <h2>Comentarios en Python</h2>
+        <p>
+            Los comentarios son fragmentos de texto que se incluyen en el código para explicar su propósito o funcionamiento. Python no los ejecuta, lo que los convierte en herramientas ideales para documentación interna.
+        </p>
+
+        <h3>Comentarios de una sola línea</h3>
+        <p>
+            Para escribir un comentario de una sola línea, utiliza el símbolo <code>#</code>. Todo lo que esté a la derecha de este símbolo será ignorado por Python.
+        </p>
+        <pre><code>
+# Esto es un comentario de una sola línea
+print("Hola, mundo")  # Este comentario explica el print
+        </code></pre>
+
+        <h3>Comentarios de varias líneas</h3>
+        <p>
+            Python no tiene un bloque de comentarios nativo, pero puedes usar cadenas de texto triples (<code>"""</code> o <code>'''</code>) como una alternativa para agregar comentarios largos o descripciones.
+        </p>
+        <pre><code>
+"""
+Este es un comentario de varias líneas.
+Se puede usar para explicar una sección completa del código.
+"""
+print("Este código tiene comentarios explicativos.")
+        </code></pre>
+
+        <h3>Buenas prácticas al usar comentarios</h3>
+        <ul>
+            <li>Escribe comentarios claros y concisos.</li>
+            <li>Evita comentarios redundantes. Por ejemplo, no expliques algo que ya es obvio en el código.</li>
+            <li>Actualiza los comentarios si cambias el código relacionado.</li>
+            <li>Usa comentarios para describir la lógica o el propósito, no para narrar cada línea.</li>
+        </ul>
+
+        <h2>Identificadores en Python</h2>
+        <p>
+            Un identificador es el nombre que se asigna a variables, funciones, clases o módulos en Python. Siguen ciertas reglas y convenciones específicas que debes respetar.
+        </p>
+
+        <h3>Reglas para nombres de identificadores</h3>
+        <ul>
+            <li>Debe comenzar con una letra (a-z, A-Z) o un guion bajo (<code>_</code>).</li>
+            <li>Puede contener letras, dígitos (0-9) y guion bajo (<code>_</code>).</li>
+            <li>No puede comenzar con un dígito.</li>
+            <li>No puede coincidir con palabras clave reservadas de Python como <code>if</code>, <code>else</code>, <code>for</code>, etc.</li>
+            <li>Sensible a mayúsculas y minúsculas: <code>Variable</code> y <code>variable</code> son diferentes.</li>
+        </ul>
+        <pre><code>
+# Ejemplo válido
+nombre_usuario = "Sebastián"
+Edad = 19
+_estilo_clase = "sutil"
+
+# Ejemplo inválido
+2variable = 10  # Comienza con un número
+class = "Python"  # Usa una palabra clave reservada
+        </code></pre>
+
+        <h3>Convenciones de nombres</h3>
+        <ul>
+            <li><strong>snake_case:</strong> Usado comúnmente para variables y funciones (<code>mi_variable</code>).</li>
+            <li><strong>PascalCase:</strong> Usado para nombres de clases (<code>MiClase</code>).</li>
+            <li><strong>UPPER_CASE:</strong> Usado para constantes (<code>CONSTANTE</code>).</li>
+            <li>Evita usar una sola letra para nombres de variables, excepto en bucles (<code>i</code>, <code>j</code>).</li>
+        </ul>
+
+        <h2>Ejemplo práctico: Comentarios e Identificadores</h2>
+        <p>
+            Observa el siguiente fragmento de código que utiliza comentarios e identificadores siguiendo las mejores prácticas:
+        </p>
+        <pre><code>
+# Este programa calcula el área de un rectángulo
+def calcular_area(base, altura):
+    """Calcula y retorna el área de un rectángulo"""
+    return base * altura
+
+# Variables principales
+base_rectangulo = 10
+altura_rectangulo = 5
+
+# Cálculo del área
+area = calcular_area(base_rectangulo, altura_rectangulo)
+print(f"El área del rectángulo es: {area}")
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>El área del rectángulo es: 50</code></pre>
+
 
         <h2 id="recursos-adicionales">Recursos Adicionales</h2>
         <p>Si quieres profundizar más en Python, aquí tienes una selección de libros y artículos interesantes:</p>
@@ -201,6 +521,11 @@ Fin del programa
             <li><a href="https://www.learnpython.org/" target="_blank">Learn Python</a>: Una plataforma interactiva para aprender Python.</li>
             <li><a href="https://docs.python.org/3/tutorial/index.html" target="_blank">Documentación Oficial de Python</a>: El tutorial oficial del lenguaje.</li>
             <li><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8</a>: La guía de estilo oficial de Python.</li>
+            <li><a href="https://docs.python.org/3/tutorial/introduction.html#comments" target="_blank">Documentación oficial de Python sobre comentarios</a></li>
+            <li><a href="https://pep8.org/" target="_blank">Guía de estilo PEP 8 para Python</a></li>
+            <li><a href="https://realpython.com/python-comments-guide/" target="_blank">Guía práctica de comentarios en Python - Real Python</a></li>
+            <li><a href="https://docs.python.org/3/library/operator.html" target="_blank">Documentación oficial de Python sobre operadores</a></li>
+            <li><a href="https://www.w3schools.com/python/python_operators.asp" target="_blank">Guía de operadores en Python - W3Schools</a></li>
         </ul>
     </div>
 

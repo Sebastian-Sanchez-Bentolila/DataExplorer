@@ -37,7 +37,7 @@ const guiasJSON = [
         },
         {
             "titulo": "Módulos",
-            "descripcion": "Librerias y su importación",
+            "descripcion": "Librerias propias y externas (PIP) y su importación",
             "enlace": "guias/Python/modulos/modulos.html"
         },
         {
