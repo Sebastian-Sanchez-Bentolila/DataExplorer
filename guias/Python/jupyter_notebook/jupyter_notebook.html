@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupyter Notebook</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+<div class="contenido">
+    <h1>Introducción a Jupyter Notebook</h1>
+    <p>
+        Jupyter Notebook es una herramienta interactiva ampliamente utilizada en ciencia de datos, aprendizaje automático y desarrollo de software. Permite combinar código, texto formateado (usando Markdown), gráficos y ecuaciones matemáticas en un único documento ejecutable. Es ideal para la enseñanza, la exploración de datos y la creación de informes interactivos.
+    </p>
+
+    <h2>1. Instalación de Jupyter Notebook</h2>
+    <p>Jupyter Notebook se puede instalar de varias maneras. Aquí te mostramos las opciones más comunes:</p>
+
+    <h3>Opción 1: Instalación usando Anaconda (Recomendado)</h3>
+    <ol>
+        <li>Descarga e instala <a href="https://www.anaconda.com/" target="_blank">Anaconda</a>, una distribución popular de Python que incluye Jupyter Notebook.</li>
+        <li>Abre Anaconda Navigator y selecciona "Jupyter Notebook" para iniciarlo.</li>
+    </ol>
+
+    <h3>Opción 2: Instalación con pip</h3>
+    <ol>
+        <li>Asegúrate de tener Python instalado. Puedes descargarlo desde <a href="https://www.python.org/" target="_blank">python.org</a>.</li>
+        <li>Abre una terminal o línea de comandos e instala Jupyter Notebook con el siguiente comando:
+            <pre><code>pip install notebook</code></pre>
+        </li>
+        <li>Inicia Jupyter Notebook escribiendo:
+            <pre><code>jupyter notebook</code></pre>
+        </li>
+    </ol>
+
+    <h3>Opción 3: Instalación en un entorno virtual</h3>
+    <p>Si prefieres trabajar en un entorno virtual para mantener tus dependencias organizadas, sigue estos pasos:</p>
+    <ol>
+        <li>Crea un entorno virtual:
+            <pre><code>python -m venv nombre_entorno</code></pre>
+        </li>
+        <li>Activa el entorno:
+            <ul>
+                <li>En Windows: <code>nombre_entorno\Scripts\activate</code></li>
+                <li>En macOS/Linux: <code>source nombre_entorno/bin/activate</code></li>
+            </ul>
+        </li>
+        <li>Instala Jupyter Notebook:
+            <pre><code>pip install notebook</code></pre>
+        </li>
+        <li>Inicia Jupyter Notebook:
+            <pre><code>jupyter notebook</code></pre>
+        </li>
+    </ol>
+
+    <h2>2. ¿Cómo usar Jupyter Notebook?</h2>
+    <p>Una vez instalado, sigue estos pasos para usar Jupyter Notebook:</p>
+    <ol>
+        <li>Ejecuta el comando <code>jupyter notebook</code> en tu terminal. Se abrirá una interfaz web en tu navegador.</li>
+        <li>Explora tus directorios desde la interfaz y crea un nuevo notebook haciendo clic en "New" y seleccionando "Python 3".</li>
+        <li>Escribe tu código o texto en las celdas del notebook. Para ejecutar una celda, presiona <code>Shift + Enter</code>.</li>
+    </ol>
+
+    <h2>3. Funcionalidades principales</h2>
+    <p>Jupyter Notebook ofrece una variedad de características útiles:</p>
+    <ul>
+        <li><strong>Código ejecutable:</strong> Escribe y ejecuta código Python en celdas.</li>
+        <li><strong>Texto con Markdown:</strong> Formatea texto usando Markdown para agregar títulos, listas, enlaces y más.</li>
+        <li><strong>Gráficos:</strong> Integra bibliotecas como Matplotlib o Seaborn para generar gráficos interactivos.</li>
+        <li><strong>Ecuaciones matemáticas:</strong> Usa LaTeX para escribir ecuaciones matemáticas.</li>
+    </ul>
+
+    <h2>4. Atajos útiles</h2>
+    <p>Aprender algunos atajos de teclado puede acelerar tu flujo de trabajo:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Atajo</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>Shift + Enter</code></td>
+                <td>Ejecutar celda y pasar a la siguiente</td>
+            </tr>
+            <tr>
+                <td><code>Ctrl + Enter</code></td>
+                <td>Ejecutar celda sin moverse</td>
+            </tr>
+            <tr>
+                <td><code>Esc + M</code></td>
+                <td>Convertir celda a Markdown</td>
+            </tr>
+            <tr>
+                <td><code>Esc + Y</code></td>
+                <td>Convertir celda a código</td>
+            </tr>
+            <tr>
+                <td><code>Esc + A</code></td>
+                <td>Insertar celda arriba</td>
+            </tr>
+            <tr>
+                <td><code>Esc + B</code></td>
+                <td>Insertar celda abajo</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>5. Ventajas de usar Jupyter Notebook</h2>
+    <ul>
+        <li>Interactividad: Ideal para explorar y visualizar datos.</li>
+        <li>Versatilidad: Soporta múltiples lenguajes de programación (con extensiones).</li>
+        <li>Compartibilidad: Fácil de compartir como archivo <code>.ipynb</code> o exportar a HTML, PDF, etc.</li>
+    </ul>
+
+    <h2>6. Recursos adicionales</h2>
+    <ul>
+        <li><a href="https://jupyter.org/" target="_blank">Sitio oficial de Jupyter</a></li>
+        <li><a href="https://realpython.com/jupyter-notebook-introduction/" target="_blank">Guía introductoria de Jupyter Notebook</a></li>
+        <li><a href="https://nbviewer.org/" target="_blank">Visualiza notebooks online</a></li>
+    </ul>
+</div>
+
+
+
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
