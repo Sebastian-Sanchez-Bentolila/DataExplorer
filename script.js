@@ -93,7 +93,7 @@ const guiasJSON = [
         {
             "titulo": "Google colab",
             "descripcion": "Introducción al entorno de Google Colab",
-            "enlace": "guias/Python/documentacion/documentacion.html"
+            "enlace": "guias/Python/google_colab/google_colab.html"
         },
         {
             "titulo": "Metaclases",
