@@ -154,7 +154,12 @@ const guiasJSON = [
             "titulo": "Metodología de la investigación",
             "descripcion": "Aprende los fundamentos de una investigación",
             "enlace": "guias/Investigacion/metodologia_investigacion/metodologia_investigacion.html"
-        }]
+        },
+        {
+            "titulo": "Administración",
+            "descripcion": "Administración a nivel universitario",
+            "enlace": "guias/Investigacion/cts/cts.html"
+        },]
     }
 ];
 
