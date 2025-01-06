@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupyter Notebook</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+<div class="contenido">
+    <h1>Introducción a Google Colab</h1>
+    <p>
+        Google Colab (Colaboratory) es una herramienta en línea gratuita proporcionada por Google que permite ejecutar código Python directamente en tu navegador. Es ideal para proyectos de aprendizaje automático, ciencia de datos y desarrollo, ya que ofrece acceso a GPUs y TPUs gratuitas para acelerar cálculos complejos.
+    </p>
+
+    <h2>1. ¿Qué es Google Colab?</h2>
+    <p>
+        Google Colab es un servicio basado en la nube que proporciona un entorno interactivo similar a Jupyter Notebook. Puedes escribir y ejecutar código Python, importar datos desde varias fuentes, crear gráficos y compartir fácilmente tus notebooks con otros.
+    </p>
+
+    <h2>2. Características principales</h2>
+    <ul>
+        <li><strong>Gratuito:</strong> No requiere instalación ni configuración.</li>
+        <li><strong>GPU/TPU:</strong> Acceso a hardware de alto rendimiento para acelerar cálculos.</li>
+        <li><strong>Integración con Google Drive:</strong> Guarda y accede a tus notebooks desde la nube.</li>
+        <li><strong>Soporte para bibliotecas:</strong> Compatible con bibliotecas populares como NumPy, Pandas, Matplotlib, TensorFlow, etc.</li>
+        <li><strong>Colaboración:</strong> Comparte notebooks fácilmente y colabora en tiempo real.</li>
+    </ul>
+
+    <h2>3. Cómo acceder a Google Colab</h2>
+    <p>
+        Acceder a Google Colab es simple. Solo necesitas una cuenta de Google. Sigue estos pasos:
+    </p>
+    <ol>
+        <li>Abre tu navegador y ve a <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>.</li>
+        <li>Inicia sesión con tu cuenta de Google.</li>
+        <li>Elige una de las opciones para crear o abrir un notebook:
+            <ul>
+                <li><strong>Notebook en blanco:</strong> Crea un nuevo archivo.</li>
+                <li><strong>Subir:</strong> Abre un archivo desde tu computadora.</li>
+                <li><strong>Google Drive:</strong> Accede a tus notebooks guardados en Drive.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>4. Instalación de bibliotecas en Google Colab</h2>
+    <p>
+        Puedes instalar bibliotecas adicionales usando <code>pip</code> directamente en una celda:
+    </p>
+    <pre><code>!pip install nombre_biblioteca</code></pre>
+
+    <h2>5. Uso de hardware acelerado</h2>
+    <p>Para habilitar una GPU o TPU, sigue estos pasos:</p>
+    <ol>
+        <li>Haz clic en <strong>Entorno de ejecución</strong> &gt; <strong>Configurar entorno de ejecución</strong>.</li>
+        <li>En la opción "Acelerador de hardware", selecciona:
+            <ul>
+                <li>GPU: Para acelerar cálculos gráficos (TensorFlow, PyTorch).</li>
+                <li>TPU: Para tareas de aprendizaje profundo de alta intensidad.</li>
+            </ul>
+        </li>
+        <li>Haz clic en "Guardar".</li>
+    </ol>
+
+    <h2>6. Compartir notebooks</h2>
+    <p>
+        Puedes compartir un notebook con otros de la misma forma que compartirías un archivo en Google Drive:
+    </p>
+    <ol>
+        <li>Haz clic en <strong>Archivo</strong> &gt; <strong>Compartir</strong>.</li>
+        <li>Configura los permisos de acceso (solo lectura o edición).</li>
+        <li>Comparte el enlace con tus colaboradores.</li>
+    </ol>
+
+    <h2>7. Ventajas de Google Colab</h2>
+    <ul>
+        <li>No necesita instalación ni configuración.</li>
+        <li>Acceso a potentes recursos computacionales gratuitos.</li>
+        <li>Fácil integración con Google Drive y otras fuentes de datos.</li>
+        <li>Interfaz basada en navegador, accesible desde cualquier dispositivo.</li>
+        <li>Compatibilidad con Python y muchas bibliotecas de aprendizaje automático y ciencia de datos.</li>
+    </ul>
+
+    <h2>8. Limitaciones</h2>
+    <ul>
+        <li>Sesiones limitadas a 12 horas continuas.</li>
+        <li>Dependencia de conexión a internet.</li>
+        <li>Uso compartido de recursos de hardware con otros usuarios.</li>
+    </ul>
+
+    <h2>9. Recursos útiles</h2>
+    <ul>
+        <li><a href="https://colab.research.google.com/notebooks/intro.ipynb" target="_blank">Introducción oficial a Google Colab</a></li>
+        <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
+        <li><a href="https://pytorch.org/" target="_blank">PyTorch</a></li>
+    </ul>
+</div>
+
+
+
+
+    
+
+    <footer class="footer">
+        <p>© 2024 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
