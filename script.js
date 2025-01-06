@@ -86,6 +86,16 @@ const guiasJSON = [
             "enlace": "guias/Python/documentacion/documentacion.html"
         },
         {
+            "titulo": "Jupyter Notebook",
+            "descripcion": "Introducción al entorno de Jupyter Notebook",
+            "enlace": "guias/Python/jupyter_notebook/jupyter_notebook.html"
+        },
+        {
+            "titulo": "Google colab",
+            "descripcion": "Introducción al entorno de Google Colab",
+            "enlace": "guias/Python/documentacion/documentacion.html"
+        },
+        {
             "titulo": "Metaclases",
             "descripcion": "Metaclases en Python",
             "enlace": "guias/Python/metaclases/metaclases.html"
