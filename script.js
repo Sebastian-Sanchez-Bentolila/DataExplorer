@@ -146,6 +146,11 @@ const guiasJSON = [
         "tecnologia": "Investigación",
         "guias": [
         {
+            "titulo": "CTyS",
+            "descripcion": "Taller de Ciencia, Tecnología y Sociedad",
+            "enlace": "guias/Investigacion/cts/cts.html"
+        },
+        {
             "titulo": "Metodología de la investigación",
             "descripcion": "Aprende los fundamentos de una investigación",
             "enlace": "guias/Investigacion/metodologia_investigacion/metodologia_investigacion.html"
