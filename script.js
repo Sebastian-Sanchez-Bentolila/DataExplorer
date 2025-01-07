@@ -158,7 +158,7 @@ const guiasJSON = [
         {
             "titulo": "Administración",
             "descripcion": "Administración a nivel universitario",
-            "enlace": "guias/Investigacion/cts/cts.html"
+            "enlace": "guias/Investigacion/administracion/administracion.html"
         },]
     }
 ];
