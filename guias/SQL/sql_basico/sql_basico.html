@@ -27,6 +27,42 @@
     <div class="contenido">
         <h1>Introducción a SQL</h1>
         <p>SQL (Structured Query Language) es un lenguaje estándar utilizado para gestionar y manipular bases de datos relacionales. Con SQL, puedes realizar diversas operaciones como consultas, inserciones, actualizaciones y eliminaciones de datos. A continuación, exploraremos los conceptos básicos de SQL, junto con ejemplos prácticos y salidas esperadas.</p>
+
+        <h2>Historia y Evolución de SQL</h2>
+        <p>
+            SQL (Structured Query Language) es el lenguaje estándar para interactuar con bases de datos relacionales. 
+            Su desarrollo comenzó en la década de 1970 en IBM, donde se creó el sistema de base de datos relacional llamado <strong>System R</strong>.
+            Este proyecto, basado en el modelo relacional propuesto por <a href="https://es.wikipedia.org/wiki/Edgar_F._Codd" target="_blank">Edgar F. Codd</a> en 1970, 
+            marcó el inicio de una nueva era en la gestión de datos.
+        </p>
+        <p>
+            SQL fue estandarizado por primera vez por ANSI en 1986 y por ISO en 1987. Desde entonces, ha evolucionado para incluir 
+            nuevas funcionalidades, como el manejo de datos jerárquicos, JSON, y soporte para análisis avanzado. Las versiones más recientes 
+            del estándar incluyen SQL:2016 y SQL:2019, que introducen capacidades modernas como análisis avanzado de datos y extensiones para big data.
+        </p>
+    
+        <h3>Línea de Tiempo</h3>
+        <ul>
+            <li><strong>1970:</strong> Edgar F. Codd publica "A Relational Model of Data for Large Shared Data Banks".</li>
+            <li><strong>1974:</strong> IBM desarrolla el lenguaje SEQUEL, precursor de SQL.</li>
+            <li><strong>1986:</strong> ANSI establece el primer estándar de SQL.</li>
+            <li><strong>1990:</strong> Surgen sistemas comerciales como Oracle, MySQL y Microsoft SQL Server.</li>
+            <li><strong>Presente:</strong> SQL es usado en casi todos los sistemas de bases de datos relacionales.</li>
+        </ul>
+    
+        <h2>Conceptos Fundamentales de Bases de Datos Relacionales</h2>
+        <p>
+            Las bases de datos relacionales son sistemas diseñados para almacenar, gestionar y recuperar grandes cantidades de información estructurada. 
+            Este modelo se basa en el concepto de <strong>relaciones</strong>, representadas como tablas compuestas por filas y columnas.
+        </p>
+    
+        <h3>Elementos Clave</h3>
+        <ul>
+            <li><strong>Tablas:</strong> Representan entidades y están compuestas por filas (registros) y columnas (atributos).</li>
+            <li><strong>Llaves Primarias:</strong> Identifican de manera única cada registro en una tabla.</li>
+            <li><strong>Llaves Foráneas:</strong> Establecen relaciones entre tablas.</li>
+            <li><strong>Consultas:</strong> Permiten recuperar datos específicos mediante el uso de SQL.</li>
+        </ul>
         
         <h2>Creación de una Base de Datos y Tablas</h2>
         <p>Para comenzar a trabajar con SQL, primero necesitas crear una base de datos y luego crear tablas dentro de esa base de datos. Aquí tienes un ejemplo:</p>
@@ -211,6 +247,91 @@ INNER JOIN Curso ON Inscripcion.CursoID = Curso.CursoID;
 | Carla  | Bioquímica          |
 +--------+---------------------+
         </code></pre>
+
+        <h3>Ejemplo de Estructura Relacional</h3>
+        <p>Supongamos que tenemos dos tablas en una base de datos para una librería:</p>
+    
+        <h4>Tabla: Libros</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>LibroID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>El Quijote</td>
+                    <td>Miguel de Cervantes</td>
+                    <td>15.99</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Cien Años de Soledad</td>
+                    <td>Gabriel García Márquez</td>
+                    <td>12.99</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h4>Tabla: Ventas</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>VentaID</th>
+                    <th>LibroID</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>2025-01-01</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2025-01-02</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <h3>Ejemplo de Consulta SQL</h3>
+        <pre><code>
+-- Consulta para obtener todos los libros vendidos
+SELECT Libros.Título, Ventas.Cantidad, Ventas.Fecha
+FROM Libros
+JOIN Ventas ON Libros.LibroID = Ventas.LibroID;
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>El Quijote</td>
+                    <td>2</td>
+                    <td>2025-01-01</td>
+                </tr>
+                <tr>
+                    <td>Cien Años de Soledad</td>
+                    <td>1</td>
+                    <td>2025-01-02</td>
+                </tr>
+            </tbody>
+        </table>
         
         <h2>Recursos Adicionales</h2>
         <p>Para profundizar en SQL, aquí tienes algunos recursos adicionales:</p>
