@@ -63,6 +63,99 @@
             <li><strong>Llaves Foráneas:</strong> Establecen relaciones entre tablas.</li>
             <li><strong>Consultas:</strong> Permiten recuperar datos específicos mediante el uso de SQL.</li>
         </ul>
+
+        <h2>Introducción a los Sistemas Gestores de Bases de Datos</h2>
+        <p>
+            Un Sistema Gestor de Bases de Datos (SGBD o DBMS, por sus siglas en inglés) es un software diseñado para 
+            crear, gestionar y consultar bases de datos. Permite a los usuarios interactuar con los datos de manera eficiente 
+            mediante la ejecución de consultas, la administración de transacciones y el manejo de permisos.
+        </p>
+        <p>Algunos de los sistemas más populares incluyen:</p>
+        <ul>
+            <li><strong>MySQL:</strong> Uno de los gestores más utilizados, especialmente en aplicaciones web. Es conocido por su velocidad y facilidad de uso.</li>
+            <li><strong>PostgreSQL:</strong> Un SGBD avanzado y de código abierto, conocido por su robustez y soporte para características avanzadas como JSON y replicación.</li>
+            <li><strong>Microsoft SQL Server:</strong> Ofrece integración nativa con productos de Microsoft y es ampliamente usado en entornos corporativos.</li>
+            <li><strong>Oracle Database:</strong> Una solución empresarial con un enfoque en rendimiento y seguridad.</li>
+            <li><strong>SQLite:</strong> Un SGBD liviano y embebido, ideal para aplicaciones móviles y de escritorio.</li>
+        </ul>
+        <!-- Imagen sugerida: Una tabla comparativa entre diferentes gestores mostrando características clave como licencia, rendimiento y popularidad. -->
+    
+        <h2>Instalación y Configuración del Entorno</h2>
+        <h3>1. Instalación de MySQL</h3>
+        <p>Para instalar MySQL en tu sistema:</p>
+        <ol>
+            <li>Visita el sitio oficial de <a href="https://dev.mysql.com/downloads/" target="_blank">MySQL</a> y descarga el instalador adecuado para tu sistema operativo.</li>
+            <li>Sigue las instrucciones del asistente de instalación.</li>
+            <li>Configura el servidor asignando una contraseña para el usuario "root".</li>
+        </ol>
+        <p>
+            Una vez instalado, puedes conectarte al servidor usando la línea de comandos o herramientas gráficas como 
+            <a href="https://www.phpmyadmin.net/" target="_blank">phpMyAdmin</a> o MySQL Workbench.
+        </p>
+    
+        <h3>2. Instalación de PostgreSQL</h3>
+        <p>Pasos para instalar PostgreSQL:</p>
+        <ol>
+            <li>Descarga el instalador desde la <a href="https://www.postgresql.org/download/" target="_blank">página oficial de PostgreSQL</a>.</li>
+            <li>Sigue las instrucciones del instalador, incluyendo la configuración del usuario administrador "postgres".</li>
+            <li>Instala pgAdmin, una herramienta gráfica para gestionar bases de datos PostgreSQL.</li>
+        </ol>
+    
+        <h3>Configuración Básica</h3>
+        <p>
+            Después de la instalación, es importante configurar las variables de entorno y servicios necesarios. 
+            Además, verifica que el servicio del gestor esté corriendo antes de intentar conectarte.
+        </p>
+        <pre><code>
+# Ejemplo: Verificar el estado de MySQL en Linux
+sudo systemctl status mysql
+        </code></pre>
+    
+        <h2>Componentes Básicos del Lenguaje SQL</h2>
+        <p>
+            SQL se divide en varios sublenguajes, cada uno diseñado para cumplir funciones específicas. 
+            A continuación, se describen los componentes básicos:
+        </p>
+        <ul>
+            <li><strong>DDL (Data Definition Language):</strong> Define la estructura de las bases de datos y sus objetos (tablas, índices, vistas, etc.).
+                <pre><code>
+-- Crear una tabla
+CREATE TABLE Usuarios (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(50),
+    Correo VARCHAR(100)
+);
+        </code></pre>
+            </li>
+            <li><strong>DML (Data Manipulation Language):</strong> Manipula los datos dentro de las tablas.
+                <pre><code>
+-- Insertar datos
+INSERT INTO Usuarios (ID, Nombre, Correo) 
+VALUES (1, 'Juan Pérez', 'juan@example.com');
+    
+-- Consultar datos
+SELECT * FROM Usuarios;
+        </code></pre>
+            </li>
+            <li><strong>DCL (Data Control Language):</strong> Controla el acceso a los datos mediante permisos.
+                <pre><code>
+-- Otorgar permisos
+GRANT SELECT ON Usuarios TO usuario_lectura;
+    
+-- Revocar permisos
+REVOKE SELECT ON Usuarios FROM usuario_lectura;
+        </code></pre>
+            </li>
+            <li><strong>TCL (Transaction Control Language):</strong> Administra transacciones, asegurando la integridad de los datos.
+                <pre><code>
+-- Uso de transacciones
+BEGIN;
+UPDATE Usuarios SET Nombre = 'Carlos Pérez' WHERE ID = 1;
+COMMIT;
+        </code></pre>
+                <p><strong>Nota:</strong> En caso de error, se puede usar <code>ROLLBACK;</code> para deshacer los cambios.</p>
+            </li>
+        </ul>
         
         <h2>Creación de una Base de Datos y Tablas</h2>
         <p>Para comenzar a trabajar con SQL, primero necesitas crear una base de datos y luego crear tablas dentro de esa base de datos. Aquí tienes un ejemplo:</p>
