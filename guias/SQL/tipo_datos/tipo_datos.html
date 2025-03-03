@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Tipo de Datos en SQL</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Tipos de Datos en SQL</h1>
+        <p>En SQL, los tipos de datos definen el tipo de valores que se pueden almacenar en una columna de una tabla. Los tipos de datos más comunes en SQL incluyen:</p>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo de Declaración</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CHAR</td>
+                    <td>Cadenas de texto de longitud fija. Se rellenan con espacios si la longitud es menor a la especificada.</td>
+                    <td><pre><code>columna CHAR(10)</code></pre></td>
+                </tr>
+                <tr>
+                    <td>VARCHAR</td>
+                    <td>Cadenas de texto de longitud variable. Solo almacena la cantidad real de caracteres.</td>
+                    <td><pre><code>columna VARCHAR(50)</code></pre></td>
+                </tr>
+                <tr>
+                    <td>INT</td>
+                    <td>Números enteros.</td>
+                    <td><pre><code>columna INT</code></pre></td>
+                </tr>
+                <tr>
+                    <td>FLOAT</td>
+                    <td>Números de punto flotante de precisión simple.</td>
+                    <td><pre><code>columna FLOAT</code></pre></td>
+                </tr>
+                <tr>
+                    <td>DOUBLE</td>
+                    <td>Números de punto flotante de precisión doble.</td>
+                    <td><pre><code>columna DOUBLE</code></pre></td>
+                </tr>
+                <tr>
+                    <td>DATE</td>
+                    <td>Fechas en el formato <code>YYYY-MM-DD</code>.</td>
+                    <td><pre><code>columna DATE</code></pre></td>
+                </tr>
+                <tr>
+                    <td>TIME</td>
+                    <td>Horas en el formato <code>HH:MM:SS</code>.</td>
+                    <td><pre><code>columna TIME</code></pre></td>
+                </tr>
+                <tr>
+                    <td>DATETIME</td>
+                    <td>Fecha y hora combinadas en el formato <code>YYYY-MM-DD HH:MM:SS</code>.</td>
+                    <td><pre><code>columna DATETIME</code></pre></td>
+                </tr>
+                <tr>
+                    <td>TIMESTAMP</td>
+                    <td>Marca de tiempo que almacena fecha y hora en formato <code>YYYY-MM-DD HH:MM:SS</code>. Automáticamente actualiza la fecha y hora al insertar o actualizar registros.</td>
+                    <td><pre><code>columna TIMESTAMP</code></pre></td>
+                </tr>
+                <tr>
+                    <td>BOOLEAN</td>
+                    <td>Valores lógicos. Puede almacenar <code>TRUE</code> o <code>FALSE</code>.</td>
+                    <td><pre><code>columna BOOLEAN</code></pre></td>
+                </tr>
+                <tr>
+                    <td>TEXT</td>
+                    <td>Grandes cadenas de texto de longitud variable.</td>
+                    <td><pre><code>columna TEXT</code></pre></td>
+                </tr>
+                <tr>
+                    <td>BLOB</td>
+                    <td>Grandes cantidades de datos binarios, como imágenes o archivos.</td>
+                    <td><pre><code>columna BLOB</code></pre></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>CHAR</h2>
+        <p>El tipo <code>CHAR</code> (o <code>CHARACTER</code>) se utiliza para almacenar cadenas de texto de longitud fija. Se debe especificar la longitud máxima de la cadena al declarar una columna de tipo <code>CHAR</code>. Si la cadena almacenada es más corta que la longitud especificada, se rellenará con espacios.</p>
+        <pre><code>
+CREATE TABLE ejemplo_char (
+    columna1 CHAR(10)
+);
+        </code></pre>
+        <div class="nota">
+            <strong>Nota:</strong> <code>CHAR(10)</code> define una columna con una longitud fija de 10 caracteres.
+        </div>
+        
+        <h2>VARCHAR</h2>
+        <p>El tipo <code>VARCHAR</code> (o <code>CHARACTER VARYING</code>) se utiliza para almacenar cadenas de texto de longitud variable. A diferencia de <code>CHAR</code>, <code>VARCHAR</code> no rellena la cadena con espacios y solo almacena la cantidad de caracteres reales.</p>
+        <pre><code>
+CREATE TABLE ejemplo_varchar (
+    columna1 VARCHAR(50)
+);
+        </code></pre>
+        <div class="nota">
+            <strong>Nota:</strong> <code>VARCHAR(50)</code> define una columna que puede almacenar hasta 50 caracteres.
+        </div>
+        <p>Salida en consola al insertar datos:</p>
+        <pre><code>
+INSERT INTO ejemplo_varchar (columna1) VALUES ('Hola');
+    
+SELECT * FROM ejemplo_varchar;
+/* Salida en consola:
+columna1
+-----------
+    Hola        
+*/
+        </code></pre>
+        
+        <h2>INT</h2>
+        <p>El tipo <code>INT</code> (o <code>INTEGER</code>) se utiliza para almacenar números enteros. Es ideal para representar valores numéricos sin decimales.</p>
+        <pre><code>
+CREATE TABLE ejemplo_int (
+    columna1 INT
+);
+        </code></pre>
+        <div class="nota">
+            <strong>Nota:</strong> <code>INT</code> puede almacenar números enteros desde -2,147,483,648 hasta 2,147,483,647.
+        </div>
+        <p>Salida en consola al insertar datos:</p>
+        <pre><code>
+INSERT INTO ejemplo_int (columna1) VALUES (123);
+    
+SELECT * FROM ejemplo_int;
+/* Salida en consola:
+columna1
+---------
+    123
+*/
+        </code></pre>
+        
+        <h2>FLOAT</h2>
+        <p>El tipo <code>FLOAT</code> se utiliza para almacenar números de punto flotante de precisión simple. Es adecuado para almacenar valores numéricos con decimales y una amplia gama de valores.</p>
+        <pre><code>
+CREATE TABLE ejemplo_float (
+    columna1 FLOAT
+);
+        </code></pre>
+        <div class="nota">
+            <strong>Nota:</strong> <code>FLOAT</code> puede almacenar valores numéricos muy grandes y pequeños con decimales.
+        </div>
+        <p>Salida en consola al insertar datos:</p>
+        <pre><code>
+INSERT INTO ejemplo_float (columna1) VALUES (123.45);
+    
+SELECT * FROM ejemplo_float;
+/* Salida en consola:
+columna1
+---------
+    123.45
+*/
+        </code></pre>
+        
+        <h2>DATE</h2>
+        <p>El tipo <code>DATE</code> se utiliza para almacenar valores de fecha. El formato de la fecha es <code>YYYY-MM-DD</code>.</p>
+        <pre><code>
+CREATE TABLE ejemplo_date (
+    columna1 DATE
+);
+        </code></pre>
+        <div class="nota">
+            <strong>Nota:</strong> <code>DATE</code> almacena solo la parte de la fecha, sin información de la hora.
+        </div>
+        <p>Salida en consola al insertar datos:</p>
+        <pre><code>
+INSERT INTO ejemplo_date (columna1) VALUES ('2025-03-03');
+    
+SELECT * FROM ejemplo_date;
+/* Salida en consola:
+columna1
+------------
+    2025-03-03
+*/
+        </code></pre>
+        
+        <h2>BOOLEAN</h2>
+        <p>El tipo <code>BOOLEAN</code> se utiliza para almacenar valores lógicos. Puede tomar los valores <code>TRUE</code> o <code>FALSE</code>.</p>
+        <pre><code>
+CREATE TABLE ejemplo_boolean (
+    columna1 BOOLEAN
+);
+        </code></pre>
+        <div class="nota">
+            <strong>Nota:</strong> <code>BOOLEAN</code> almacena valores de verdad o falsedad.
+        </div>
+        <p>Salida en consola al insertar datos:</p>
+        <pre><code>
+INSERT INTO ejemplo_boolean (columna1) VALUES (TRUE);
+    
+SELECT * FROM ejemplo_boolean;
+/* Salida en consola:
+columna1
+---------
+    t
+*/
+        </code></pre>
+        
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/sql/sql_datatypes.asp" target="_blank">W3Schools SQL Data Types</a></li>
+            <li><a href="https://dev.mysql.com/doc/refman/8.0/en/data-types.html" target="_blank">MySQL Data Types Documentation</a></li>
+            <li><a href="https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql" target="_blank">Microsoft SQL Server Data Types</a></li>
+        </ul>
+    </div>
+    
+       
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

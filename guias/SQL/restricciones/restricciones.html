@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Restricciones en SQL</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Restricciones en SQL</h1>
+        <p>Las restricciones en SQL son reglas aplicadas a las columnas de una tabla para garantizar la integridad y validez de los datos almacenados. Estas restricciones evitan datos incorrectos o duplicados y aseguran relaciones consistentes entre las tablas.</p>
+    
+        <h2>Principales restricciones en SQL</h2>
+    
+        <h3>NOT NULL</h3>
+        <p>Impide que una columna tenga valores <code>NULL</code>. Se usa para asegurarse de que un campo siempre tenga un valor.</p>
+        <pre><code>
+CREATE TABLE Clientes (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Email VARCHAR(150) NOT NULL
+);
+        </code></pre>
+        <p>En este caso, las columnas <code>Nombre</code> y <code>Email</code> no pueden tener valores nulos.</p>
+    
+        <h3>UNIQUE</h3>
+        <p>Garantiza que los valores de una columna sean únicos en toda la tabla.</p>
+        <pre><code>
+CREATE TABLE Productos (
+    ID INT PRIMARY KEY,
+    Codigo VARCHAR(50) UNIQUE,
+    Nombre VARCHAR(100)
+);
+        </code></pre>
+        <p>Aquí, el código de cada producto debe ser único.</p>
+    
+        <h3>PRIMARY KEY</h3>
+        <p>Es una combinación de <code>NOT NULL</code> y <code>UNIQUE</code>. Se usa para identificar de manera única cada fila en una tabla.</p>
+        <pre><code>
+CREATE TABLE Empleados (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Edad INT
+);
+        </code></pre>
+        <p>La columna <code>ID</code> es clave primaria, lo que significa que su valor no puede repetirse ni ser <code>NULL</code>.</p>
+    
+        <h3>FOREIGN KEY</h3>
+        <p>Define una relación entre dos tablas, asegurando que el valor en una columna coincida con un valor en la clave primaria de otra tabla.</p>
+        <pre><code>
+CREATE TABLE Pedidos (
+    ID INT PRIMARY KEY,
+    ClienteID INT,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ID)
+);
+        </code></pre>
+        <p>El <code>ClienteID</code> en la tabla <code>Pedidos</code> debe existir en la tabla <code>Clientes</code>.</p>
+    
+        <h3>CHECK</h3>
+        <p>Restringe los valores permitidos en una columna.</p>
+        <pre><code>
+CREATE TABLE Personas (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Edad INT CHECK (Edad >= 18)
+);
+        </code></pre>
+        <p>Aquí, solo se permiten valores de edad mayores o iguales a 18.</p>
+    
+        <h3>DEFAULT</h3>
+        <p>Asigna un valor por defecto a una columna si no se proporciona uno.</p>
+        <pre><code>
+CREATE TABLE Usuarios (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Estado VARCHAR(20) DEFAULT 'Activo'
+);
+        </code></pre>
+        <p>Si no se especifica un valor para <code>Estado</code>, se asignará 'Activo' por defecto.</p>
+    
+        <h3>INDEX</h3>
+        <p>Mejora la velocidad de búsqueda en una tabla.</p>
+        <pre><code>CREATE INDEX idx_nombre ON Clientes (Nombre);</code></pre>
+        <p>Este índice acelera la búsqueda por nombre en la tabla <code>Clientes</code>.</p>
+
+        <h3>AUTO_INCREMENT (MySQL) / SERIAL (PostgreSQL)</h3>
+        <p>Permite generar valores automáticos en una columna, generalmente utilizada en claves primarias.</p>
+        <pre><code>
+CREATE TABLE empleados (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100)
+);
+        </code></pre>
+    
+        <h3>Restricciones en ALTER TABLE</h3>
+        <p>También se pueden agregar o eliminar restricciones en tablas existentes con <code>ALTER TABLE</code>.</p>
+        <pre><code>ALTER TABLE empleados ADD CONSTRAINT chk_edad CHECK (edad>= 18);</code></pre>
+    
+    </div>
+    
+       
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

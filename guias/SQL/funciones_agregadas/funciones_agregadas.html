@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a las funciones agregadas en SQL</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Funciones Agregadas en SQL</h1>
+        
+        <p>Las funciones agregadas en SQL son funciones que operan sobre un conjunto de valores y devuelven un único resultado. Estas funciones son comúnmente utilizadas en combinación con la cláusula <code>GROUP BY</code> para agrupar datos y realizar cálculos sobre cada grupo.</p>
+        
+        <h2>Principales Funciones Agregadas</h2>
+        <p>A continuación, se presentan las funciones agregadas más utilizadas en SQL:</p>
+        
+        <ul>
+            <li><strong><code>COUNT()</code></strong>: Cuenta el número de filas.</li>
+            <li><strong><code>SUM()</code></strong>: Suma los valores de una columna numérica.</li>
+            <li><strong><code>AVG()</code></strong>: Calcula el promedio de una columna numérica.</li>
+            <li><strong><code>MIN()</code></strong>: Encuentra el valor mínimo en una columna.</li>
+            <li><strong><code>MAX()</code></strong>: Encuentra el valor máximo en una columna.</li>
+        </ul>
+        
+        <h2>Ejemplos de Uso</h2>
+        <h3>1. Uso de <code>COUNT()</code></h3>
+        <p>El siguiente ejemplo cuenta el número total de clientes en una tabla llamada <code>clientes</code>:</p>
+        <pre><code>SELECT COUNT(*) AS total_clientes FROM clientes;</code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
++---------------+
+| total_clientes|
++---------------+
+|         150   |
++---------------+
+        </code></pre>
+        
+        <h3>2. Uso de <code>SUM()</code></h3>
+        <p>Si queremos conocer la suma total de ventas en una tabla <code>ventas</code>, usamos:</p>
+        <pre><code>SELECT SUM(monto) AS total_ventas FROM ventas;</code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
++--------------+
+| total_ventas |
++--------------+
+|    25000.00  |
++--------------+
+        </code></pre>
+        
+        <h3>3. Uso de <code>AVG()</code></h3>
+        <p>Para calcular el promedio de edad de los clientes:</p>
+        <pre><code>SELECT AVG(edad) AS edad_promedio FROM clientes;</code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
++---------------+
+| edad_promedio |
++---------------+
+|      35.4     |
++---------------+
+        </code></pre>
+        
+        <h3>4. Uso de <code>MIN()</code> y <code>MAX()</code></h3>
+        <p>Para encontrar la edad mínima y máxima de los clientes:</p>
+        <pre><code>SELECT MIN(edad) AS edad_minima, MAX(edad) AS edad_maxima FROM clientes;</code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
++-------------+-------------+
+| edad_minima | edad_maxima |
++-------------+-------------+
+|     18      |     65      |
++-------------+-------------+
+        </code></pre>
+        
+        <h2>Uso con <code>GROUP BY</code></h2>
+        <p>Las funciones agregadas suelen utilizarse con <code>GROUP BY</code> para realizar cálculos sobre grupos de datos. Por ejemplo, obtener el total de ventas por cada categoría de productos:</p>
+        <pre><code>
+SELECT categoria, SUM(monto) AS total_ventas
+FROM ventas
+GROUP BY categoria;
+        </code></pre>
+        
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>
++-------------+--------------+
+| categoria   | total_ventas |
++-------------+--------------+
+| Electrónica |     15000.00 |
+| Ropa        |      5000.00 |
+| Hogar       |      5000.00 |
++-------------+--------------+
+        </code></pre>
+        
+        <!-- Aquí se podría agregar una imagen de una tabla representando el uso de funciones agregadas en SQL -->
+        
+        <h2>Consideraciones Importantes</h2>
+        <ul>
+            <li>Las funciones agregadas ignoran los valores <code>NULL</code> en los cálculos.</li>
+            <li>Si se usa <code>GROUP BY</code>, todas las columnas seleccionadas que no sean parte de la agregación deben estar en la cláusula <code>GROUP BY</code>.</li>
+            <li>Para incluir valores <code>NULL</code> en los cálculos, se pueden usar funciones como <code>COALESCE()</code> para reemplazarlos con un valor predeterminado.</li>
+        </ul>
+        
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://dev.mysql.com/doc/refman/8.0/en/group-by-functions.html" target="_blank">Documentación oficial de MySQL sobre funciones agregadas</a></li>
+            <li><a href="https://www.postgresql.org/docs/current/functions-aggregate.html" target="_blank">Funciones agregadas en PostgreSQL</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/aggregate-functions-transact-sql" target="_blank">Funciones agregadas en SQL Server</a></li>
+        </ul>
+    </div>
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

@@ -117,6 +117,26 @@ const guiasJSON = [
             "titulo": "Introducción a SQL",
             "descripcion": "Aprende los fundamentos de las bases de datos relacionales",
             "enlace": "guias/SQL/sql_basico/sql_basico.html"
+        },
+        {
+            "titulo": "Tipo de Datos",
+            "descripcion": "Tipos de datos en SQL",
+            "enlace": "guias/SQL/tipo_datos/tipo_datos.html"
+        },
+        {
+            "titulo": "Manipulación de Datos",
+            "descripcion": "Aprende las diferentes formas para manipular los datos de una base de datos relacionales",
+            "enlace": "guias/SQL/manipulacion_datos/manipulacion_datos.html"
+        },
+        {
+            "titulo": "Restricciones",
+            "descripcion": "Restricciones de una base de datos relacional",
+            "enlace": "guias/SQL/restricciones/restricciones.html"
+        },
+        {
+            "titulo": "Funciones Agregadas",
+            "descripcion": "Aprende las diferentes funciones agregadas para operar sobre base de datos relacionales",
+            "enlace": "guias/SQL/funciones_agregadas/funciones_agregadas.html"
         }]
     },
     {

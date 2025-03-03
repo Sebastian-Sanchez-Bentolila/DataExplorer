@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Manipulación de datos en SQL</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Manipulación de Datos en SQL</h1>
+        
+        <p>SQL proporciona varias instrucciones para manipular datos dentro de las bases de datos. Estas operaciones incluyen la inserción, actualización, eliminación y consulta de datos. A continuación, exploraremos los comandos más utilizados.</p>
+        
+        <h2>INSERT - Insertar Datos</h2>
+        <p>El comando <code>INSERT</code> permite agregar nuevas filas a una tabla.</p>
+        <pre><code>
+INSERT INTO empleados (id, nombre, edad, salario)
+VALUES (1, 'Carlos Pérez', 30, 50000);
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se inserta una nueva fila en la tabla empleados.</p>
+        
+        <h2>UPDATE - Actualizar Datos</h2>
+        <p>El comando <code>UPDATE</code> permite modificar registros existentes.</p>
+        <pre><code>
+UPDATE empleados
+SET salario = 62000
+WHERE id = 3;   
+        </code></pre>
+        <p>También podemos actualizar múltiples campos:</p>
+        <p><strong>Salida en consola:</strong> Se actualiza el salario de la empleada con ID 3.</p>
+        
+        <h2>DELETE - Eliminar Datos</h2>
+        <p>El comando <code>DELETE</code> se usa para eliminar registros de una tabla.</p>
+        <pre><code>DELETE FROM empleados WHERE id = 1;</code></pre>
+        <p><strong>Salida en consola:</strong> Se elimina la fila con ID 1 de la tabla empleados.</p>
+        <p>Si queremos eliminar todos los registros de una tabla sin eliminar la estructura:</p>
+        <pre><code>DELETE FROM empleados;</code></pre>
+        
+        <h2>SELECT - Consultar Datos</h2>
+        <p>El comando <code>SELECT</code> permite recuperar información de una tabla.</p>
+        <pre><code>SELECT * FROM empleados;</code></pre>
+        <p>Podemos filtrar los resultados:</p>
+        <pre><code>SELECT nombre, salario FROM empleados WHERE salario > 55000;</code></pre>
+        <p><strong>Salida en consola:</strong> Se muestran todos los registros de la tabla empleados.</p>
+
+        <h2>WHERE</h2>
+        <p>El operador <code>WHERE</code> se usa para filtrar registros en una consulta.</p>
+        <pre><code>SELECT * FROM empleados WHERE edad>30;</code></pre>
+
+        <h2>BETWEEN</h2>
+        <p>Se usa para seleccionar valores dentro de un rango.</p>
+        <pre><code>SELECT * FROM productos WHERE precio BETWEEN 100 AND 500;</code></pre>
+
+        <h2>LIKE NOT LIKE</h2>
+        <p>Se usan para buscar patrones en texto.</p>
+        <pre><code>
+SELECT * FROM clientes WHERE nombre LIKE 'A%';  -- Nombres que empiezan con 'A'
+SELECT * FROM clientes WHERE nombre NOT LIKE '%z';  -- Nombres que no terminan en 'z'
+        </code></pre>
+
+        <h2>IS NULL e IS NOT NULL</h2>
+        <p>Se usan para filtrar registros que tienen valores nulos o no nulos.</p>
+        <pre><code>
+SELECT * FROM empleados WHERE telefono IS NULL;
+SELECT * FROM empleados WHERE telefono IS NOT NULL;
+        </code></pre>
+
+        <h2>DISTINCT</h2>
+        <p>Elimina los valores duplicados de un resultado.</p>
+        <pre><code>SELECT DISTINCT ciudad FROM clientes;</code></pre>
+
+
+        <h2>TRUNCATE - Vaciar una Tabla</h2>
+        <p>El comando <code>TRUNCATE</code> elimina todos los registros de una tabla, pero mantiene su estructura.</p>
+        <pre><code>TRUNCATE TABLE empleados;</code></pre>
+        <p><strong>Salida en consola:</strong> Se eliminan todos los datos de la tabla empleados.</p>
+        
+        <h2>REPLACE - Inserción o Reemplazo de Datos</h2>
+        <p>El comando <code>REPLACE</code> inserta un nuevo registro o reemplaza uno existente si hay un conflicto de clave primaria.</p>
+        <pre><code>
+REPLACE INTO empleados (id, nombre, puesto, salario)
+VALUES (1, 'Ana Pérez', 'Gerente', 60000);
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se reemplaza la fila con ID 1 si ya existía; de lo contrario, se inserta.</p>
+
+        <h2>LIMIT - Restricción en la Cantidad de Resultados</h2>
+        <p>El comando <code>LIMIT</code> permite restringir la cantidad de registros devueltos por una consulta.</p>
+        <pre><code>
+SELECT * FROM empleados
+LIMIT 5;
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se muestran los primeros 5 registros de la tabla empleados.</p>
+
+        <h2>ORDER BY - Ordenación de Resultados</h2>
+        <p>El comando <code>ORDER BY</code> se usa para ordenar los resultados según una columna específica.</p>
+        <pre><code>
+SELECT * FROM empleados
+ORDER BY salario DESC;
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se muestran los empleados ordenados por salario en orden descendente.</p>
+
+        <h2>GROUP BY - Agrupación de Resultados</h2>
+        <p>El comando <code>GROUP BY</code> permite agrupar resultados según una columna y aplicar funciones agregadas.</p>
+        <pre><code>
+SELECT puesto, COUNT(*) AS cantidad
+FROM empleados
+GROUP BY puesto;
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se muestra la cantidad de empleados por cada puesto.</p>
+
+        <h2>HAVING - Filtrado de Agrupaciones</h2>
+        <p>El comando <code>HAVING</code> se usa para filtrar resultados después de agruparlos.</p>
+        <pre><code>
+SELECT puesto, COUNT(*) AS cantidad
+FROM empleados
+GROUP BY puesto
+HAVING COUNT(*) > 2;
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se muestran solo los puestos con más de 2 empleados.</p>
+
+        <h2>EXISTS - Verificación de Existencia</h2>
+        <p>El comando <code>EXISTS</code> se usa para verificar si una subconsulta devuelve resultados.</p>
+        <pre><code>
+SELECT nombre FROM empleados e
+WHERE EXISTS (SELECT 1 FROM departamentos d WHERE e.id = d.jefe_id);
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se listan los nombres de empleados que son jefes de algún departamento.</p>
+
+        <h2>IN - Búsqueda en una Lista de Valores</h2>
+        <p>El comando <code>IN</code> permite buscar valores dentro de una lista específica.</p>
+        <pre><code>
+SELECT * FROM empleados
+WHERE puesto IN ('Desarrolladora', 'Gerente');
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se muestran los empleados que tienen los puestos especificados.</p>
+
+        <h2>CASE - Condiciones en Consultas</h2>
+        <p>El comando <code>CASE</code> se usa para realizar evaluaciones condicionales dentro de una consulta.</p>
+        <pre><code>
+SELECT nombre, salario,
+CASE
+    WHEN salario > 50000 THEN 'Alto'
+    WHEN salario BETWEEN 30000 AND 50000 THEN 'Medio'
+    ELSE 'Bajo'
+END AS categoria_salarial
+FROM empleados;
+        </code></pre>
+        <p><strong>Salida en consola:</strong> Se muestra la categoría salarial de cada empleado.</p>
+        
+        
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/sql/">Documentación SQL - W3Schools</a></li>
+            <li><a href="https://dev.mysql.com/doc/">Guía Oficial de MySQL</a></li>
+            <li><a href="https://www.postgresql.org/docs/">Manual de PostgreSQL</a></li>
+        </ul>
+    </div>
+       
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
