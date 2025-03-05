@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Derivadas</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Derivadas: Concepto, Propiedades y Aplicaciones</h1>
+    
+        <p>Las derivadas son un concepto fundamental en el cálculo diferencial, utilizado para medir la tasa de cambio de una función con respecto a una variable. Se aplican en múltiples áreas como la física, economía, ingeniería y machine learning.</p>
+    
+        <h2>Definición de Derivada</h2>
+        <p>La derivada de una función \( f(x) \) en un punto \( x \) se define como el límite del cociente de diferencias cuando el incremento en \( x \) tiende a cero:</p>
+    
+        <div class="ecuacion">
+            \[
+            f'(x) = \lim\limits_{h \to 0} \frac{f(x+h) - f(x)}{h}
+            \]
+        </div>
+    
+        <p>Si este límite existe, se dice que la función es **diferenciable** en \( x \).</p>
+    
+        <h2>Reglas de Derivación</h2>
+        <p>Para calcular derivadas de manera eficiente, se utilizan reglas como:</p>
+        
+        <ul>
+            <li><strong>Regla de la Potencia:</strong> \(\frac{d}{dx} x^n = n x^{n-1}\)</li>
+            <li><strong>Regla del Producto:</strong> \(\frac{d}{dx} [u v] = u' v + u v'\)</li>
+            <li><strong>Regla del Cociente:</strong> \(\frac{d}{dx} \left(\frac{u}{v}\right) = \frac{u' v - u v'}{v^2}\)</li>
+            <li><strong>Regla de la Cadena:</strong> Si \( y = f(g(x)) \), entonces \( \frac{dy}{dx} = f'(g(x)) g'(x) \).</li>
+        </ul>
+    
+        <h2>Ejemplo de Cálculo de Derivadas</h2>
+        <p>Calculemos la derivada de \( f(x) = x^3 - 5x^2 + 3x - 7 \):</p>
+    
+        <pre><code>f'(x) = 3x² - 10x + 3</code></pre>
+    
+        <h2>Cálculo de Derivadas en Python</h2>
+        <p>Podemos utilizar la biblioteca <code>sympy</code> para calcular derivadas en Python:</p>
+    
+        <pre><code>
+import sympy as sp
+    
+x = sp.Symbol('x')
+f = x**3 - 5*x**2 + 3*x - 7
+derivada = sp.diff(f, x)
+print(derivada) 
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>3*x**2 - 10*x + 3</code></pre>
+    
+        <h2>Cálculo de Derivadas en R</h2>
+        <p>También podemos calcular derivadas en R con la función <code>D()</code>:</p>
+    
+        <pre><code>
+# Definir la función en R
+f <- expression(x^3 - 5*x^2 + 3*x - 7)
+    
+# Calcular la derivada
+D(f, "x")  
+        </code></pre>
+        <p>Salida en consola: </p>
+        <pre><code>3 * x^2 - 10 * x + 3</code></pre>
+    
+        <h2>Aplicaciones de las Derivadas</h2>
+        <ul>
+            <li><strong>Optimización:</strong> Se usan para encontrar máximos y mínimos de funciones.</li>
+            <li><strong>Física:</strong> Describen velocidades y aceleraciones en cinemática.</li>
+            <li><strong>Machine Learning:</strong> Se aplican en el cálculo del gradiente en modelos de optimización.</li>
+        </ul>
+
+        <h2>Reglas Avanzadas de Derivación</h2>
+        <p>Además de las reglas básicas, existen reglas avanzadas que nos permiten derivar funciones más complejas.</p>
+
+        <h3>Derivada de Funciones Exponenciales y Logarítmicas</h3>
+        <ul>
+            <li>\(\frac{d}{dx} e^x = e^x\)</li>
+            <li>\(\frac{d}{dx} a^x = a^x \ln a\)</li>
+            <li>\(\frac{d}{dx} \ln x = \frac{1}{x}\)</li>
+            <li>\(\frac{d}{dx} \log_a x = \frac{1}{x \ln a}\)</li>
+        </ul>
+
+        <h3>Derivada de Funciones Trigonométricas</h3>
+        <ul>
+            <li>\(\frac{d}{dx} \sin x = \cos x\)</li>
+            <li>\(\frac{d}{dx} \cos x = -\sin x\)</li>
+            <li>\(\frac{d}{dx} \tan x = \sec^2 x\)</li>
+            <li>\(\frac{d}{dx} \cot x = -\csc^2 x\)</li>
+        </ul>
+
+        <h2>Derivadas Parciales</h2>
+        <p>Cuando una función depende de múltiples variables, se utilizan las derivadas parciales para medir el cambio con respecto a una de ellas, manteniendo las demás constantes.</p>
+
+        <p>La derivada parcial de una función \( f(x,y) \) respecto a \( x \) se denota como:</p>
+
+        <div class="ecuacion">
+            \[
+            \frac{\partial f}{\partial x} = \lim\limits_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
+            \]
+        </div>
+
+        <h3>Ejemplo</h3>
+        <p>Si \( f(x, y) = x^2y + 3xy^2 \), sus derivadas parciales son:</p>
+
+        <ul>
+            <li>\(\frac{\partial f}{\partial x} = 2xy + 3y^2\)</li>
+            <li>\(\frac{\partial f}{\partial y} = x^2 + 6xy\)</li>
+        </ul>
+
+        <h2>Derivadas Dobles</h2>
+        <p>La derivada doble se obtiene aplicando la derivación dos veces a una función.</p>
+
+        <p>Para una función de una sola variable \( f(x) \), la derivada segunda se expresa como:</p>
+
+        <div class="ecuacion">
+            \[
+            f''(x) = \frac{d^2 f}{dx^2}
+            \]
+        </div>
+
+        <p>En funciones de varias variables, se pueden calcular derivadas parciales segundas:</p>
+
+        <ul>
+            <li>\(\frac{\partial^2 f}{\partial x^2}\) mide cómo cambia \(\frac{\partial f}{\partial x}\).</li>
+            <li>\(\frac{\partial^2 f}{\partial y^2}\) mide cómo cambia \(\frac{\partial f}{\partial y}\).</li>
+            <li>\(\frac{\partial^2 f}{\partial x \partial y}\) mide la interacción entre \( x \) y \( y \).</li>
+        </ul>
+
+        <h2>Derivadas e Interpretación Geométrica</h2>
+        <p>La derivada representa la pendiente de la recta tangente a una curva en un punto. En funciones de varias variables:</p>
+
+        <ul>
+            <li>Las derivadas parciales indican cómo cambia la función en una dirección específica.</li>
+            <li>El **gradiente** \(\nabla f(x, y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)\) señala la dirección de máximo crecimiento.</li>
+        </ul>
+
+        <h2>Aplicaciones Avanzadas</h2>
+        <ul>
+            <li><strong>Ecuaciones Diferenciales:</strong> Modelan fenómenos físicos y biológicos.</li>
+            <li><strong>Optimización en Machine Learning:</strong> Se usan en el descenso de gradiente para entrenar modelos.</li>
+            <li><strong>Economía:</strong> Analizan tasas de cambio en costos y beneficios.</li>
+        </ul>
+    
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://es.wikipedia.org/wiki/Derivada" target="_blank">Artículo sobre derivadas en Wikipedia</a></li>
+            <li><a href="https://www.sympy.org/" target="_blank">Documentación de SymPy para cálculo simbólico</a></li>
+            <li><a href="https://www.rdocumentation.org/" target="_blank">Documentación de R para cálculo de derivadas</a></li>
+            <li><a href="https://mathworld.wolfram.com/PartialDerivative.html" target="_blank">Artículo sobre derivadas parciales en Wolfram</a></li>
+            <li><a href="https://es.khanacademy.org/math/multivariable-calculus" target="_blank">Curso de cálculo multivariable en Khan Academy</a></li>
+        </ul>
+    </div>  
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

@@ -151,7 +151,12 @@ const guiasJSON = [
             "titulo": "Logaritmo",
             "descripcion": "Logaritmo",
             "enlace": "guias/matematica/logaritmo/logaritmo.html"
-        }]
+        },
+        {
+            "titulo": "Derivadas",
+            "descripcion": "Derivadas",
+            "enlace": "guias/matematica/derivadas/derivadas.html"
+        },]
     },
     {
         "tecnologia": "Git",
