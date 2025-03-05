@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Límite</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <head>
+        <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    </head>
+    
+    <div class="contenido">
+        <h1>Límites: Conceptos y Aplicaciones</h1>
+        <p>Los límites son fundamentales en el cálculo y el análisis matemático, ya que permiten estudiar el comportamiento de una función cuando una variable se acerca a un valor específico.</p>
+        
+        <h2>¿Qué es un Límite?</h2>
+        <p>El límite de una función \( f(x) \) cuando \( x \) se aproxima a un número \( a \) se denota como:</p>
+        
+        \[
+        \lim\limits_{x \to a} f(x)
+        \]
+        
+        <p>Esto significa que, a medida que \( x \) se acerca a \( a \), la función \( f(x) \) se aproxima a un valor determinado.</p>
+        
+        <h3>Ejemplo Básico</h3>
+        <p>Si \( f(x) = x^2 \), entonces:</p>
+        
+        \[
+        \lim\limits_{x \to 2} x^2 = 4
+        \]
+        
+        <p>Porque cuando \( x \) se acerca a 2, \( x^2 \) se acerca a 4.</p>
+        
+        <h2>Límites Laterales</h2>
+        <p>Los límites laterales analizan la función desde la izquierda (\( x \to a^- \)) y desde la derecha (\( x \to a^+ \)):</p>
+        
+        <ul>
+            <li><strong>Límite por la izquierda:</strong> \( \lim\limits_{x \to a^-} f(x) \)</li>
+            <li><strong>Límite por la derecha:</strong> \( \lim\limits_{x \to a^+} f(x) \)</li>
+        </ul>
+        
+        <p>Para que el límite exista, debe cumplirse:</p>
+        
+        \[
+        \lim\limits_{x \to a^-} f(x) = \lim\limits_{x \to a^+} f(x)
+        \]
+        
+        <h3>Ejemplo</h3>
+        <p>Sea la función:</p>
+        
+        \[
+        f(x) =
+        \begin{cases}
+        x + 1, & x < 3 \\
+        2x, & x \geq 3
+        \end{cases}
+        \]
+        
+        <p>Calculamos los límites laterales en \( x = 3 \):</p>
+        
+        <ul>
+            <li>\( \lim\limits_{x \to 3^-} f(x) = 3 + 1 = 4 \)</li>
+            <li>\( \lim\limits_{x \to 3^+} f(x) = 2(3) = 6 \)</li>
+        </ul>
+        
+        <p>Como \( 4 \neq 6 \), el límite en \( x = 3 \) no existe.</p>
+        
+        <h2>Límites Infinitos y Asíntotas</h2>
+        <p>Un límite infinito ocurre cuando la función crece sin acotación:</p>
+        
+        \[
+        \lim\limits_{x \to a} f(x) = \infty \quad \text{o} \quad \lim\limits_{x \to a} f(x) = -\infty
+        \]
+        
+        <p>Si esto ocurre en un punto \( x = a \), hay una <strong>asíntota vertical</strong> en \( x = a \).</p>
+        
+        <h3>Ejemplo</h3>
+        <p>Para la función \( f(x) = \frac{1}{x-2} \), calculamos:</p>
+        
+        <ul>
+            <li>\( \lim\limits_{x \to 2^-} \frac{1}{x-2} = -\infty \)</li>
+            <li>\( \lim\limits_{x \to 2^+} \frac{1}{x-2} = \infty \)</li>
+        </ul>
+        
+        <p>Por lo que \( x = 2 \) es una <strong>asíntota vertical</strong>.</p>
+        
+        <h2>Indeterminaciones y Técnicas de Resolución</h2>
+        <p>Cuando un límite da una forma indeterminada como:</p>
+        
+        <ul>
+            <li>\( \frac{0}{0} \)</li>
+            <li>\( \frac{\infty}{\infty} \)</li>
+            <li>\( 0 \cdot \infty \)</li>
+        </ul>
+        
+        <p>Se deben aplicar técnicas como:</p>
+        
+        <ul>
+            <li>Factorización</li>
+            <li>Racionalización</li>
+            <li>Regla de L'Hôpital</li>
+        </ul>
+        
+        <h3>Ejemplo con Factorización</h3>
+        <p>Calculemos:</p>
+        
+        \[
+        \lim\limits_{x \to 2} \frac{x^2 - 4}{x - 2}
+        \]
+        
+        <p>Factorizamos:</p>
+        
+        \[
+        \lim\limits_{x \to 2} \frac{(x-2)(x+2)}{x-2}
+        \]
+        
+        <p>Cancelamos \( x - 2 \) y obtenemos:</p>
+        
+        \[
+        \lim\limits_{x \to 2} x+2 = 4
+        \]
+        
+        <h2>Regla de L'Hôpital</h2>
+        <p>Si un límite tiene una indeterminación \( \frac{0}{0} \) o \( \frac{\infty}{\infty} \), aplicamos la derivada:</p>
+        
+        \[
+        \lim\limits_{x \to a} \frac{f(x)}{g(x)} = \lim\limits_{x \to a} \frac{f'(x)}{g'(x)}
+        \]
+        
+        <h3>Ejemplo</h3>
+        <p>Calculemos:</p>
+        
+        \[
+        \lim\limits_{x \to 0} \frac{\sin x}{x}
+        \]
+        
+        <p>Ambos tienden a \( 0 \), aplicamos L'Hôpital:</p>
+        
+        \[
+        \lim\limits_{x \to 0} \frac{\cos x}{1} = 1
+        \]
+        
+        <h2>Aplicaciones de los Límites</h2>
+        <ul>
+            <li><strong>Definición de la derivada:</strong> \( \lim\limits_{h \to 0} \frac{f(x+h) - f(x)}{h} \).</li>
+            <li><strong>Estudio de continuidad:</strong> Se verifica si una función es continua en un punto.</li>
+            <li><strong>Modelos en física:</strong> Se usan en velocidad instantánea y tasas de cambio.</li>
+        </ul>
+        
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://es.khanacademy.org/math/calculus-1/limits" target="_blank">Curso sobre límites en Khan Academy</a></li>
+            <li><a href="https://mathworld.wolfram.com/Limit.html" target="_blank">Artículo sobre límites en Wolfram</a></li>
+        </ul>
+    </div>
+    
+
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

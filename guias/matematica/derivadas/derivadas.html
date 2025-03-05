@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="../../styles_guias.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 <body>
     <header class="header">
@@ -39,6 +42,8 @@
         </div>
     
         <p>Si este límite existe, se dice que la función es **diferenciable** en \( x \).</p>
+
+        <img src="src/img/derivada_grafico.jpg" alt="Imágen de recta tangente y derivada">
     
         <h2>Reglas de Derivación</h2>
         <p>Para calcular derivadas de manera eficiente, se utilizan reglas como:</p>
@@ -113,11 +118,9 @@ D(f, "x")
 
         <p>La derivada parcial de una función \( f(x,y) \) respecto a \( x \) se denota como:</p>
 
-        <div class="ecuacion">
-            \[
-            \frac{\partial f}{\partial x} = \lim\limits_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
-            \]
-        </div>
+        \[
+        \frac{\partial f}{\partial x} = \lim\limits_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
+        \]
 
         <h3>Ejemplo</h3>
         <p>Si \( f(x, y) = x^2y + 3xy^2 \), sus derivadas parciales son:</p>
@@ -132,11 +135,9 @@ D(f, "x")
 
         <p>Para una función de una sola variable \( f(x) \), la derivada segunda se expresa como:</p>
 
-        <div class="ecuacion">
-            \[
-            f''(x) = \frac{d^2 f}{dx^2}
-            \]
-        </div>
+        \[
+        f''(x) = \frac{d^2 f}{dx^2}
+        \]
 
         <p>En funciones de varias variables, se pueden calcular derivadas parciales segundas:</p>
 
@@ -151,7 +152,7 @@ D(f, "x")
 
         <ul>
             <li>Las derivadas parciales indican cómo cambia la función en una dirección específica.</li>
-            <li>El **gradiente** \(\nabla f(x, y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)\) señala la dirección de máximo crecimiento.</li>
+            <li>El <strong>gradiente</strong> \( \nabla f(x, y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right) \) señala la dirección de máximo crecimiento.</li>
         </ul>
 
         <h2>Aplicaciones Avanzadas</h2>

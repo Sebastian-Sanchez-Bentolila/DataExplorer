@@ -153,10 +153,20 @@ const guiasJSON = [
             "enlace": "guias/matematica/logaritmo/logaritmo.html"
         },
         {
+            "titulo": "Números Complejos",
+            "descripcion": "Números Complejos",
+            "enlace": "guias/matematica/numero_complejos/numero_complejos.html"
+        },
+        {
+            "titulo": "Límites",
+            "descripcion": "Límites matemáticos",
+            "enlace": "guias/matematica/limite/limite.html"
+        },
+        {
             "titulo": "Derivadas",
             "descripcion": "Derivadas",
             "enlace": "guias/matematica/derivadas/derivadas.html"
-        },]
+        }]
     },
     {
         "tecnologia": "Git",
