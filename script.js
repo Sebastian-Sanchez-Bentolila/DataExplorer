@@ -137,6 +137,11 @@ const guiasJSON = [
             "titulo": "Funciones Agregadas",
             "descripcion": "Aprende las diferentes funciones agregadas para operar sobre base de datos relacionales",
             "enlace": "guias/SQL/funciones_agregadas/funciones_agregadas.html"
+        },
+        {
+            "titulo": "JOIN y uniones",
+            "descripcion": "Uniones e intersecciones en SQL",
+            "enlace": "guias/SQL/join/join.html"
         }]
     },
     {
