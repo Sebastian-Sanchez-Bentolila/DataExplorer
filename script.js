@@ -152,6 +152,11 @@ const guiasJSON = [
             "titulo": "Rutinas",
             "descripcion": "Rutinas en SQL",
             "enlace": "guias/SQL/rutinas/rutinas.html"
+        },
+        {
+            "titulo": "Variables",
+            "descripcion": "Variables en SQL",
+            "enlace": "guias/SQL/variables/variables.html"
         }]
     },
     {
