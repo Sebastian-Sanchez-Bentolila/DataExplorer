@@ -157,6 +157,11 @@ const guiasJSON = [
             "titulo": "Variables",
             "descripcion": "Variables en SQL",
             "enlace": "guias/SQL/variables/variables.html"
+        },
+        {
+            "titulo": "Mejores Prácticas",
+            "descripcion": "Optimización y mejores prácticas en SQL",
+            "enlace": "guias/SQL/optimizacion/optimizacion.html"
         }]
     },
     {
