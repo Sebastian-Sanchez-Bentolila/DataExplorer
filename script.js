@@ -142,7 +142,12 @@ const guiasJSON = [
             "titulo": "JOIN y uniones",
             "descripcion": "Uniones e intersecciones en SQL",
             "enlace": "guias/SQL/join/join.html"
-        }]
+        },
+        {
+            "titulo": "SubConsultas",
+            "descripcion": "Subconsultas en SQL",
+            "enlace": "guias/SQL/subconsultas/subconsultas.html"
+        },]
     },
     {
         "tecnologia": "Matemáticas",
