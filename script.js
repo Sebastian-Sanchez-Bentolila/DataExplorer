@@ -147,7 +147,7 @@ const guiasJSON = [
             "titulo": "SubConsultas",
             "descripcion": "Subconsultas en SQL",
             "enlace": "guias/SQL/subconsultas/subconsultas.html"
-        },]
+        }]
     },
     {
         "tecnologia": "Matemáticas",
