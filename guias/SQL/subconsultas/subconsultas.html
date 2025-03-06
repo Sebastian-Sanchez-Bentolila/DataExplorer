@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a R</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+
+    <h1>📌 Subconsultas en SQL</h1>
+
+    <p>
+        Una <strong>subconsulta</strong> en SQL es una consulta anidada dentro de otra consulta principal.
+        Se utilizan para obtener datos que luego serán usados en la consulta externa.
+    </p>
+
+    <p>Las subconsultas pueden aparecer en:</p>
+    <ul>
+        <li><strong>SELECT</strong>: Para filtrar o calcular valores.</li>
+        <li><strong>FROM</strong>: Para tratar la subconsulta como una tabla temporal.</li>
+        <li><strong>WHERE</strong>: Para filtrar resultados basados en otra consulta.</li>
+    </ul>
+
+    <h2>🔹 Ejemplo de Base de Datos</h2>
+
+    <p>Supongamos que tenemos las siguientes tablas:</p>
+
+    <h3>📌 Tabla <code>empleados</code></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>id_empleado</th>
+                <th>nombre</th>
+                <th>id_departamento</th>
+                <th>salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Ana</td><td>101</td><td>50000</td></tr>
+            <tr><td>2</td><td>Juan</td><td>102</td><td>60000</td></tr>
+            <tr><td>3</td><td>Pedro</td><td>101</td><td>55000</td></tr>
+            <tr><td>4</td><td>Marta</td><td>103</td><td>70000</td></tr>
+        </tbody>
+    </table>
+
+    <h3>📌 Tabla <code>departamentos</code></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>id_departamento</th>
+                <th>nombre_departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>101</td><td>Ventas</td></tr>
+            <tr><td>102</td><td>IT</td></tr>
+            <tr><td>103</td><td>Finanzas</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Ejemplo de Subconsulta en <code>WHERE</code></h2>
+
+    <p>Queremos encontrar los empleados cuyo salario es <strong>mayor al salario promedio</strong> de todos los empleados.</p>
+
+    <pre><code>
+SELECT nombre, salario 
+FROM empleados
+WHERE salario > (SELECT AVG(salario) FROM empleados);
+    </code></pre>
+
+    <h3>💻 Salida en consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>nombre</th>
+                <th>salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Juan</td><td>60000</td></tr>
+            <tr><td>Marta</td><td>70000</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Subconsulta en <code>SELECT</code></h2>
+
+    <p>Queremos mostrar el nombre de cada empleado junto con el nombre de su departamento.</p>
+
+    <pre><code>
+SELECT nombre, 
+       (SELECT nombre_departamento 
+        FROM departamentos 
+        WHERE departamentos.id_departamento = empleados.id_departamento) 
+       AS departamento
+FROM empleados;
+    </code></pre>
+
+    <h3>💻 Salida en consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>nombre</th>
+                <th>departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Ana</td><td>Ventas</td></tr>
+            <tr><td>Juan</td><td>IT</td></tr>
+            <tr><td>Pedro</td><td>Ventas</td></tr>
+            <tr><td>Marta</td><td>Finanzas</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Subconsulta en <code>FROM</code> (Subconsultas Derivadas)</h2>
+
+    <p>Podemos usar una subconsulta como una tabla temporal para calcular valores antes de usarlos en la consulta principal.</p>
+
+    <p><strong>📌 Queremos mostrar el salario promedio por departamento.</strong></p>
+
+    <pre><code>
+SELECT d.nombre_departamento, t.salario_promedio
+FROM (SELECT id_departamento, AVG(salario) AS salario_promedio 
+      FROM empleados 
+      GROUP BY id_departamento) AS t
+JOIN departamentos d ON t.id_departamento = d.id_departamento;
+    </code></pre>
+
+    <h3>💻 Salida en consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>nombre_departamento</th>
+                <th>salario_promedio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Ventas</td><td>52500</td></tr>
+            <tr><td>IT</td><td>60000</td></tr>
+            <tr><td>Finanzas</td><td>70000</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Subconsulta con <code>EXISTS</code></h2>
+
+    <p>📌 Queremos listar empleados que trabajan en un departamento específico (por ejemplo, "IT").</p>
+
+    <pre><code>
+SELECT nombre 
+FROM empleados e
+WHERE EXISTS (SELECT 1 FROM departamentos d 
+              WHERE d.id_departamento = e.id_departamento 
+              AND d.nombre_departamento = 'IT');
+    </code></pre>
+
+    <h3>💻 Salida en consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Juan</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Diferencias entre <code>EXISTS</code> y <code>IN</code></h2>
+
+    <p><strong>✅ Usando <code>IN</code></strong></p>
+    <pre><code>
+SELECT nombre 
+FROM empleados
+WHERE id_departamento IN (SELECT id_departamento 
+                          FROM departamentos 
+                          WHERE nombre_departamento = 'IT');
+    </code></pre>
+
+    <p><strong>✅ Usando <code>EXISTS</code></strong></p>
+    <pre><code>
+SELECT nombre 
+FROM empleados e
+WHERE EXISTS (SELECT 1 
+              FROM departamentos d 
+              WHERE d.id_departamento = e.id_departamento 
+              AND d.nombre_departamento = 'IT');
+    </code></pre>
+
+    <h2>🎯 Cuándo Usar Subconsultas</h2>
+
+    <ul>
+        <li>Cuando queremos calcular valores <strong>antes</strong> de ejecutar la consulta principal.</li>
+        <li>Para hacer filtros basados en otros resultados (subconsulta en <code>WHERE</code>).</li>
+        <li>Para generar columnas adicionales con información de otra tabla (subconsulta en <code>SELECT</code>).</li>
+        <li>Como alternativa a <code>JOIN</code> en casos donde sea más claro estructurar la consulta.</li>
+    </ul>
+
+    <h2>📚 Recursos Adicionales</h2>
+    <ul>
+        <li>📖 <a href="https://www.w3schools.com/sql/sql_subqueries.asp" target="_blank">Documentación de SQL - Subconsultas</a></li>
+        <li>🎥 <a href="https://www.youtube.com/watch?v=xyz" target="_blank">Video Explicativo sobre Subconsultas</a></li>
+    </ul>
+
+</div>
+
+
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
