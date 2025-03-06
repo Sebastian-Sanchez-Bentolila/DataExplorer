@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a R</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+
+    <h1>📌 Variables en SQL</h1>
+
+    <p>
+        En SQL, las <strong>variables</strong> se utilizan para almacenar valores temporales y usarlos dentro de consultas 
+        o procedimientos almacenados. Permiten manejar datos de forma flexible dentro del entorno de la base de datos.
+    </p>
+
+    <h2>🔹 Tipos de Variables en SQL</h2>
+
+    <p>Existen diferentes tipos de variables según su uso y el sistema de gestión de base de datos (DBMS). Las más comunes son:</p>
+
+    <ul>
+        <li><strong>Variables locales:</strong> Se definen dentro de un procedimiento almacenado o función y solo existen en ese contexto.</li>
+        <li><strong>Variables de usuario:</strong> Se pueden usar en una sesión de base de datos y existen hasta que finaliza la sesión.</li>
+        <li><strong>Variables de sistema:</strong> Son definidas por el DBMS y contienen información sobre la configuración y el estado del sistema.</li>
+    </ul>
+
+    <h2>🔹 Declaración y Uso de Variables Locales</h2>
+
+    <p>Las variables locales se usan dentro de procedimientos almacenados o funciones.</p>
+
+    <h3>📌 Sintaxis para Declarar una Variable</h3>
+
+    <pre><code>
+DECLARE nombre_variable TIPO_DE_DATO [DEFAULT valor_inicial];
+    </code></pre>
+
+    <h3>🔹 Ejemplo de Uso en un Procedimiento</h3>
+
+    <p>📌 Calculamos el salario anual de un empleado usando una variable.</p>
+
+    <pre><code>
+DELIMITER $$
+
+CREATE PROCEDURE CalcularSalarioAnual(IN salario_mensual DECIMAL(10,2))
+BEGIN
+    DECLARE salario_anual DECIMAL(10,2);
+    
+    SET salario_anual = salario_mensual * 12;
+    
+    SELECT salario_anual AS "Salario Anual";
+END $$
+
+DELIMITER ;
+    </code></pre>
+
+    <h3>✅ Llamar al Procedimiento</h3>
+
+    <pre><code>
+CALL CalcularSalarioAnual(50000);
+    </code></pre>
+
+    <h3>💻 Salida en Consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Salario Anual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>600000</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Variables de Usuario</h2>
+
+    <p>
+        Las <strong>variables de usuario</strong> se pueden usar en cualquier consulta dentro de una sesión y comienzan con el prefijo <code>@</code>.
+    </p>
+
+    <h3>📌 Definir y Usar una Variable de Usuario</h3>
+
+    <pre><code>
+SET @nombre = 'Sebastián';
+SELECT @nombre AS "Nombre del Usuario";
+    </code></pre>
+
+    <h3>💻 Salida en Consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Sebastián</td></tr>
+        </tbody>
+    </table>
+
+    <h3>🔹 Uso en Consultas</h3>
+
+    <p>📌 Usamos una variable para filtrar una consulta.</p>
+
+    <pre><code>
+SET @departamento_id = 101;
+SELECT nombre, salario FROM empleados WHERE id_departamento = @departamento_id;
+    </code></pre>
+
+    <h2>🔹 Variables de Sistema</h2>
+
+    <p>Las <strong>variables de sistema</strong> contienen información sobre la configuración y estado del servidor SQL.</p>
+
+    <h3>📌 Ejemplo de Variables de Sistema</h3>
+
+    <pre><code>
+SELECT @@version AS "Versión de MySQL", @@hostname AS "Nombre del Servidor";
+    </code></pre>
+
+    <h3>💻 Salida en Consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Versión de MySQL</th>
+                <th>Nombre del Servidor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>8.0.33</td><td>servidor-db</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🎯 Diferencias entre Tipos de Variables</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Ámbito</th>
+                <th>Ejemplo de Uso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Variables Locales</td>
+                <td>Solo dentro de un procedimiento o función</td>
+                <td><code>DECLARE total INT;</code></td>
+            </tr>
+            <tr>
+                <td>Variables de Usuario</td>
+                <td>Disponible en toda la sesión</td>
+                <td><code>SET @usuario = 'Ana';</code></td>
+            </tr>
+            <tr>
+                <td>Variables de Sistema</td>
+                <td>Configuración del sistema</td>
+                <td><code>SELECT @@version;</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>📚 Recursos Adicionales</h2>
+    <ul>
+        <li>📖 <a href="https://www.w3schools.com/sql/sql_variables.asp" target="_blank">Guía sobre Variables en SQL</a></li>
+        <li>🎥 <a href="https://www.youtube.com/watch?v=xyz" target="_blank">Video Explicativo sobre Variables</a></li>
+    </ul>
+
+</div>
+
+
+
+
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
