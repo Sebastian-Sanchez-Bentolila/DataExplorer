@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a R</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+    <h1>Diseño de una Base de Datos</h1>
+
+    <p>El diseño de una base de datos es un proceso fundamental para garantizar su eficiencia, integridad y facilidad de mantenimiento. Un buen diseño reduce redundancias, mejora la organización de los datos y facilita las consultas.</p>
+
+    <h2>Fases del Diseño de una Base de Datos</h2>
+
+    <h3>1. Análisis de Requisitos</h3>
+    <p>Antes de diseñar una base de datos, es necesario comprender las necesidades del sistema. Algunas preguntas clave incluyen:</p>
+    <ul>
+        <li>¿Qué datos se van a almacenar?</li>
+        <li>¿Cómo se relacionan los datos entre sí?</li>
+        <li>¿Cuáles son los requisitos de consulta y rendimiento?</li>
+    </ul>
+
+    <h3>2. Modelo Conceptual</h3>
+    <p>Se crea un modelo de alto nivel de la base de datos utilizando diagramas entidad-relación (DER). En este modelo se definen:</p>
+    <ul>
+        <li>Entidades: Representan objetos o conceptos (ej. Cliente, Producto).</li>
+        <li>Atributos: Características de cada entidad (ej. nombre, precio).</li>
+        <li>Relaciones: Cómo interactúan las entidades entre sí (ej. Un cliente puede realizar múltiples compras).</li>
+    </ul>
+<h4>Principales Símbolos del Modelo Conceptual (DER)</h4>
+ <p>El **Diagrama Entidad-Relación** (DER) usa símbolos gráficos para representar la estructura de la base de datos. A continuación, se muestra un cuadro con los principales elementos:</p>
+<table>
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descripción</th>
+                <th>Ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>📦 Entidad</strong></td>
+                <td>Representa un objeto real del sistema (ejemplo: Cliente, Producto).</td>
+                <td><code>[Cliente]</code></td>
+            </tr>
+            <tr>
+                <td><strong>🔑 Clave Primaria</strong></td>
+                <td>Atributo único que identifica a cada entidad.</td>
+                <td><code>id_cliente (PK)</code></td>
+            </tr>
+            <tr>
+                <td><strong>🔗 Relación</strong></td>
+                <td>Vincula dos entidades.</td>
+                <td><code>Cliente --- Realiza ---> Pedido</code></td>
+            </tr>
+            <tr>
+                <td><strong>⚡ Atributo</strong></td>
+                <td>Propiedad de una entidad.</td>
+                <td><code>nombre, edad, dirección</code></td>
+            </tr>
+            <tr>
+                <td><strong>🔄 Cardinalidad</strong></td>
+                <td>Define el número de relaciones entre entidades.</td>
+                <td><code>1 a 1, 1 a muchos, muchos a muchos</code></td>
+            </tr>
+            <tr>
+                <td><strong>🟠 Entidad Débil</strong></td>
+                <td>No tiene clave primaria propia y depende de otra entidad.</td>
+                <td><code>Factura (depende de Pedido)</code></td>
+            </tr>
+        </tbody>
+    </table>
+<img src="src/img/der.png" alt="Simbolos diagrama Entidad Relación">
+
+<h4>Ejemplo</h4>
+ <p>Diseño de una base de datos para reservar recursos a los diferentes usuario en una universidad.</p>
+<img src="src/img/modelo_conceptual.png" alt="MER ejemplo">
+
+    <h3>3. Modelo Lógico</h3>
+    <p>Se traduce el modelo conceptual en un esquema más detallado utilizando el modelo relacional. En esta etapa se definen:</p>
+    <ul>
+        <li>Tablas y sus atributos.</li>
+        <li>Claves primarias y foráneas.</li>
+        <li>Relaciones entre tablas.</li>
+        <li>Reglas de integridad.</li>
+    </ul>
+
+<h4>Ejemplo</h4>
+ <p>Diseño de una base de datos para reservar recursos a los diferentes usuario en una universidad.</p>
+<img src="src/img/modelo_logico_relacional.png" alt="Modelo Lógico Ejemplo">
+    
+<h3>4. Normalización</h3>
+    <p>La normalización es el proceso de organizar los datos para reducir redundancias y mejorar la consistencia. Las formas normales incluyen:</p>
+    <ul>
+        <li><strong>1NF (Primera Forma Normal):</strong> Elimina grupos repetidos en una tabla.</li>
+        <li><strong>2NF (Segunda Forma Normal):</strong> Elimina dependencias parciales de la clave primaria.</li>
+        <li><strong>3NF (Tercera Forma Normal):</strong> Elimina dependencias transitivas.</li>
+    </ul>
+
+    <h3>5. Modelo Físico</h3>
+    <p>Se implementa el modelo lógico en un sistema de gestión de bases de datos (SGBD), definiendo aspectos como:</p>
+    <ul>
+        <li>Tipos de datos de cada columna.</li>
+        <li>Índices para mejorar el rendimiento.</li>
+        <li>Políticas de seguridad y acceso.</li>
+    </ul>
+
+<h4>Ejemplo</h4>
+ <p>Diseño de una base de datos para reservar recursos a los diferentes usuario en una universidad.</p>
+<pre><code>
+CREATE TABLE Usuario(
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  DNI VARCHAR(20) not NULL UNIQUE,
+  id_usuario INT AUTO_INCREMENT,
+  tipo_usuario ENUM('estudiante', 'profesor', 'bibliotecario'),
+  coreo VARCHAR(50) NOT NULL UNIQUE,
+  fec_nacimiento DATE NOT NULL,
+  ciudad VARCHAR(100),
+  CP VARCHAR(20),
+  calle VARCHAR(100),
+  numero INT,
+  PRIMARY KEY(id_usuario)
+);
+
+CREATE TABLE Recurso(
+  id_recurso INT AUTO_INCREMENT,
+  tipo_reserva VARCHAR(20) NOT NULL,
+  especificaciones TEXT,
+  capacidad INT,
+  PRIMARY KEY(id_recurso)
+);
+
+CREATE TABLE Horario(
+  id_horario INT AUTO_INCREMENT,
+  hora_inicio TIME NOT NULL, 
+  hora_fin TIME NOT NULL,
+  PRIMARY KEY(id_horario)
+);
+
+CREATE Disponibilidad(
+  id_disponibilidad INT AUTO_INCREMENT,
+  id_recurso INT NOT NULL,
+  id_horario INT NOT NULL,
+  fecha DATE NOT NULL,
+  estado ENUM('disponible', 'reservado') DEFAULT 'disponible',
+  PRIMARY KEY(id_disponibilidad),
+  FOREIGN KEY (id_recurso) REFERENCES Recurso(id_recurso),
+  FOREIGN KEY (id_horario) REFERENCES Horario(id_horario)
+);
+
+CREATE TABLE Reserva(
+  id_reserva INT AUTO_INCREMENT,
+  id_usuario INT NOT NULL,
+  estado ENUM('activa', 'cancelada') DEFAULT 'activa',
+  fecha_reserva DATE NOT NULL,
+  PRIMARY KEY(id_reserva),
+  FOREIGN KEY (id_disponibilidad) REFERENCES Disponibilidad(id_disponibilidad),
+  FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+);
+</code></pre>
+
+    <h2>Buenas Prácticas en el Diseño de Bases de Datos</h2>
+
+    <h3>Uso de Claves Primarias y Foráneas</h3>
+    <p>Las claves primarias garantizan la unicidad de los registros, mientras que las claves foráneas aseguran la integridad referencial entre tablas.</p>
+
+    <h3>Índices para Mejorar el Rendimiento</h3>
+    <p>Los índices optimizan la velocidad de búsqueda en tablas con grandes volúmenes de datos.</p>
+
+    <h3>Evitar la Redundancia de Datos</h3>
+    <p>Un diseño bien estructurado reduce la duplicación de datos, mejorando la consistencia y eficiencia.</p>
+
+    <h3>Uso de Vistas y Procedimientos Almacenados</h3>
+    <p>Las vistas simplifican las consultas y los procedimientos almacenados mejoran la eficiencia del sistema.</p>
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
