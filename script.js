@@ -162,6 +162,11 @@ const guiasJSON = [
             "titulo": "Mejores Prácticas",
             "descripcion": "Optimización y mejores prácticas en SQL",
             "enlace": "guias/SQL/optimizacion/optimizacion.html"
+        },
+        {
+            "titulo": "Diseño",
+            "descripcion": "Diseño de una Base de Datos",
+            "enlace": "guias/SQL/diseno/diseno.html"
         }]
     },
     {
