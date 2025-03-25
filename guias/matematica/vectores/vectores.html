@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Vectores</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Vectores</h1>
+
+        <h2>¿Qué es un vector?</h2>
+        <p>Un vector es una lista ordenada de números que se utiliza para representar magnitudes y direcciones en el espacio. Matemáticamente, un vector puede expresarse como:</p>
+        <div class="ecuacion">\[ \mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \]</div>
+
+        <h2>Partes de un Vector</h2>
+        <ul>
+            <li><strong>Punto de origen:</strong> El punto donde inicia el vector.</li>
+            <li><strong>Dirección:</strong> La orientación del vector en el espacio.</li>
+            <li><strong>Módulo o Magnitud:</strong> La longitud del vector.</li>
+            <li><strong>Componentes:</strong> Los valores que representan al vector en cada eje.</li>
+        </ul>
+        <img src="src/img/vector2.png" alt="Partes de un Vector">
+
+        <h2>Tipos de Vectores</h2>
+        <ul>
+            <li><strong>Vector nulo:</strong> Su magnitud es cero.</li>
+            <li><strong>Vector unitario:</strong> Su magnitud es 1.</li>
+            <li><strong>Vectores paralelos:</strong> Tienen la misma dirección o direcciones opuestas.</li>
+            <li><strong>Vectores ortogonales:</strong> Su producto escalar es cero, indicando que son perpendiculares.</li>
+        </ul>
+
+        <h2>Vectores en \(\mathbb{R}^2\) y \(\mathbb{R}^3\)</h2>
+        <p>Un vector en \(\mathbb{R}^2\) tiene dos componentes, y en \(\mathbb{R}^3\) tiene tres:</p>
+        <div class="ecuacion">
+            \[ \mathbf{v} = (v_1, v_2) \quad \text{en} \quad \mathbb{R}^2 \]
+            \[ \mathbf{v} = (v_1, v_2, v_3) \quad \text{en} \quad \mathbb{R}^3 \]
+        </div>
+    
+        <h2>Declaración de vectores en Python</h2>
+        <p>En Python, los vectores se pueden representar usando listas, arrays de NumPy o estructuras similares. Veamos un ejemplo con NumPy:</p>
+        <pre><code>
+import numpy as np
+    
+# Crear un vector
+v = np.array([1, 2, 3])
+print(v)
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>[1 2 3]</code></pre>
+    
+        <h2>Operaciones básicas con vectores</h2>
+        <h3>Suma de vectores</h3>
+        <p>La suma de dos vectores se realiza sumando sus componentes correspondientes:</p>
+        <div class="ecuacion">\[ \mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \end{bmatrix} \]</div>
+        <pre><code>
+u = np.array([1, 2])
+v = np.array([3, 4])
+suma = u + v
+print(suma)
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>[4 6]</code></pre>
+
+        <h3>Producto por Escalar</h3>
+        <p>Multiplicar un vector por un escalar amplía o reduce su magnitud:</p>
+        <div class="ecuacion">
+            \[ k \mathbf{v} = (k v_1, k v_2, \ldots, k v_n) \]
+        </div>
+    
+        <h3>Producto punto</h3>
+        <p>El producto punto entre dos vectores se define como la suma de los productos de sus elementos correspondientes:</p>
+        <div class="ecuacion">\[ \mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \ldots + u_n v_n \]</div>
+        <pre><code>
+producto_punto = np.dot(u, v)
+print(producto_punto)
+        </code></pre>
+        <p><strong>Salida en consola:</strong></p>
+        <pre><code>11</code></pre>
+
+        <h3>Módulo de un Vector</h3>
+        <p>El módulo o magnitud de un vector en \(\mathbb{R}^n\) se calcula con la fórmula:</p>
+        <div class="ecuacion">
+            \[ |\mathbf{v}| = \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2} \]
+        </div>
+
+        <h3>Distancia entre Puntos</h3>
+        <p>La distancia entre dos puntos \(A(x_1, y_1)\) y \(B(x_2, y_2)\) se calcula como:</p>
+        <div class="ecuacion">
+            \[ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
+        </div>
+
+        <h2>Visualización de Vectores</h2>
+        <p>A continuación se muestra un gráfico de vectores en \(\mathbb{R}^2\) y \(\mathbb{R}^3\):</p>
+        <img src="src/img/vectores_r2.png" alt="Gráfico de vectores en R2">
+        <img src="src/img/vectores_r3.png" alt="Gráfico de vectores en R3">
+
+        <h2>Ejemplos en Python</h2>
+        <pre><code>
+# Importamos las bibliotecas necesarias
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Vectores en R2
+v1 = np.array([2, 3])
+v2 = np.array([-1, 4])
+
+# Graficar vectores
+plt.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='r', label='v1')
+plt.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='b', label='v2')
+plt.xlim(-2, 5)
+plt.ylim(-1, 5)
+plt.grid()
+plt.legend()
+plt.show()
+
+# Definimos el vector en R3
+vector = np.array([3, 4, 5])  # Cambia estos valores para otros vectores
+
+# Crear la figura y el eje 3D
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Origen del vector
+origin = np.array([0, 0, 0])
+
+# Graficar el vector
+ax.quiver(origin[0], origin[1], origin[2], 
+          vector[0], vector[1], vector[2], 
+          color='dodgerblue', arrow_length_ratio=0.1, linewidth=2)
+
+# Etiquetas de los ejes
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+# Configuración de límites
+ax.set_xlim([0, max(vector[0], 1)])
+ax.set_ylim([0, max(vector[1], 1)])
+ax.set_zlim([0, max(vector[2], 1)])
+
+# Título
+ax.set_title('Vector en R³')
+
+# Mostrar el gráfico
+plt.show()
+        </code></pre>
+
+        <h3>Salida en Consola</h3>
+        <pre><code>
+# Magnitud de un vector
+magnitud_v1 = np.linalg.norm(v1)
+print(f"Magnitud de v1: {magnitud_v1}")
+        </code></pre>
+
+        <h2>Proyección de Vectores</h2>
+        <p>La proyección de un vector <strong>\( \mathbf{a} \)</strong> sobre otro vector <strong>\( \mathbf{b} \)</strong> se define como el vector resultante que representa la "sombra" de <strong>\( \mathbf{a} \)</strong> en la dirección de <strong>\( \mathbf{b} \)</strong>. Se calcula con la siguiente fórmula:</p>
+        <div class="ecuacion">
+            \[
+            \text{Proj}_{\mathbf{b}} \mathbf{a} = \frac{\mathbf{a} \cdot \mathbf{b}}{\mathbf{b} \cdot \mathbf{b}} \mathbf{b}
+            \]
+        </div>
+        <h3>Código en Python</h3>
+        <pre><code>
+import numpy as np
+
+a = np.array([3, 4, 0])
+b = np.array([1, 0, 0])
+
+proyeccion = (np.dot(a, b) / np.dot(b, b)) * b
+print("Proyección de a sobre b:", proyeccion)
+        </code></pre>
+        <h3>Salida en consola:</h3>
+        <pre><code>Proyección de a sobre b: [3. 0. 0.]</code></pre>
+
+        <h2>Producto Mixto</h2>
+        <p>El producto mixto de tres vectores <strong>\( \mathbf{a}, \mathbf{b}, \mathbf{c} \)</strong> se define como:</p>
+        <div class="ecuacion">
+            \[
+            \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})
+            \]
+        </div>
+        <p>El resultado es un escalar que representa el volumen del paralelepípedo formado por estos tres vectores.</p>
+        <h3>Código en Python</h3>
+        <pre><code>
+import numpy as np
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+c = np.array([7, 8, 9])
+
+producto_mixto = np.dot(a, np.cross(b, c))
+print("Producto Mixto:", producto_mixto)
+        </code></pre>
+        <h3>Salida en consola:</h3>
+        <pre><code>Producto Mixto: 0</code></pre>
+    
+        <h2>Aplicaciones de los vectores en Data Science</h2>
+        <ul>
+            <li>Representación de datos en modelos de Machine Learning.</li>
+            <li>Manipulación de grandes conjuntos de datos.</li>
+            <li>Procesamiento de imágenes y señales digitales.</li>
+        </ul>
+    
+        <h2>Recursos adicionales</h2>
+        <ul>
+            <li><a href="https://numpy.org/doc/stable/" target="_blank">Documentación de NumPy</a></li>
+            <li><a href="https://es.khanacademy.org/math/linear-algebra/vectors-and-spaces" target="_blank">Curso de Álgebra Lineal - Khan Academy</a></li>
+        </ul>
+    </div>    
+    
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Matriz</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Introducción a las Matrices</h1>
+        <p>En álgebra lineal, una <strong>matriz</strong> es una disposición rectangular de números, símbolos o expresiones, organizados en filas y columnas. Las matrices se utilizan ampliamente en diversos campos como la física, la informática, la economía, entre otros.</p>
+      
+        <h2>Notación y Representación</h2>
+        <p>Una matriz de dimensión <em>m x n</em> (m filas y n columnas) se representa de la siguiente manera:</p>
+        <div class="ecuacion">
+          \[
+          A = \begin{bmatrix} 
+          a_{11} & a_{12} & \ldots & a_{1n} \\
+          a_{21} & a_{22} & \ldots & a_{2n} \\
+          \vdots & \vdots & \ddots & \vdots \\
+          a_{m1} & a_{m2} & \ldots & a_{mn} 
+          \end{bmatrix}
+          \]
+        </div>
+      
+        <h2>Operaciones Básicas</h2>
+        <h3>Suma de Matrices</h3>
+        <p>La suma de matrices se realiza sumando los elementos correspondientes:</p>
+        <div class="ecuacion">
+          \[
+          C = A + B \quad \text{donde} \quad c_{ij} = a_{ij} + b_{ij}
+          \]
+        </div>
+      
+        <h3>Multiplicación por un Escalar</h3>
+        <p>Se multiplica cada elemento de la matriz por el escalar:</p>
+        <div class="ecuacion">
+          \[
+          B = k \cdot A \quad \text{donde} \quad b_{ij} = k \cdot a_{ij}
+          \]
+        </div>
+      
+        <h3>Multiplicación de Matrices</h3>
+        <p>La multiplicación de matrices se define de la siguiente forma:</p>
+        <div class="ecuacion">
+          \[
+          C = A \cdot B \quad \text{donde} \quad c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj}
+          \]
+        </div>
+      
+        <h2>Tipos de Matrices</h2>
+        <ul>
+          <li><strong>Matriz Cuadrada:</strong> Tiene el mismo número de filas y columnas.</li>
+          <li><strong>Matriz Identidad:</strong> Matriz cuadrada con 1 en la diagonal principal y 0 en el resto.</li>
+          <li><strong>Matriz Diagonal:</strong> Los elementos fuera de la diagonal principal son 0.</li>
+          <li><strong>Matriz Nula:</strong> Todos sus elementos son 0.</li>
+          <li><strong>Matriz Transpuesta:</strong> Se obtiene intercambiando filas por columnas.</li>
+        </ul>
+      
+        <h2>Determinante e Inversa</h2>
+        <p>El <strong>determinante</strong> de una matriz cuadrada se calcula de distintas maneras, dependiendo del tamaño de la matriz:</p>
+        <div class="ecuacion">
+          \[
+          \text{Det}(A) = a_{11}(a_{22}a_{33} - a_{23}a_{32}) - a_{12}(a_{21}a_{33} - a_{23}a_{31}) + a_{13}(a_{21}a_{32} - a_{22}a_{31})
+          \]
+        </div>
+        <p>La <strong>matriz inversa</strong> \(A^{-1}\) existe solo si el determinante no es cero, y se calcula mediante:</p>
+        <div class="ecuacion">
+          \[
+          A^{-1} = \frac{1}{\text{Det}(A)} \cdot \text{Adj}(A)
+          \]
+        </div>
+      
+        <h2>Aplicaciones de las Matrices</h2>
+        <ul>
+          <li><strong>Sistemas de Ecuaciones Lineales:</strong> Resolver sistemas mediante el método de Gauss o Cramer.</li>
+          <li><strong>Transformaciones Lineales:</strong> Rotación, escalado y traslación en gráficos y visión por computadora.</li>
+          <li><strong>Redes Neuronales:</strong> Representación de pesos y conexiones entre neuronas.</li>
+          <li><strong>Procesamiento de Imágenes:</strong> Aplicación de filtros y transformaciones.</li>
+        </ul>
+      
+        <h2>Ejemplo en Python</h2>
+        <pre><code class="language-python">
+import numpy as np
+      
+# Definimos matrices A y B
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+      
+# Suma de matrices
+C = A + B
+print("Suma de matrices:\n", C)
+      
+# Producto de matrices
+D = np.dot(A, B)
+print("Producto de matrices:\n", D)
+      
+# Inversa de A
+inv_A = np.linalg.inv(A)
+print("Inversa de A:\n", inv_A)
+        </code></pre>
+      
+        <h3>Salida en consola:</h3>
+        <pre>
+Suma de matrices:
+    [[ 6  8]
+    [10 12]]
+Producto de matrices:
+    [[19 22]
+    [43 50]]
+Inversa de A:
+    [[-2.   1. ]
+    [ 1.5 -0.5]]
+        </pre>
+
+         <!-- Matriz Transpuesta -->
+        <h2>Matriz Transpuesta</h2>
+        <p>La matriz transpuesta de una matriz <strong>A</strong> se obtiene intercambiando sus filas por columnas. Si <strong>A</strong> es una matriz de tamaño <em>m × n</em>, su transpuesta <strong>A<sup>T</sup></strong> será de tamaño <em>n × m</em>. Formalmente:</p>
+        <div class="ecuacion">(A<sup>T</sup>)<sub>ij</sub> = A<sub>ji</sub></div>
+        <p>Ejemplo:</p>
+        <pre><code>A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}</code></pre>
+        <p>Su transpuesta es:</p>
+        <pre><code>A<sup>T</sup> = \begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}</code></pre>
+
+        <!-- Rango de una Matriz -->
+        <h2>Rango de una Matriz</h2>
+        <p>El rango de una matriz es el número máximo de filas (o columnas) linealmente independientes. Se puede calcular mediante la forma escalonada reducida por filas.</p>
+        <p>Ejemplo en Python:</p>
+        <pre><code>
+import numpy as np
+A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+rank = np.linalg.matrix_rank(A)
+print(rank)
+        </code></pre>
+        <p>Salida en consola:</p>
+        <pre><code>2</code></pre>
+
+        <!-- Traza de una Matriz -->
+        <h2>Traza de una Matriz</h2>
+        <p>La traza de una matriz cuadrada es la suma de los elementos en su diagonal principal. Formalmente:</p>
+        <div class="ecuacion">tr(A) = \sum_{i=1}^{n} A_{ii}</div>
+        <p>Ejemplo:</p>
+        <pre><code>A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}</code></pre>
+        <p>Su traza es:</p>
+        <div class="ecuacion">tr(A) = 1 + 5 + 9 = 15</div>
+
+        <!-- Resolución de Sistemas de Ecuaciones -->
+        <h2>Resolución de Sistemas de Ecuaciones</h2>
+        <p>Un sistema de ecuaciones lineales puede resolverse usando matrices de diversas formas, como la inversa de la matriz de coeficientes o la eliminación de Gauss.</p>
+        <p>Ejemplo en Python:</p>
+        <pre><code>
+import numpy as np
+A = np.array([[2, 1], [1, -1]])
+b = np.array([4, 1])
+sol = np.linalg.solve(A, b)
+print(sol)
+    </code></pre>
+    <p>Salida en consola:</p>
+    <pre><code>[3. 2.]</code></pre>
+
+    <!-- Gráfico Interactivo -->
+    <h2>Gráfico Interactivo</h2>
+    <p>Podemos visualizar la acción de una matriz de transformación sobre un conjunto de puntos en 2D. Utilizando Python con Matplotlib:</p>
+    <pre><code>
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definimos los puntos
+points = np.array([[0, 0], [1, 0], [0, 1], [1, 1]])
+transform = np.array([[2, 0], [0, 1]])
+transformed_points = points @ transform.T
+
+# Graficamos
+plt.scatter(points[:, 0], points[:, 1], color='blue', label='Original')
+plt.scatter(transformed_points[:, 0], transformed_points[:, 1], color='red', label='Transformado')
+plt.legend()
+plt.grid(True)
+plt.show()
+    </code></pre>
+    <p>Este código muestra cómo la matriz transforma el cuadrado original en un rectángulo.</p>
+    <img src="src/img/grafico.png" alt="Gráfico de la matriz">
+      
+        <h2>Recursos Adicionales</h2>
+        <ul>
+          <li><a href="https://numpy.org/doc/stable/">Documentación de NumPy</a></li>
+          <li><a href="https://es.wikipedia.org/wiki/Matriz_(matem%C3%A1ticas)">Matrices en Wikipedia</a></li>
+        </ul>
+    </div>
+      
+    
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

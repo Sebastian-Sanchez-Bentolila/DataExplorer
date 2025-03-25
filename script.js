@@ -166,6 +166,16 @@ const guiasJSON = [
             "titulo": "Derivadas",
             "descripcion": "Derivadas",
             "enlace": "guias/matematica/derivadas/derivadas.html"
+        },
+        {
+            "titulo": "Vectores",
+            "descripcion": "Vectores en álgebra",
+            "enlace": "guias/matematica/vectores/vectores.html"
+        },
+        {
+            "titulo": "Matriz",
+            "descripcion": "Mátrices",
+            "enlace": "guias/matematica/matrices/matrices.html"
         }]
     },
     {
