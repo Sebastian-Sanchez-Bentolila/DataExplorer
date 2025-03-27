@@ -206,6 +206,11 @@ const guiasJSON = [
             "titulo": "Matriz",
             "descripcion": "Mátrices",
             "enlace": "guias/matematica/matrices/matrices.html"
+        },
+        {
+            "titulo": "Autovalores y Autovectores",
+            "descripcion": "Guía sobre Autovalores, Autovectores y Transformaciones Lineales",
+            "enlace": "guias/matematica/tranformaciones/tranformaciones.html"
         }]
     },
     {

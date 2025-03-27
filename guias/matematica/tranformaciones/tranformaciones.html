@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Matriz</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <h1>Autovalores y Autovectores</h1>
+      
+        <h2>Introducción</h2>
+        <p>Los <strong>autovalores</strong> y <strong>autovectores</strong> son conceptos fundamentales en álgebra lineal y tienen aplicaciones clave en diversas áreas de la ciencia de datos, como la reducción de dimensionalidad (PCA), la descomposición espectral y el aprendizaje automático.</p>
+        
+        <p>De manera intuitiva, un <strong>autovector</strong> de una matriz es un vector que no cambia su dirección cuando se aplica la matriz, sino que solo se escala por un número llamado <strong>autovalor</strong>.</p>
+        
+        <div class="nota">
+            <strong>Nota:</strong> Comprender los autovalores y autovectores es esencial para interpretar el comportamiento de transformaciones lineales y su impacto en los datos.
+        </div>
+        
+        <h2>Definición Formal</h2>
+        <p>Sea \( A \) una matriz cuadrada de tamaño \( n \times n \). Un número \( \lambda \) es un <strong>autovalor</strong> de \( A \) si existe un vector no nulo \( \mathbf{v} \) tal que:</p>
+        
+        <div class="ecuacion">
+            \[ A \mathbf{v} = \lambda \mathbf{v} \]
+        </div>
+        
+        <p>El vector \( \mathbf{v} \) se llama <strong>autovector</strong> asociado al autovalor \( \lambda \).</p>
+        
+        <h2>Ejemplo Intuitivo</h2>
+        <p>Supongamos la siguiente matriz:</p>
+        
+        <p>A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}</p>
+        
+        <p>Podemos encontrar sus autovalores resolviendo la ecuación característica:</p>
+        
+        <div class="ecuacion">
+            \[ \det(A - \lambda I) = 0 \]
+        </div>
+        
+        <p>Expandiendo el determinante, obtenemos una ecuación cuadrática cuyas soluciones nos darán los autovalores.</p>
+        
+        <h2>Aplicaciones en Ciencia de Datos</h2>
+        <ul>
+            <li><strong>Análisis de Componentes Principales (PCA):</strong> Se basa en la descomposición espectral de matrices de covarianza.</li>
+            <li><strong>Modelos de Redes Neuronales:</strong> La estabilidad de los pesos está relacionada con autovalores.</li>
+            <li><strong>Procesamiento de Imágenes:</strong> Se usan para reducir ruido y extraer características.</li>
+        </ul>
+
+        <h2>Definición Formal de Autovalores y Autovectores</h2>
+        <p>En álgebra lineal, los <strong>autovalores</strong> y <strong>autovectores</strong> son conceptos fundamentales para entender la estructura de una transformación lineal. 
+          Dado un operador lineal representado por una matriz cuadrada <em>A</em>, un autovalor y su correspondiente autovector son definidos de la siguiente manera:</p>
+        
+        <div class="ecuacion">
+            A \mathbf{v} = \lambda \mathbf{v}
+        </div>
+        
+        <p>donde:</p>
+        <ul>
+            <li><span>\( A \)</span> es una matriz cuadrada de dimensión \( n \times n \).</li>
+            <li><span>\( \lambda \)</span> es un <strong>autovalor</strong>, un número escalar asociado a la matriz.</li>
+            <li><span>\( \mathbf{v} \)</span> es un <strong>autovector</strong> no nulo correspondiente a \( \lambda \).</li>
+        </ul>
+        
+        <h3>Ejemplo de Cálculo de Autovalores</h3>
+        <p>Sea la matriz:</p>
+        
+        <p>
+            A = \begin{bmatrix} 4 & 2 \\ 1 & 3 \end{bmatrix}
+        <p>
+        
+        <p>Para encontrar los autovalores, resolvemos la ecuación característica:</p>
+        
+        <div class="ecuacion">
+            \det(A - \lambda I) = 0
+        </div>
+        
+        <p>Desarrollando:</p>
+        
+        <div class="ecuacion">
+            \begin{vmatrix} 4 - \lambda & 2 \\ 1 & 3 - \lambda \end{vmatrix} = 0
+        </div>
+        
+        <p>Expandiendo el determinante:</p>
+        
+        <div class="ecuacion">
+            (4 - \lambda)(3 - \lambda) - (2 \cdot 1) = 0
+        </div>
+        
+        <p>Lo que resulta en la ecuación cuadrática:</p>
+        
+        <div class="ecuacion">
+            \lambda^2 - 7\lambda + 10 = 0
+        </div>
+        
+        <p>Resolviendo, obtenemos los autovalores:</p>
+        
+        <div class="ecuacion">
+            \lambda_1 = 5, \quad \lambda_2 = 2
+        </div>
+        
+        <p>Para encontrar los autovectores asociados, resolvemos <span>\( (A - \lambda I) \mathbf{v} = 0 \)</span> para cada autovalor.</p>
+        
+        <h3>Importancia de los Autovalores y Autovectores</h3>
+        <p>Los autovalores y autovectores tienen aplicaciones en múltiples áreas como:</p>
+        <ul>
+            <li>Reducción dimensional en aprendizaje automático (PCA).</li>
+            <li>Estabilidad de sistemas dinámicos.</li>
+            <li>Resolución de ecuaciones diferenciales.</li>
+            <li>Compresión de imágenes y datos.</li>
+        </ul>
+        
+        <h2>Recursos Adicionales</h2>
+        <ul>
+            <li><a href="https://es.wikipedia.org/wiki/Autovalor_y_autovector" target="_blank">Wikipedia: Autovalores y Autovectores</a></li>
+            <li><a href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/eigen-everything/v/linear-algebra-eigenvalues-and-eigenvectors" target="_blank">Khan Academy: Introducción a Autovalores</a></li>
+        </ul>
+    </div>
+  
+      
+    
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
