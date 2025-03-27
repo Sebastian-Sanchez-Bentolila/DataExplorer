@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a R</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+    <h1>Optimización y Mejores Prácticas en SQL</h1>
+
+    <p>Optimizar consultas SQL es fundamental para garantizar un rendimiento eficiente en sistemas de gestión de bases de datos. A continuación, se presentan prácticas recomendadas para mejorar la eficiencia de las consultas.</p>
+
+    <h2>Selección de Columnas Específicas</h2>
+    <p>Evita el uso de <code>SELECT *</code>. Especifica únicamente las columnas necesarias para reducir el volumen de datos procesados.</p>
+
+    <pre><code class="sql">
+-- Evitar
+SELECT * FROM empleados;
+
+-- Recomendado
+SELECT nombre, puesto FROM empleados;
+    </code></pre>
+
+    <h2>Uso Adecuado de Índices</h2>
+    <p>Los índices aceleran la recuperación de datos. Crea índices en columnas frecuentemente utilizadas en cláusulas <code>WHERE</code>, <code>JOIN</code> y <code>ORDER BY</code>.</p>
+
+    <pre><code class="sql">
+CREATE INDEX idx_empleados_puesto ON empleados(puesto);
+    </code></pre>
+
+    <h2>Evitar Funciones en Cláusulas <code>WHERE</code></h2>
+    <p>Las funciones en columnas pueden impedir el uso de índices. Reformula las consultas para mantener la eficiencia.</p>
+
+    <pre><code class="sql">
+-- Evitar
+SELECT * FROM empleados WHERE UPPER(nombre) = 'JUAN';
+
+-- Recomendado
+SELECT * FROM empleados WHERE nombre = 'Juan';
+    </code></pre>
+
+    <h2>Utilizar <code>JOIN</code> en Lugar de Subconsultas</h2>
+    <p>Los <code>JOIN</code> suelen ser más eficientes que las subconsultas correlacionadas.</p>
+
+    <pre><code class="sql">
+-- Evitar
+SELECT e.nombre
+FROM empleados e
+WHERE e.departamento_id IN (SELECT d.id FROM departamentos d WHERE d.nombre = 'Ventas');
+
+-- Recomendado
+SELECT e.nombre
+FROM empleados e
+JOIN departamentos d ON e.departamento_id = d.id
+WHERE d.nombre = 'Ventas';
+    </code></pre>
+
+    <h2>Limitar el Uso de la Cláusula <code>DISTINCT</code></h2>
+    <p>Utiliza <code>DISTINCT</code> solo cuando sea necesario eliminar duplicados, ya que puede aumentar el tiempo de procesamiento.</p>
+
+    <h2>Aplicar Filtros Tempranamente</h2>
+    <p>Aplica condiciones de filtrado lo antes posible en la consulta para reducir el conjunto de datos procesados en etapas posteriores.</p>
+
+    <h2>Evitar Operaciones Costosas en Consultas Frecuentes</h2>
+    <p>Minimiza el uso de operaciones como <code>ORDER BY</code>, <code>GROUP BY</code> y <code>HAVING</code> en consultas que se ejecutan con frecuencia, a menos que sean imprescindibles.</p>
+
+    <h2>Analizar y Optimizar Planes de Ejecución</h2>
+    <p>Utiliza herramientas del SGBD para analizar el plan de ejecución de las consultas y detectar posibles cuellos de botella.</p>
+
+    <h2>Mantener Estadísticas Actualizadas</h2>
+    <p>Las estadísticas actualizadas permiten al optimizador de consultas tomar decisiones más informadas sobre los planes de ejecución.</p>
+
+    <h2>Considerar la Normalización y Desnormalización</h2>
+    <p>La normalización elimina redundancias, pero en algunos casos, la desnormalización controlada puede mejorar el rendimiento de consultas específicas.</p>
+
+    <div class="nota">
+        <strong>Nota:</strong> Implementar estas prácticas contribuirá a mejorar la eficiencia y el rendimiento de las consultas SQL en tus sistemas de bases de datos.
+    </div>
+
+</div>
+
+
+
+
+
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

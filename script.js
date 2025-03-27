@@ -137,6 +137,36 @@ const guiasJSON = [
             "titulo": "Funciones Agregadas",
             "descripcion": "Aprende las diferentes funciones agregadas para operar sobre base de datos relacionales",
             "enlace": "guias/SQL/funciones_agregadas/funciones_agregadas.html"
+        },
+        {
+            "titulo": "JOIN y uniones",
+            "descripcion": "Uniones e intersecciones en SQL",
+            "enlace": "guias/SQL/join/join.html"
+        },
+        {
+            "titulo": "SubConsultas",
+            "descripcion": "Subconsultas en SQL",
+            "enlace": "guias/SQL/subconsultas/subconsultas.html"
+        },
+        {
+            "titulo": "Rutinas",
+            "descripcion": "Rutinas en SQL",
+            "enlace": "guias/SQL/rutinas/rutinas.html"
+        },
+        {
+            "titulo": "Variables",
+            "descripcion": "Variables en SQL",
+            "enlace": "guias/SQL/variables/variables.html"
+        },
+        {
+            "titulo": "Mejores Prácticas",
+            "descripcion": "Optimización y mejores prácticas en SQL",
+            "enlace": "guias/SQL/optimizacion/optimizacion.html"
+        },
+        {
+            "titulo": "Diseño",
+            "descripcion": "Diseño de una Base de Datos",
+            "enlace": "guias/SQL/diseno/diseno.html"
         }]
     },
     {

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a R</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+
+    <h1>📌 Rutinas y Procedimientos en SQL</h1>
+
+    <p>
+        En SQL, los procedimientos almacenados y las funciones son bloques de código reutilizables que 
+        permiten ejecutar una serie de instrucciones en la base de datos. Estos elementos mejoran la 
+        eficiencia y la seguridad al encapsular la lógica de negocio dentro del sistema de gestión de bases 
+        de datos (DBMS).
+    </p>
+
+    <h2>🔹 Procedimientos Almacenados (Stored Procedures)</h2>
+
+    <p>
+        Un <strong>procedimiento almacenado</strong> es un conjunto de instrucciones SQL que se almacena en la base 
+        de datos y se puede ejecutar con un solo comando. Se utilizan para realizar operaciones repetitivas 
+        o complejas sin necesidad de escribir la consulta completa cada vez.
+    </p>
+
+    <h3>📌 Sintaxis de un Procedimiento Almacenado</h3>
+
+    <pre><code>
+CREATE PROCEDURE nombre_procedimiento (parámetros)
+BEGIN
+    -- Instrucciones SQL
+END;
+    </code></pre>
+
+    <h3>🔹 Ejemplo de Procedimiento Almacenado</h3>
+
+    <p>📌 Creamos un procedimiento para obtener todos los empleados de un departamento específico.</p>
+
+    <pre><code>
+DELIMITER $$
+
+CREATE PROCEDURE ObtenerEmpleadosPorDepartamento(IN depto_id INT)
+BEGIN
+    SELECT nombre, salario 
+    FROM empleados
+    WHERE id_departamento = depto_id;
+END $$
+
+DELIMITER ;
+    </code></pre>
+
+    <h3>✅ Llamar al Procedimiento</h3>
+
+    <pre><code>
+CALL ObtenerEmpleadosPorDepartamento(101);
+    </code></pre>
+
+    <h3>💻 Salida en Consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>nombre</th>
+                <th>salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Ana</td><td>50000</td></tr>
+            <tr><td>Pedro</td><td>55000</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Funciones Almacenadas</h2>
+
+    <p>
+        A diferencia de los procedimientos, las funciones almacenadas <strong>devuelven un valor</strong> y pueden 
+        usarse dentro de consultas SQL. Son útiles para cálculos personalizados o transformaciones de datos.
+    </p>
+
+    <h3>📌 Sintaxis de una Función</h3>
+
+    <pre><code>
+CREATE FUNCTION nombre_función (parámetros) RETURNS tipo_de_dato
+BEGIN
+    -- Código SQL que devuelve un valor
+    RETURN valor;
+END;
+    </code></pre>
+
+    <h3>🔹 Ejemplo de Función</h3>
+
+    <p>📌 Creamos una función para calcular el salario anual de un empleado.</p>
+
+    <pre><code>
+DELIMITER $$
+
+CREATE FUNCTION SalarioAnual(salario_mensual DECIMAL(10,2)) RETURNS DECIMAL(10,2)
+BEGIN
+    RETURN salario_mensual * 12;
+END $$
+
+DELIMITER ;
+    </code></pre>
+
+    <h3>✅ Usar la Función en una Consulta</h3>
+
+    <pre><code>
+SELECT nombre, SalarioAnual(salario) AS salario_anual FROM empleados;
+    </code></pre>
+
+    <h3>💻 Salida en Consola</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>nombre</th>
+                <th>salario_anual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Ana</td><td>600000</td></tr>
+            <tr><td>Juan</td><td>720000</td></tr>
+            <tr><td>Pedro</td><td>660000</td></tr>
+            <tr><td>Marta</td><td>840000</td></tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Diferencias entre Procedimientos y Funciones</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th>Procedimiento Almacenado</th>
+                <th>Función</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Retorno de valores</td>
+                <td>No devuelve un valor, ejecuta acciones</td>
+                <td>Devuelve un valor</td>
+            </tr>
+            <tr>
+                <td>Uso en consultas</td>
+                <td>No se puede usar dentro de una consulta SELECT</td>
+                <td>Se puede usar en consultas SELECT</td>
+            </tr>
+            <tr>
+                <td>Uso de parámetros</td>
+                <td>Pueden tener parámetros de entrada y salida</td>
+                <td>Sólo pueden tener parámetros de entrada</td>
+            </tr>
+            <tr>
+                <td>Aplicaciones</td>
+                <td>Automatización de procesos y lógica de negocio</td>
+                <td>Cálculos y transformaciones dentro de consultas</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>🔹 Triggers (Disparadores)</h2>
+
+    <p>
+        Los <strong>triggers</strong> son eventos que se ejecutan automáticamente cuando ocurre una acción en la base 
+        de datos, como una inserción, actualización o eliminación.
+    </p>
+
+    <h3>📌 Ejemplo de Trigger</h3>
+
+    <p>📌 Creamos un trigger que registra los cambios de salario en la tabla <code>historial_salarios</code>.</p>
+
+    <pre><code>
+DELIMITER $$
+
+CREATE TRIGGER RegistrarCambioSalario
+AFTER UPDATE ON empleados
+FOR EACH ROW
+BEGIN
+    INSERT INTO historial_salarios(id_empleado, salario_anterior, salario_nuevo, fecha_cambio)
+    VALUES (OLD.id_empleado, OLD.salario, NEW.salario, NOW());
+END $$
+
+DELIMITER ;
+    </code></pre>
+
+    <h2>🎯 Cuándo Usar Procedimientos y Funciones</h2>
+
+    <ul>
+        <li>✅ Usar <strong>procedimientos almacenados</strong> cuando necesites ejecutar una serie de instrucciones SQL como una sola unidad.</li>
+        <li>✅ Usar <strong>funciones almacenadas</strong> cuando necesites realizar cálculos o transformar valores dentro de consultas SQL.</li>
+        <li>✅ Usar <strong>triggers</strong> cuando necesites automatizar tareas ante cambios en la base de datos.</li>
+    </ul>
+
+    <h2>📚 Recursos Adicionales</h2>
+    <ul>
+        <li>📖 <a href="https://www.w3schools.com/sql/sql_stored_procedures.asp" target="_blank">Guía sobre Procedimientos Almacenados</a></li>
+        <li>🎥 <a href="https://www.youtube.com/watch?v=xyz" target="_blank">Video Explicativo sobre Triggers</a></li>
+    </ul>
+
+</div>
+
+
+
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>

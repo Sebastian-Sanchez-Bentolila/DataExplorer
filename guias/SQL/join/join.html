@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Introducción a R</title>
+    <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
+    <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
+    <meta name="author" content="Sebastian Sanchez Bentolila" />
+    <meta name="copyright" content="Sebastian Sanchez Bentolila" />
+    <link rel="shortcut icon" href="../../../src/images/analytics.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../styles_guias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">DataScience<span> Explorer</span></div>
+        <nav class="navbar">
+            <a href="../../../index.html">Inicio</a>
+            <a href="#contenido">Contenido</a>
+            <a href="../../../index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="contenido">
+    <h1>Tipos de JOIN en SQL</h1>
+
+    <p>Los <strong>JOIN</strong> en SQL son operaciones que permiten combinar filas de dos o más tablas basándose en una condición común. Existen varios tipos de JOIN, cada uno con una funcionalidad específica para obtener los datos deseados.</p>
+
+    <h2>📌 Tabla Comparativa de los Tipos de JOIN</h2>
+    
+    <table>
+        <tr>
+            <th>Tipo de JOIN</th>
+            <th>Descripción</th>
+            <th>¿Incluye registros sin coincidencia?</th>
+        </tr>
+        <tr>
+            <td><strong>INNER JOIN</strong></td>
+            <td>Devuelve solo las filas con coincidencias en ambas tablas.</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><strong>LEFT JOIN</strong></td>
+            <td>Devuelve todas las filas de la tabla izquierda y las coincidencias de la derecha.</td>
+            <td>Sí (NULLs en la derecha si no hay coincidencia)</td>
+        </tr>
+        <tr>
+            <td><strong>RIGHT JOIN</strong></td>
+            <td>Devuelve todas las filas de la tabla derecha y las coincidencias de la izquierda.</td>
+            <td>Sí (NULLs en la izquierda si no hay coincidencia)</td>
+        </tr>
+        <tr>
+            <td><strong>FULL JOIN</strong></td>
+            <td>Devuelve todas las filas de ambas tablas, rellenando con NULLs donde no hay coincidencias.</td>
+            <td>Sí (NULLs donde no hay coincidencia)</td>
+        </tr>
+        <tr>
+            <td><strong>CROSS JOIN</strong></td>
+            <td>Devuelve el producto cartesiano de ambas tablas (todas las combinaciones posibles).</td>
+            <td>No aplica</td>
+        </tr>
+        <tr>
+            <td><strong>SELF JOIN</strong></td>
+            <td>Une una tabla consigo misma.</td>
+            <td>No aplica</td>
+        </tr>
+    </table>
+
+    <h2>🔹 INNER JOIN</h2>
+    <p>El <code>INNER JOIN</code> devuelve solo los registros donde hay coincidencia en ambas tablas.</p>
+    
+    <pre><code>SELECT empleados.nombre, departamentos.nombre AS departamento
+FROM empleados
+INNER JOIN departamentos ON empleados.id_departamento = departamentos.id;</code></pre>
+
+    <p><strong>Salida en consola:</strong></p>
+    <table>
+        <tr>
+            <th>nombre</th>
+            <th>departamento</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Ventas</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>IT</td>
+        </tr>
+    </table>
+
+    <h2>🔹 LEFT JOIN (o LEFT OUTER JOIN)</h2>
+    <p>El <code>LEFT JOIN</code> devuelve todas las filas de la tabla izquierda y las coincidencias de la derecha. Si no hay coincidencia, rellena con <code>NULL</code>.</p>
+    
+    <pre><code>SELECT empleados.nombre, departamentos.nombre AS departamento
+FROM empleados
+LEFT JOIN departamentos ON empleados.id_departamento = departamentos.id;</code></pre>
+
+    <p><strong>Salida en consola:</strong></p>
+    <table>
+        <tr>
+            <th>nombre</th>
+            <th>departamento</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Ventas</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>Luis</td>
+            <td>NULL</td>
+        </tr>
+    </table>
+
+    <h2>🔹 RIGHT JOIN (o RIGHT OUTER JOIN)</h2>
+    <p>Es el opuesto de <code>LEFT JOIN</code>: devuelve todas las filas de la tabla derecha y las coincidencias de la izquierda.</p>
+    
+    <pre><code>SELECT empleados.nombre, departamentos.nombre AS departamento
+FROM empleados
+RIGHT JOIN departamentos ON empleados.id_departamento = departamentos.id;</code></pre>
+
+    <p><strong>Salida en consola:</strong></p>
+    <table>
+        <tr>
+            <th>nombre</th>
+            <th>departamento</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Ventas</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>NULL</td>
+            <td>Recursos Humanos</td>
+        </tr>
+    </table>
+
+    <h2>🔹 FULL JOIN (o FULL OUTER JOIN)</h2>
+    <p>El <code>FULL JOIN</code> devuelve todas las filas de ambas tablas, colocando <code>NULL</code> donde no hay coincidencia.</p>
+    
+    <pre><code>SELECT empleados.nombre, departamentos.nombre AS departamento
+FROM empleados
+FULL JOIN departamentos ON empleados.id_departamento = departamentos.id;</code></pre>
+
+    <p><strong>Salida en consola:</strong></p>
+    <table>
+        <tr>
+            <th>nombre</th>
+            <th>departamento</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Ventas</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>Luis</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>NULL</td>
+            <td>Recursos Humanos</td>
+        </tr>
+    </table>
+
+    <h2>🔹 CROSS JOIN</h2>
+    <p>El <code>CROSS JOIN</code> devuelve el <strong>producto cartesiano</strong> de ambas tablas, es decir, todas las combinaciones posibles de filas.</p>
+    
+    <pre><code>SELECT empleados.nombre, departamentos.nombre AS departamento
+FROM empleados
+CROSS JOIN departamentos;</code></pre>
+
+    <p><strong>Salida en consola:</strong></p>
+    <table>
+        <tr>
+            <th>nombre</th>
+            <th>departamento</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Ventas</td>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>IT</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>Ventas</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>IT</td>
+        </tr>
+    </table>
+
+    <h2>🔹 SELF JOIN</h2>
+    <p>Un <code>SELF JOIN</code> es cuando una tabla se une consigo misma, útil para jerarquías.</p>
+    
+    <pre><code>SELECT e1.nombre AS empleado, e2.nombre AS jefe
+FROM empleados e1
+LEFT JOIN empleados e2 ON e1.id_jefe = e2.id;</code></pre>
+
+    <p><strong>Salida en consola:</strong></p>
+    <table>
+        <tr>
+            <th>empleado</th>
+            <th>jefe</th>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>Juan</td>
+        </tr>
+        <tr>
+            <td>Luis</td>
+            <td>Ana</td>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>NULL</td>
+        </tr>
+    </table>
+
+    <h2>📚 Recursos Adicionales</h2>
+    <ul>
+        <li><a href="https://www.w3schools.com/sql/sql_join.asp" target="_blank">Documentación de JOIN en W3Schools</a></li>
+        <li><a href="https://dev.mysql.com/doc/refman/8.0/en/join.html" target="_blank">JOIN en la documentación oficial de MySQL</a></li>
+    </ul>
+</div>
+
+    
+
+    <footer class="footer">
+        <p>© 2025 Sebastian Sanchez Bentolila - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../../../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de las animaciones (en ms)
+            once: true,     // La animación ocurre solo una vez
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
