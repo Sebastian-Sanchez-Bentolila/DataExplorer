@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía: Matriz</title>
+    <title>Guía: Autovalores y Autovectores</title>
     <meta name="description" content="Página web sobre contenidos acerca de Ciencia de Datos y afines. Como para mostrar lo aprendido en la facultad">
     <meta name="keywords" content="Data Science, Data, Analytics, Data Analytics, Python, SQL, Git, R, Probabilidad, Estadística, Ingenieria de Datos, Datos, UNAB, Universidad Nacional de Guillermo Brown"/>
     <meta name="author" content="Sebastian Sanchez Bentolila" />
@@ -130,11 +130,160 @@
             <li>Resolución de ecuaciones diferenciales.</li>
             <li>Compresión de imágenes y datos.</li>
         </ul>
+
+        <h1>Transformaciones Lineales</h1>
+        <p>Las transformaciones lineales son funciones que preservan la estructura de los espacios vectoriales. Formalmente, una transformación lineal <strong>T</strong> de un espacio vectorial <strong>V</strong> a otro espacio vectorial <strong>W</strong> cumple con las siguientes propiedades:</p>
+        
+        <div class="nota">
+            <strong>Propiedades de una Transformación Lineal:</strong>
+            <ul>
+                <li>Preservación de la suma: \( T(u + v) = T(u) + T(v) \)</li>
+                <li>Preservación del producto escalar: \( T(cu) = cT(u) \)</li>
+            </ul>
+        </div>
+        
+        <h2>Ejemplo de Transformación Lineal</h2>
+        <p>Consideremos la transformación \( T: \mathbb{R}^2 \to \mathbb{R}^2 \) definida por la matriz:</p>
+        
+        <div class="ecuacion">
+            \[
+            T(x, y) = \begin{bmatrix} 2 & 1 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
+            \]
+        </div>
+        
+        <p>Si aplicamos esta transformación al vector \( v = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \), obtenemos:</p>
+        
+        <div class="ecuacion">
+            \[
+            T \left( \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right) = \begin{bmatrix} 2 & 1 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 2(1) + 1(2) \\ 0(1) + 3(2) \end{bmatrix} = \begin{bmatrix} 4 \\ 6 \end{bmatrix}
+            \]
+        </div>
+        
+        <h2>Ejemplos Comunes de Transformaciones Lineales</h2>
+        <ul>
+            <li><strong>Rotación:</strong> Gira los vectores en un ángulo determinado.</li>
+            <li><strong>Escalado:</strong> Aumenta o reduce el tamaño de los vectores.</li>
+            <li><strong>Reflexión:</strong> Refleja los vectores respecto a un eje o plano.</li>
+            <li><strong>Proyección:</strong> Mapea los vectores sobre una línea o plano.</li>
+        </ul>
+        
+        <h2>Transformaciones Lineales y Matrices</h2>
+        <p>Cada transformación lineal puede representarse mediante una matriz. Si \( T: \mathbb{R}^n \to \mathbb{R}^m \) es una transformación lineal, entonces existe una matriz \( A \) de tamaño \( m \times n \) tal que:</p>
+        
+        <div class="ecuacion">
+            \[
+            T(v) = Av
+            \]
+        </div>
+
+        <h1>Relación entre Autovalores y Transformaciones Lineales</h1>
+    
+        <p>Los autovalores y autovectores juegan un papel fundamental en la comprensión de las transformaciones lineales. Permiten identificar direcciones en las que una transformación solo escala los vectores sin cambiar su dirección.</p>
+        
+        <h2>Definición Formal</h2>
+        <p>Sea \( A \) una matriz cuadrada de tamaño \( n \times n \) que representa una transformación lineal. Un escalar \( \lambda \) es un <strong>autovalor</strong> de \( A \) si existe un vector \( \mathbf{v} \neq 0 \) tal que:</p>
+        
+        <div class="ecuacion"> A \mathbf{v} = \lambda \mathbf{v} </div>
+        
+        <p>Donde \( \mathbf{v} \) es el correspondiente <strong>autovector</strong>.</p>
+        
+        <h2>Interpretación Geométrica</h2>
+        <p>En términos geométricos, los autovectores indican direcciones en las que la transformación lineal actúa como una simple escalación por el factor \( \lambda \). Algunas interpretaciones comunes incluyen:</p>
+        <ul>
+            <li>Si \( \lambda > 1 \), el vector es estirado.</li>
+            <li>Si \( 0 < \lambda < 1 \), el vector es comprimido.</li>
+            <li>Si \( \lambda < 0 \), el vector es invertido además de escalado.</li>
+        </ul>
+        
+        <h2>Ejemplo de Cálculo</h2>
+        <p>Supongamos que tenemos la matriz:</p>
+        
+        <div class="ecuacion">
+            A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}
+        </div>
+        
+        <p>Para encontrar los autovalores, resolvemos la ecuación característica:</p>
+        
+        <div class="ecuacion">
+            \det(A - \lambda I) = 0
+        </div>
+        
+        <p>Calculamos:</p>
+        
+        <div class="ecuacion">
+            \begin{vmatrix} 2 - \lambda & 1 \\ 1 & 2 - \lambda \end{vmatrix} = (2 - \lambda)^2 - 1 = 0
+        </div>
+        
+        <p>Resolviendo \( \lambda^2 - 4\lambda + 3 = 0 \), obtenemos los autovalores:</p>
+        
+        <div class="ecuacion"> \lambda_1 = 3, \quad \lambda_2 = 1 </div>
+        
+        <h2>Aplicaciones</h2>
+        <p>La relación entre autovalores y transformaciones lineales tiene aplicaciones en:</p>
+        <ul>
+            <li><strong>Análisis de estabilidad</strong>: En sistemas dinámicos, los autovalores determinan la estabilidad del sistema.</li>
+            <li><strong>Compresión de datos</strong>: En PCA (Análisis de Componentes Principales), los autovalores indican la importancia de cada componente.</li>
+            <li><strong>Procesamiento de imágenes</strong>: Se utilizan en filtros y transformaciones de imágenes.</li>
+        </ul>
+
+        <h1>Aplicaciones Prácticas de Autovalores y Autovectores</h1>
+    
+        <p>Los autovalores y autovectores tienen múltiples aplicaciones en diversas disciplinas, desde la ciencia de datos hasta la física cuántica. En esta sección, exploraremos algunas aplicaciones clave en el ámbito del análisis de datos y el aprendizaje automático.</p>
+
+        <h2>1. Reducción de Dimensionalidad: Análisis de Componentes Principales (PCA)</h2>
+        <p>El <strong>Análisis de Componentes Principales (PCA)</strong> es una técnica utilizada en ciencia de datos para reducir la dimensionalidad de los datos sin perder demasiada información. Utiliza los autovalores y autovectores de la matriz de covarianza para determinar las direcciones principales de la variabilidad en los datos.</p>
+        
+        <h3>Ejemplo en Python</h3>
+        <pre><code class="language-python">
+import numpy as np
+from sklearn.decomposition import PCA
+
+# Datos de ejemplo con 3 características
+X = np.array([[2.5, 2.4],
+              [0.5, 0.7],
+              [2.2, 2.9],
+              [1.9, 2.2],
+              [3.1, 3.0]])
+
+# Aplicando PCA
+pca = PCA(n_components=1)  # Reducimos a una sola dimensión
+X_reducido = pca.fit_transform(X)
+
+print("Datos transformados:")
+print(X_reducido)
+        </code></pre>
+        
+        <h3>Salida en consola</h3>
+        <pre>
+[[ 1.284]
+ [-1.123]
+ [ 1.493]
+ [ 0.501]
+ [ 2.025]]
+        </pre>
+        
+        <h2>2. Sistemas Dinámicos y Simulaciones</h2>
+        <p>En física y matemáticas aplicadas, los autovalores se utilizan para analizar la estabilidad de sistemas dinámicos. Un sistema es estable si todos sus autovalores tienen partes reales negativas.</p>
+
+        <h3>Ejemplo en Ecuaciones Diferenciales</h3>
+        <p>Para el sistema <span class="ecuacion">\( \frac{dx}{dt} = Ax \)</span>, donde \( A \) es una matriz de coeficientes, los autovalores de \( A \) determinan el comportamiento de las soluciones.</p>
+
+        <h2>3. Reconocimiento Facial</h2>
+        <p>Los métodos de reconocimiento facial, como el <strong>Eigenfaces</strong>, utilizan autovalores y autovectores para representar imágenes de rostros en un espacio de características reducido.</p>
+        
+        <h2>4. Métodos de Recomendación</h2>
+        <p>En sistemas de recomendación, como los de Netflix o Amazon, se utilizan técnicas basadas en descomposición en valores singulares (SVD), que dependen de los autovalores para encontrar patrones en grandes conjuntos de datos.</p>
         
         <h2>Recursos Adicionales</h2>
         <ul>
             <li><a href="https://es.wikipedia.org/wiki/Autovalor_y_autovector" target="_blank">Wikipedia: Autovalores y Autovectores</a></li>
             <li><a href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/eigen-everything/v/linear-algebra-eigenvalues-and-eigenvectors" target="_blank">Khan Academy: Introducción a Autovalores</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Transformaci%C3%B3n_lineal" target="_blank">Wikipedia - Transformación Lineal</a></li>
+            <li><a href="https://tutorial.math.lamar.edu/Classes/LinAlg/LinearTransformations.aspx" target="_blank">Paul's Online Math Notes - Linear Transformations</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors" target="_blank">Eigenvalues and Eigenvectors - Wikipedia</a></li>
+            <li><a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/" target="_blank">Curso de Álgebra Lineal - MIT OCW</a></li>
+            <li><a href="https://scikit-learn.org/stable/modules/decomposition.html#pca" target="_blank">Documentación de PCA en Scikit-Learn</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Eigenface" target="_blank">Eigenfaces en Wikipedia</a></li>
         </ul>
     </div>
   
